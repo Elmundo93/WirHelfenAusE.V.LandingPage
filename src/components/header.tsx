@@ -17,7 +17,7 @@ import {
   DropdownSection,
 } from "@heroui/react";
 import Image from "next/image";
-import { Logs, MessageCircleQuestion, BookOpen, MessageCircle, UserPlus, Newspaper } from "lucide-react";
+import { Logs, MessageCircleQuestion, BookOpen, MessageCircle, UserPlus, Newspaper, BookAIcon } from "lucide-react";
 import BienenLogo from "../../public/images/Bienen Logo.png";
 
 export default function Header() {
@@ -29,16 +29,18 @@ export default function Header() {
     { key: "contact", label: "Kontakt", icon: MessageCircle, href: "/contact-us" },
     { key: "anmeldung", label: "Minijobsystem und Anmeldung", icon: UserPlus, href: "/anmeldung" },
     { key: "blog", label: "Unser Blog", icon: Newspaper, href: "/blog" },
+    { key: "communication", label: "Kommunikationsrichtlinien", icon: BookAIcon, href: "/communication" },
+    
   ];
 
   return (
     <Navbar
+    
       shouldHideOnScroll
       isBordered
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      className="fixed top-0 left-0 w-full z-50 text-2xl py-4 px-4 bg-white/90 backdrop-blur-md shadow-md"
-    >
+      className={`fixed top-0 left-0 w-full z-50 text-2xl py-4 px-4 bg-white/90 backdrop-blur-md shadow-md ${!isMenuOpen ? 'navbar-closed' : ''}`} >
       {/* Mobile-Navbar-Content */}
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
@@ -63,7 +65,7 @@ export default function Header() {
             <DropdownTrigger>
               <div className="flex items-center gap-2 cursor-pointer">
                 <p className="text-2xl text-default-600 tracking-wider">
-                  <span className="flex items-center gap-2 cursor-pointer">
+                  <span className="flex items-center gap-2 cursor-pointer hover:text-amber-500 active:text-amber-500 active:scale-100">
                     <Logs className="w-6 h-6" />
                     Wissenswertes
                   </span>

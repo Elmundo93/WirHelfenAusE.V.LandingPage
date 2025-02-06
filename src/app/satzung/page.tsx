@@ -7,6 +7,7 @@ import People from '../../../public/images/licensed/3143372.jpg'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Footer from "../../components/footer"
+import AnimatedElement from "../../components/Animation/AnimatedElement"
 export default function Satzung() {
   const router = useRouter();
 
@@ -17,24 +18,26 @@ export default function Satzung() {
   return (
     <main className="min-h-screen">
       <Header />
-      <div className="max-w-4xl mx-auto px-4 py-8 mt-20">
-      <div className="fixed top-0 left-0 w-screen h-screen -z-10">
+
+     
+      {/* Hintergrundbild */}
       <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.2 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 w-full h-full z-[-1]"
-        >
-          <Image
-            src={People}
-            alt="Helfende Menschen"
-            layout="fill"
-            objectFit="cover"
-            priority
-            className="top-10 z-[-1]"
-          />
-        </motion.div>
-        </div>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 2 }}
+        className="fixed inset-0 z-0"
+      >
+        <Image
+          src={People}
+          alt="Helfende Menschen"
+          fill
+          style={{ objectFit: 'cover' }}
+          priority
+        />
+      </motion.div>
+      <AnimatedElement>
+      {/* Content-Bereich – er liegt über dem Hintergrund */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-10 md:pt-30 md:pb-16">
         <Button
           onPress={handleBackClick}
           className="mb-12 bg-amber-500 text-white text-lg rounded-full"
@@ -107,6 +110,7 @@ export default function Satzung() {
         </div>
         
       </div>
+      </AnimatedElement>
       <Footer />
     </main>
   );

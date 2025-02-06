@@ -7,10 +7,14 @@ import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic'
 
 import RightArrow from '../../../public/animation/Right Arrow.json'
+import AnimatedElement from '../Animation/AnimatedElement'
+import DankeSagen from '../../../public/images/DankeSagen.png'
+import { useHeaderHeight } from '../headerHeight'
 
 const LottieView = dynamic(() => import('lottie-react'), { ssr: false });
 
 export default function Hero3() {
+  const headerHeight = useHeaderHeight()
   const handleScroll = () => {    
     const target = document.querySelector('#preview');
     target?.scrollIntoView({ behavior: 'smooth' });
@@ -19,27 +23,14 @@ export default function Hero3() {
   const animationData = require('../../../public/Scribble Line.json');
 
   return (
-    <section className="relative h-full">
+    <section className="relative h-full"    style={{ marginTop: `${headerHeight}px` }}>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 0.1 }}
-          transition={{ duration: 2 }}
-          className="absolute inset-0 z-0"
-        >
-          <Image
-              src={People}
-              alt="Helfende Menschen"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-          />
-        </motion.div>
-
-      <div className="relative z-10 max-w-6xl mb-28 mx-auto px-4 sm:px-6 pt-32 pb-10 md:pt-30 md:pb-16">
-        {/* Hero content */}
-          {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+    {/* Hintergrundbild */}
+   
+    <AnimatedElement className="h-full">
+    {/* Content-Bereich – er liegt über dem Hintergrund */}
+    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-10 md:pt-30 md:pb-16">
+      <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16  border-t-0 backdrop-blur-sm rounded-2xl">
             <h1 className="text-5xl mb-4 md:text-7xl" data-aos="fade-up">
               Sie möchten ihre<br />
               <span className="relative inline-block">
@@ -94,7 +85,7 @@ export default function Hero3() {
             </div>
           </div>
         </div>
-
+        </AnimatedElement>
     </section>
   );
 }

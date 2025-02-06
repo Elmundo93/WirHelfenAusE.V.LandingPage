@@ -1,10 +1,11 @@
 'use client'
 
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import HelpingPeople from '../../../public/images/Help and support to climbing employee from mentor or leader hand.png'
+
 import AnimatedElement from '../Animation/AnimatedElement'
 import Image from 'next/image'
 import { useEffect } from 'react'
+import IdeaCrafting from '../../../public/images/IdeaCrafting.png'
 import { handleScroll } from '../util/handleScroll'
 
 // Globaler Wheel-Listener (bleibt unverändert)
@@ -22,68 +23,71 @@ function GlobalWheelScroll({ enabled }: { enabled: boolean }) {
   return null
 }
 
-export default function Preview() {
+
+export default function Preview2() {
+
+
 
 
   // Neuer Handler, der mit einem Delay scrollt – so wird erst nach Schließen des Dropdowns
-  // der Ziel-Abschnitt gefunden.
-
 
   return (
-    <section id="preview" className="relative">
-      <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center">
-        {/* Content-Bereich */}
-        <div  className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-14 lg:col-span-12" data-aos="fade-left">
-          <div className="relative mt-60 mb-20">
-            <Image 
-              className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute z-[-1] top-[-300px] left-1/2 transform -translate-x-1/2" 
-              src={HelpingPeople} 
-              width={540} 
-              height={405} 
-              alt="Features 03" 
+    <section id="preview2" className="relative">
+  <div  className="flex justify-center">
+  <AnimatedElement className="relative h-full w-full  rounded-xl shadow-lg p-10 items-center justify-center">
+    {/* Inhalt */}
+    <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+      <AnimatedElement 
+        className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" 
+        data-aos="fade-up"
+      >
+        {/* Container für Überschrift inkl. Hintergrundbild */}
+        <div className="relative inline-block w-full max-w-md mx-auto">
+          {/* Hintergrundbild – absolut positioniert */}
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src={IdeaCrafting}
+              alt="Arbeitsvertrag"
+              fill
+              className="object-contain rounded-full"
             />
-            <div className="flex justify-center">
-            <div className="inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3">
-                <h1 className="text-4xl text-center z-[1] text-gray-700">Unser Schritt für Schritt Guide!</h1>
+          </div>
+          {/* Invisible Placeholder sorgt dafür, dass der Container 
+              die Höhe des Bildes übernimmt */}
+          <div className="invisible">
+            <Image
+              src={IdeaCrafting}
+              alt="Arbeitsvertrag"
+              width={540}
+              height={405}
+              className="rounded-full"
+            />
+          </div>
+          <div className="inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3">
+                <h1 className="text-4xl text-center z-[1] text-gray-700">Die Idee:</h1>
               </div>
             </div>
-          </div>
-          <h2 className="text-3xl text-gray-500 mb-8 text-center">
-            Finde nützliche Informationen und eine umfassende Anleitung!
-          </h2>
-          
-          <div id="previewScroll" className="flex justify-center mb-10">
-            <button
-              onClick={() => handleScroll('#guideStep1', 0)}
-              className="
-                relative group
-                overflow-hidden
-                px-4 py-2
-                border-4 border-gray-400        
-                rounded-full
-                transition-colors duration-200
-                hover:text-white
-                hover:border-amber-400
-                text-2xl text-gray-500
-                shadow-lg
-              "
-            >
-              <span className="relative z-10">Direkt zum Guide!</span>
-              <span
-                className="
-                  absolute inset-0
-                  bg-amber-400
-                  transform translate-y-full
-                  transition-transform duration-300 ease-in-out
-                  group-hover:translate-y-0
-                  z-0
-                "
-              />
-            </button> 
-          </div>
+        <p className="text-2xl text-center text-gray-500 mt-10">
+          Finde Möglichkeiten, dort zu helfen wo du kannst!<br /><br />- oder jemanden, der es kann!<br /><br />Klingt einfach? Ist es auch!
+        </p>
 
-          {/* Dropdown-Menü */}
-          <Menu as="div" className="relative inline-block text-left justify-center min-w-full">
+        <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+        <button
+              onClick={() => handleScroll('#AboutStep1', 0)}
+              className="relative group overflow-hidden px-4 py-2 border-4 border-gray-400 rounded-full transition-colors duration-200 hover:text-white hover:border-amber-400 text-2xl text-gray-500 shadow-lg"
+            >
+              <span className="relative z-10">
+            Direkt zur Anleitung!
+              </span>
+              {/* Hover-Overlay */}
+              <span
+                className="absolute inset-0 bg-amber-400 transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0"
+              />
+            </button>
+
+            
+        </div>
+        <Menu as="div" className="relative inline-block text-left justify-center min-w-full mt-10">
             {({ open }) => (
               <>
                 {/* Globaler Scroll-Listener aktiv, wenn das Dropdown offen ist */}
@@ -99,16 +103,15 @@ export default function Preview() {
                       cursor-pointer
                       focus:outline-none
                     "
-
                     onClick={(e) => {
-                      if (!open) {
-                        handleScroll('#previewScroll', 0)
-                      }
-                      else {
-                        handleScroll('#preview', 0)
+                        if (!open) {
+                          handleScroll('#previewScroll', 0)
                         }
-                      
-                    }}
+                        else {
+                          handleScroll('#guideStep2', 0)
+                          }
+                        
+                      }}
                   >
                     <p className="text-2xl text-gray-500">
                       <span className="group relative">
@@ -146,12 +149,12 @@ export default function Preview() {
                     >
                       {({ active }) => (
                         <>
-                          <a onClick={() => handleScroll('#guideStep1', 800)} className="cursor-pointer block">
+                          <a onClick={() => handleScroll('#AboutStep1', 400)} className="cursor-pointer block">
                             <span className="font-semibold">Schritt 1:</span>
                             <br/>
                             <span className="group relative cursor-pointer">
                               <span className="relative">
-                                Finde deine helfende Hand mit der AushilfApp!
+                                App herunterladen & ein Konto erstellen!
                                 <span
                                   className="
                                     absolute left-0 bottom-[-18px] w-full h-0.5 
@@ -173,7 +176,7 @@ export default function Preview() {
           {({ active }) => (
             <>
               
-              <a onClick={() => handleScroll('#guideStep2', 800)} className="cursor-pointer block">
+              <a onClick={() => handleScroll('#AboutStep2', 600)} className="cursor-pointer block">
 
 
               
@@ -181,7 +184,7 @@ export default function Preview() {
               <br/>
               <span className="group relative cursor-pointer">
                 <span className="relative">
-                  Bereite einen Arbeitsvertrag vor!
+                Umschauen & Erkunden!
                   <span
                     className="
                       absolute 
@@ -213,13 +216,13 @@ export default function Preview() {
         >
           {({ active }) => (
             <>
-              <a onClick={() => handleScroll('#guideStep3', 800)} className="cursor-pointer block">
+              <a onClick={() => handleScroll('#AboutStep3', 600)} className="cursor-pointer block">
                 <span className="font-semibold">Schritt 3:</span>
                 <br/>
                 <span className="group relative cursor-pointer">
                   <span className="relative">
-              Melde deine helfende Hand bei der Minijobzentrale an!
-              <span
+                Beitrag verfassen!
+                  <span
                 className="
                   absolute 
                   left-0 
@@ -250,12 +253,12 @@ export default function Preview() {
         >
           {({ active }) => (
             <>
-              <a onClick={() => handleScroll('#guideStep4', 800)} className="cursor-pointer block">
-                <span className="font-semibold">Schritt 3, Teil 2:</span>
+              <a onClick={() => handleScroll('#AboutStep4', 600)} className="cursor-pointer block">
+                <span className="font-semibold">Schritt 4:</span>
                 <br/>
                 <span className="group relative cursor-pointer">
                   <span className="relative">
-              Details zu Anmeldung
+              In Kontakt treten!
               <span
                 className="
                   absolute 
@@ -287,12 +290,12 @@ export default function Preview() {
         >
           {({ active }) => (
             <>
-              <a onClick={() => handleScroll('#guideStep5', 800)} className="cursor-pointer block">
-                <span className="font-semibold">Schritt 4:</span>
+              <a onClick={() => handleScroll('#AboutStep5', 600)} className="cursor-pointer block">
+                <span className="font-semibold">Schritt 5:</span>
                 <br/>
                 <span className="group relative cursor-pointer">
                   <span className="relative">
-              Kalkulation der Abgaben
+                Schlau machen!
               <span
                 className="
                   absolute 
@@ -324,86 +327,12 @@ export default function Preview() {
         >
           {({ active }) => (
             <>
-              <a onClick={() => handleScroll('#guideStep6', 800)} className="cursor-pointer block">
-                <span className="font-semibold">Schritt 4, Teil 2:</span>
-                <br/>
-                <span className="group relative cursor-pointer">
-                  <span className="relative">
-              Abgabedetails für helfende Hände!
-              <span
-                className="
-                  absolute 
-                  left-0 
-                  bottom-[-18px] 
-                  w-full 
-                  h-0.5 
-                  bg-amber-500 
-                  origin-center 
-                  transform 
-                  scale-x-0 
-                  transition-transform 
-                  duration-300 
-                  ease-out 
-                  group-hover:scale-x-100
-                "
-              />
-            </span>
-          </span>
-          </a>
-          </>
-        )}
-        </MenuItem>
-
-        {/* Schritt 4, Teil 3 */}
-        <MenuItem
-          as="li"
-          className="flex flex-col pb-4 border-b border-gray-200 focus:outline-none"
-        >
-          {({ active }) => (
-            <>
-              <a onClick={() => handleScroll('#guideStep7', 800)} className="cursor-pointer block">
-                <span className="font-semibold">Schritt 4, Teil 3:</span>
-                <br/>
-                <span className="group relative cursor-pointer">
-                  <span className="relative">
-              Abgabedetails für Arbeitgeber!
-              <span
-                className="
-                  absolute 
-                  left-0 
-                  bottom-[-18px] 
-                  w-full 
-                  h-0.5 
-                  bg-amber-500 
-                  origin-center 
-                  transform 
-                  scale-x-0 
-                  transition-transform 
-                  duration-300 
-                  ease-out 
-                  group-hover:scale-x-100
-                "
-              />
-            </span>
-          </span>
-          </a>
-          </>
-        )}
-        </MenuItem>
-
-        {/* Schritt 5 (ohne border-bottom) */}
-        <MenuItem
-          as="li"
-          className="flex flex-col pb-4 focus:outline-none"
-        >
-          {({ active }) => (
-            <>
-              <a onClick={() => handleScroll('#guideStep8', 800)} className="cursor-pointer block">
+              <a onClick={() => handleScroll('#AboutStep6', 600)} className="cursor-pointer block">
                 <span className="font-semibold">Schritt 5:</span>
                 <br/>
                 <span className="group relative cursor-pointer">
                   <span className="relative">
-              Kurzzeitige Beschäftigung
+                Danke sagen!
               <span
                 className="
                   absolute 
@@ -427,17 +356,31 @@ export default function Preview() {
           </>
         )}
         </MenuItem>
+
+ 
                   </MenuItems>
                 </div>
               </>
             )}
           </Menu>
 
+      </AnimatedElement>
+
+  
+    </div>
+  </AnimatedElement>
+</div>
+
+          {/* Dropdown-Menü */}
+         
+
           <div className="space-y-6">
             {/* Weitere Inhalte */}
           </div>
-        </div>
-      </AnimatedElement>
-    </section>
+
+      
+
+      
+      </section>
   )
 }

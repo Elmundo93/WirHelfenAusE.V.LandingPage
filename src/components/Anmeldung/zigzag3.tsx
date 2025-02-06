@@ -1,19 +1,18 @@
 'use client'
 
-import PhoneScreenshot from '../../../public/images/PhoneScreenshot.png'
+
 import Arbeitsvertrag from '../../../public/images/vecteezy_business-friendship-agreement-idea-with-successful-vector_2914732.png'
 import AnimatedElement from '../Animation/AnimatedElement'
-import Calculation from '../../../public/images/Calculation.png'
+
 import PaperPlane from '../../../public/images/PaperPlane.png'
-import CheckList from '../../../public/images/Tiny man sitting on chair with laptop on checklist background.png'
-import { Button } from '@heroui/react'
-import Link from 'next/link'
+
 import Image from 'next/image'
 import Suchen from '../../../public/images/Curious analyst investigating question mark with magnifier.png'
 import MarBusiness from '../../../public/images/Mar-Business_6.png'
 import CheckList1 from '../../../public/images/Checklist1.png'
 import Calculation1 from '../../../public/images/13286.png'
 import ShortTime from '../../../public/images/3664288.png'
+import OptionenKennen from '../../../public/images/OptionenKennen.png'
 
 export default function Zigzag3() {
 
@@ -87,8 +86,8 @@ export default function Zigzag3() {
               {/* Inhalt */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:order-1 order-1" data-aos="fade-right">
                 <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                    Schritt 1: finde eine helfende Hand mit der <span className="text-amber-500">AushilfApp</span>!
+                  <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 p-4">
+                    Schritt 1: finde eine helfende Hand mit der AushilfApp!
                   </h3>
                   <p className="text-xl text-center text-gray-500 mb-4">
                     Unser intuitives Kategoriesystem lässt dich schnell und einfach definieren, wie dir geholfen werden kann, oder wie du helfen kannst!
@@ -139,12 +138,90 @@ export default function Zigzag3() {
               </div>
             </AnimatedElement>
             </div>
-
-            {/* 2. Item */}
             <div id="guideStep2" className="flex">
               <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
                 {/* Bild */}
-                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0md:order-1 sm:order-1" data-aos="fade-up">
+                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
+                  <Image 
+                    className=" max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
+                    src={OptionenKennen} 
+                    width={540} 
+                    height={405} 
+                    alt="OptionenKennen" 
+                  />
+                  <div className="invisible lg:absolute relative">
+                    <Image 
+                      className=" max-w-full mx-auto md:max-w-none p-7" 
+                      src={OptionenKennen} 
+                      width={250} 
+                      height={250} 
+                      alt="Placeholder OptionenKennen" 
+                    />
+                  </div>
+                </div>
+                {/* Inhalt */}
+                <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
+                  <div className="md:pl-4 lg:pl-12 xl:pl-16">
+                    
+                    <h3 className="text-4xl text-center mb-5  inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3">
+                      Schritt 2: Optionen kennenlernen!
+                    </h3>
+                    <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
+                      Das Beschäftigungsverhältnis kann für verschiedene Szenarien varieren, weshalb es wichtig ist, im vorhinein zu klären in welchem Ausmaß die Unterstützung erfolgen soll. 
+                      <br /><br />
+                      So kann z.B. bei einer kurzzeitigen Beschäftigung ( weniger als 70 Tage im Kalendarjahr ) der Renteversicherungsbeitrag für die helfende Hand entfallen. 
+                      <br /><br />
+                      Nähere Informationen über die Abgaben folgen in dem Guide, oder lassen sich ganz einfach   <button
+              onClick={() => handleMinijobNavigation('https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/muster-arbeitsvertrag-privathaushalt.html?nn=b0bdec7a-a43b-4976-b45e-9d7ff303840e')}
+              className="
+                relative group
+                overflow-hidden
+                px-4 py-2
+                border-4 border-gray-400        
+                rounded-full
+                transition-colors duration-200
+                hover:text-white
+                hover:border-amber-400
+                text-2xl text-gray-500
+                shadow-lg
+              "
+            >
+              <span className="relative z-10">hier</span>
+              <span
+                className="
+                  absolute inset-0
+                  bg-amber-400
+                  transform translate-y-full
+                  transition-transform duration-300 ease-in-out
+                  group-hover:translate-y-0
+                  z-0
+                "
+              />
+            </button>  nachlesen.
+             
+                    </p>
+                    <div className="space-y-6">
+                      <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep3')} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </AnimatedElement>
+            </div>
+            {/* 2. Item */}
+            <div id="guideStep3" className="flex">
+              <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
+                {/* Bild */}
+                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0" data-aos="fade-up">
                   <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
                     src={Arbeitsvertrag} 
@@ -165,8 +242,8 @@ export default function Zigzag3() {
                 {/* Inhalt */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
                   <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                    <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                      Schritt 2: Bereite einen Arbeitsvertrag vor!
+                    <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3rounded-full p-4">
+                      Schritt 3: Bereite einen Arbeitsvertrag vor!
                     </h3>
                     <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
                       Nachdem alle relevanten Eckdaten besprochen wurden, kann der Arbeitsvertrag aufgesetzt werden.
@@ -204,7 +281,7 @@ export default function Zigzag3() {
                     </p>
                     <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep3')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep4')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -219,12 +296,12 @@ export default function Zigzag3() {
                 </div>
               </AnimatedElement>
             </div>
-
+       
             {/* 3. Item */}
-            <div id="guideStep3" className="flex">
+            <div id="guideStep4" className="flex">
               <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
                 {/* Bild */}
-                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 " data-aos="fade-up">
+                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
                   <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
                     src={PaperPlane} 
@@ -245,8 +322,8 @@ export default function Zigzag3() {
                 {/* Inhalt */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
                   <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                    <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                    Schritt 3: Melde deine helfende Hand bei der Minijobzentrale an!                    
+                    <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3rounded-full p-4">
+                    Schritt 4: Melde deine helfende Hand bei der Minijobzentrale an!                    
                     </h3>
                     <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
                     Du kannst deine helfende Hand bei der Minijobzentrale auf unterschiedlichen Wegen anmelden. <br/><br/>Per Telefon um eventuell offene Fragen zu klären unter 0355 2902-70799 von Montag bis Freitag zwischen 07.00 Uhr und 17.00 Uhr.<br/><br/>Per Post mit der Adresse: Minijob-Zentrale, 45115 Essen. <br/><br/> Oder einfach in 2 Schritten Online mit diesem
@@ -282,7 +359,7 @@ export default function Zigzag3() {
                     </p>
                     <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep4')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep5')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -299,10 +376,10 @@ export default function Zigzag3() {
             </div>
 
             {/* 4. Item */}
-            <div id="guideStep4" className="flex">
-            <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
+            <div id="guideStep5" className="flex">
+            <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center w-full">
             {/* Bild */}
-            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0md:order-1 sm:order-1" data-aos="fade-up">
+            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0" data-aos="fade-up">
             <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
                     src={CheckList1} 
@@ -323,8 +400,8 @@ export default function Zigzag3() {
                 {/* Inhalt */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
                   <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                  <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                  Schritt 3, Teil 2: Details zur Anmeldung
+                  <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3rounded-full p-4">
+                  Schritt 4, Teil 2: Details zur Anmeldung
                   </h3>
                   <p className="text-xl  text-gray-500 mb-4 text-center">Grundsätzlich brauchst du für die Anmeldung mit dem Haushaltcheck-Verfahren:
     </p> 
@@ -340,7 +417,7 @@ export default function Zigzag3() {
              
                     <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep5')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep6')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -356,10 +433,10 @@ export default function Zigzag3() {
               </AnimatedElement>
             </div>
             {/* 5. Item */}
-            <div id="guideStep5" className="flex">
+            <div id="guideStep6" className="flex">
             <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
             {/* Bild */}
-            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0" data-aos="fade-up">
+            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
             <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
                       src={MarBusiness} 
@@ -380,8 +457,8 @@ export default function Zigzag3() {
                 {/* Inhalt */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
                   <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                    <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                    Schritt 4: Kalkulation der Abgaben:                    </h3>
+                    <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 rounded-full p-4">
+                    Schritt 5: Kalkulation der Abgaben:                    </h3>
                     <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
                     Grundsätzlich gilt: Der Arbeitgeber ist für die Abgaben verantwortlich.<br/><br/>
       Insofern sich die helfende Hand nicht vorher von der Rentenversicherungspflicht befreit hat, behält der Arbeitgeber 13,6% vom Bruttolohn der helfenden Hand ein um diese mit seinen Abgaben der Minijobzentrale zukommen zu lassen.<br/><br/>
@@ -419,7 +496,7 @@ export default function Zigzag3() {
                     </p>
                     <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep6')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep7')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -436,10 +513,10 @@ export default function Zigzag3() {
             </div>
 
             {/* 6. Item */}
-            <div id="guideStep6" className="flex">
+            <div id="guideStep7" className="flex">
             <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
             {/* Bild */}
-            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
+            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0" data-aos="fade-up">
             <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
                     src={Calculation1} 
@@ -460,8 +537,8 @@ export default function Zigzag3() {
                 {/* Inhalt */}
                 <div id="step2" className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
                   <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                    <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                      Schritt 4, Teil 2: Abgabedetails für helfende Hände
+                    <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 rounded-full p-4">
+                      Schritt 5, Teil 2: Abgabedetails für helfende Hände
                     </h3>
                     <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
                     Als helfende Hand, hast du die Möglichkeit dich von der Rentenversicherungspflicht zu befreien, sodass du keine weiteren Abgaben von deinem Lohn hast. <br/><br/>
@@ -529,7 +606,7 @@ export default function Zigzag3() {
                     </p>
                     <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep7')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#guideStep8')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -545,14 +622,14 @@ export default function Zigzag3() {
               </AnimatedElement>
             </div>
 
-            {/* 7. Item */}
-            <div id="guideStep7" className="flex">
+
+            <div id="guideStep8" className="flex">
             <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center justify-center">
             {/* Bild */}
-            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 " data-aos="fade-up">
+            <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
             <Image 
                     className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
-                    src={Calculation} 
+                    src={ShortTime} 
                     width={540} 
                     height={405} 
                     alt="Calculation" 
@@ -560,18 +637,18 @@ export default function Zigzag3() {
                   <div className="invisible lg:absolute relative">
                     <Image 
                       className="rounded-full max-w-full mx-auto md:max-w-none p-7" 
-                      src={Calculation} 
+                      src={ShortTime} 
                       width={250} 
                       height={250} 
-                      alt="Placeholder Calculation" 
+                      alt="Placeholder ShortTime" 
                     />
                   </div>
                 </div>
                 {/* Inhalt */}
                 <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6 mt-12" data-aos="fade-left">
                   <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                  Schritt 4, Teil 3: Abgabedetails für Arbeitgeber!
+                  <h3 className="text-4xl text-center mb-5 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 rounded-full p-4">
+                  Schritt 5, Teil 3: Abgabedetails für Arbeitgeber!
                     </h3>
                     <p className="text-xl text-center text-gray-500 mb-4 md:mt-14 lg:mt-0 sm:mt-0 mt-0">
                     Die Abgaben werden halbjährig bequem von der Minijobzentrale per SEPA-Lastschrift eingezogen. <br/><br/>
@@ -669,7 +746,7 @@ export default function Zigzag3() {
             </p>
             <div className="space-y-6">
                       <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
-                        <button onClick={() => handleAnmeldungNavigation('#guideStep8')} className="cursor-pointer block">
+                        <button onClick={() => handleAnmeldungNavigation('#preview')} className="cursor-pointer block">
                           <span className="group relative cursor-pointer">
                             <span className="relative font-semibold text-gray-500 text-xl">
                               Nächster Schritt
@@ -686,60 +763,8 @@ export default function Zigzag3() {
               </AnimatedElement>
             </div>
 
-            {/* 8. Item */}
-            <div id="guideStep8" className="flex">
-              <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center">
-                {/* Bild */}
-                <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
-                  <Image 
-                    className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7 absolute lg:relative left-1/2 top-3/4 transform -translate-x-1/2 -translate-y-1/2 lg:transform-none lg:left-0 lg:top-0 z-[-1]" 
-                    src={ShortTime} 
-                    width={540} 
-                    height={405} 
-                    alt="CheckList" 
-                  />
-                  <div className="invisible lg:absolute relative">
-                    <Image 
-                      className="rounded-full max-w-full mx-auto md:max-w-none p-7" 
-                      src={ShortTime} 
-                      width={250} 
-                      height={250} 
-                      alt="Placeholder CheckList" 
-                    />
-                  </div>
-                </div>
-                {/* Inhalt */}
-                <div id="step2" className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
-                  <div className="md:pl-4 lg:pl-12 xl:pl-16">
-                  <h3 className="text-4xl text-center mb-5 bg-white rounded-full p-4">
-                  Schritt 5: Kurzzeitige Beschäftigung
-                    </h3>
-                    <p className="text-xl text-gray-500 mb-4 text-center">
-                      Eine Kurzzeitbeschäftigung liegt vor, wenn die helfende Hand weniger als 70 Arbeitstage im Kalenderjahr beschäftigt wird.
-                      <br /><br />
-                      Dabei entfallen Renten- & Sozialversicherungsbeiträge, weshalb auch die Abgaben geringer ausfallen.
-                      <br /><br />
-                      Der Anmeldeprozess läuft wie gewohnt über die Minijobzentrale – ideal für saisonale Tätigkeiten wie Erntehelfer oder unregelmäßige Nachhilfe.
-                      <br /><br />
-                      Details zu den Abgaben findest du hier!
-                    </p>
-                    <div className="space-y-6">
-                      <div data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
-                        <button onClick={() => handleAnmeldungNavigation('#preview')} className="cursor-pointer block">
-                          <span className="group relative cursor-pointer">
-                            <span className="relative font-semibold text-gray-500 text-xl">
-                              Zurück zur Übersicht
-                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
-                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
-                            </span>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            </div>
+
+           
 
           </div>
         </div>

@@ -7,6 +7,7 @@ import People from '../../public/images/staff-personnel-structure-management-svg
 import Register from '../../public/images/register-svgrepo-com.svg';
 import RightOne from '../../public/images/choice-svgrepo-com.svg';
 import AnimatedElement from './Animation/AnimatedElement';
+import CoolKids from '../../public/images/CoolKids.png'
 
 
 
@@ -15,11 +16,40 @@ export default function Features() {
     <section  id="ÜberUns">
       <div className="border-t mt-20 max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20">
-        <AnimatedElement  className="max-w-3xl mx-auto text-center pb-12 md:pb-16 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" data-aos="fade-up">
           
-          <div  className="inline-flex text-sm py-1 px-3 m-2 text-white bg-amber-500 rounded-full mb-4">Dort helfen wo du kannst!</div>
-            <h1 className="text-5xl text-center mb-8">Unser Ziel</h1>
+        <AnimatedElement  className="relative flex flex-col max-w-3xl mx-auto text-center  md:pb-16 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" data-aos="fade-up">
+        <div className="relative inline-block w-full max-w-md mx-auto">
+
+          <div className="absolute  inset-0 -z-10">
+              <Image
+                src={CoolKids}
+                alt="CoolKids"
+                width={640}
+                height={505}
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={CoolKids}
+                alt="CoolKids"
+                width={300}
+                height={300}
+                className="rounded-full"
+              />
+
+            </div>
+
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-xl py-4 px-10 bg-white shadow-lg mx-auto inline-block">
+             Unser Ziel
+            </h1>
+            </div>
+           
             <p className="text-xl text-center text-gray-500">Wir vom &apos;Wir helfen aus e.V.&apos; glauben daran, dass wir mit unserem Netzwerk die Helferkultur auf regionaler Ebene fördern.<br></br><br></br> Viele Aufgaben lassen sich mit mehr Händen schneller bewältigen &amp; deshalb verbinden wir Menschen mit unserer App!</p>
+
             </AnimatedElement>
 
 

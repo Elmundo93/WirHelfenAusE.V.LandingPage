@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Avatar from '../../public/images/avatar-thinking-svgrepo-com.png'
 import { motion } from 'framer-motion';
 import AnimatedElement from "./Animation/AnimatedElement";
+import DankeSagen from '../../public/images/DankeSagen.png'
+import { useHeaderHeight } from './headerHeight'
 export default function ContactUs() {
   const [fullname, setFullname] = useState<string>("");
   const [email, setEmail] = useState<string>("");
@@ -91,9 +93,24 @@ export default function ContactUs() {
     }
     console.log(fullname, email, subject, message);
   };
-
+  const headerHeight = useHeaderHeight()
   return (
     <main id="contact-us">
+         <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.1 }}
+        transition={{ duration: 2 }}
+        className="fixed inset-0 z-[-1] h-full"
+        style={{ marginTop: `${headerHeight}px` }}
+      >
+      <Image
+        src={DankeSagen}
+        alt="Helfende Menschen"
+        fill
+        style={{ objectFit: 'cover' }}
+        priority
+      />
+    </motion.div>
       <AnimatedElement id="contact-us" className=" p-8 grid grid-cols-1 md:grid-cols-2 gap-4 pt-10 lg:px-40 dark:bg-blue-900 md:h-96 mt-10">
        
         <div className="mx-auto mb-10 md:mt-20">

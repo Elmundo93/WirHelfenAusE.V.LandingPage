@@ -2,113 +2,442 @@
 
 import Image from 'next/image'
 
-import BeitragVerfassen from '../../../public/images/BeitragVerfassen.png'
-import BeitragSuchen from '../../../public/images/SucheBeitrag.png'
+import Registration from '../../../public/images/Registration.png'
+import FilterSuche from '../../../public/images/FilterSucher.png'
+import BeitragVerfassen from '../../../public/images/VerfasseBeitrag.png'
 import AnimatedElement from '../Animation/AnimatedElement'
-import Sicherheit from '../../../public/images/safe-and-stable-svgrepo-com.svg'
+import { handleScroll } from '../util/handleScroll'
+import InKontaktTreten from '../../../public/images/InKontaktTretene.png'
+import DankeSagen from '../../../public/images/DankeSagen.png'
+import SicherheitAnmeldung from '../../../public/images/SicherheitAnmeldung.png'
 
 
 
 
 export default function Zigzag2() {
   return (
-    <section id="zigzag2">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="py-12 md:py-20 border-t border-gray-800">
-
-          {/* Section header */}
-      
-
-          {/* Items */}
-          <div className="grid gap-20">
-
-            {/* 1st item */}
-            <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center flex flex-col">
-              {/* Image */}
-              <div className="flex justify-center max-w-md md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-2 order-2" data-aos="fade-up">
-                <div className="relative inline-block">
-                <Image 
-                  className="max-w-full mx-auto md:max-w-none h-auto 
-                  border-2 border-white/20  
-                  rounded-3xl              
-                  p-0                     
-                  hover:border-white/40   
-                  transition-colors       /* 
-                  " 
-                  src={BeitragVerfassen} 
-                  width={440} 
-                  height={405} 
-                  alt="Beitrag Verfassen" 
-                />
-                  <div className="absolute  top-[15%] backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold">
-    1.
-  </div>
-  <div className="absolute top-[28%] backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold">
-    2.
-  </div>
-  <div className="absolute top-[66%]   w-10 h-10 rounded-full flex items-center justify-center text-2xl font-bold">
-    3.
-  </div>
-  </div>
-              </div>
-              {/* Content */}
-              <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:order-1 order-1" data-aos="fade-right">
-                <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                  
-
-
-                  <h3 className="text-4xl text-center mb-5">Kategorien machen die Definition einfach!</h3>
-                  <p className="text-xl text-center text-gray-500 mb-4">Wähle ob du eine helfende Hand suchst, oder anbietest. Wähle anschließend eine Kategorie und beschreibe deine Anfrage!<br></br> <br></br>Unser intuitives Kategoriesystem lässt dich schnell und einfach definieren, wie dir geholfen werden kann, oder wie du helfen kannst!</p>
-                </div>
-              </div>
-              </AnimatedElement>
-
-            {/* 2nd item */}
-            <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center">
-  {/* Image */}
-  <div className="relative max-w-md md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0" data-aos="fade-up">
-    <Image className="rounded-full max-w-full mx-auto md:max-w-none h-auto p-7" src={BeitragSuchen} width={540} height={405} alt="Features 02" />
-    <div className="absolute -right-12 top-[15%] bg-white/10 backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
-    1
-  </div>
-  <div className="absolute -right-12 top-[50%] bg-white/10 backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
-    2
-  </div>
-  <div className="absolute -right-12 top-[85%] bg-white/10 backdrop-blur-sm w-10 h-10 rounded-full flex items-center justify-center text-xl font-bold">
-    3
-  </div>
-  </div>
-  {/* Content */}
-  <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-7 lg:col-span-6" data-aos="fade-left">
-    <div className="md:pl-4 lg:pl-12 xl:pl-16">
-      <h3 className="text-4xl text-center mb-5">Kategorien machen die Suche einfach!</h3>
-      <p className="text-xl text-center text-gray-500 mb-4">Nicht nur wird die Definition einfach, sondern auch die Suche! <br></br> <br></br> Filtere deine Suche nach der Kategorie mit unserem leicht zugänglichem Filter!<br></br><br></br>Wenn du dann die richtige Person gefunden hast, schreibe ihr einfach eine Nachricht über die App!</p>
-    </div>
-  </div>
-</AnimatedElement>
-
-            {/* 3rd item */}
-            <AnimatedElement className="h-full bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-10 lg:grid md:grid-cols-12 lg:gap-6 items-center">
-  
-              {/* Image */}
-              <div className="max-w-md md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 mb-8 md:mb-0 md:order-1 sm:order-1" data-aos="fade-up">
-                <Image className=" rounded-full max-w-full mx-auto md:max-w-none h-auto p-7" src={Sicherheit} width={540} height={405} alt="Features 03" />
-              </div>
-              {/* Content */}
-              <div className="max-w-md md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6" data-aos="fade-right">
-                <div className="md:pr-4 lg:pr-12 xl:pr-16">
-                 {/* <div className="font-architects-daughter text-xl text-purple-600 mb-2">More speed. Less spend</div>*/}
-                 
-                  <h3 className="text-4xl text-center mb-5">Und dabei geht uns Sicherheit vor!</h3>
-                  <p className="text-xl text-center text-gray-500 mb-4">Die Benutzung der App kostet einen minimal Betrag. <br></br><br></br>Neben der Deckung der laufenden App kosten hat die Angabe der Bankverbindung auch die Aufhebung der Anonymität als Vorteil. <br></br><br></br>Bei Problemen können die Verantwortlichen leicht ermittelt werden und zur Verantwortung gezogen werden!</p>
-                </div>
-              </div>
-            </AnimatedElement>
-
+    <section >
+    <div id="AboutStep1" className="flex justify-center">
+    <AnimatedElement className="relative h-full w-full  rounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src={Registration}
+                alt="Arbeitsvertrag"
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={Registration}
+                alt="Arbeitsvertrag"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 1: <br/>
+               App herunterladen & ein Konto erstellen!
+            </h1>
           </div>
-
-        </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+            Du findest die App schnell und zugänglich im App- & Playstore!
+          </p>
+          <div className="flex justify-center mt-10">
+          <button
+                onClick={() => handleScroll('#AboutStep1', 0)}
+                className="relative group overflow-hidden px-4 py-2 border-4 border-gray-400 rounded-full transition-colors duration-200 hover:text-white hover:border-amber-400 text-2xl text-gray-500 shadow-lg"
+              >
+                <span className="relative z-10">
+                App herunterladen!
+                </span>
+                {/* Hover-Overlay */}
+                <span
+                  className="absolute inset-0 bg-amber-400 transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0"
+                />
+              </button>
+              </div>
+              <div className="mt-10">
+                <p className="text-2xl text-center text-gray-500">Nachdem die App auf deinem Gerät installiert wurde, kannst du ein Konto erstellen. <br/><br/>Die App führt dich durch alle relevanten Verifiktationsschritte! </p>
+              </div>
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#AboutStep2', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+    
       </div>
-    </section>
+    </AnimatedElement>
+    
+  </div>
+  <div id="AboutStep2" className="flex justify-center">
+  <AnimatedElement className="relative h-full w-full  rounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 ">
+              <Image
+                src={FilterSuche}
+                alt="FilterSucher"
+                fill
+                className="object-contain rounded-full "
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={FilterSuche}
+                alt="FilterSucher"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 2: 
+              <br/>
+              Umschauen & Erkunden!
+            </h1>
+          </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+            Du hast ein Konto erstellt?
+            <br/><br/>
+            Dann herzlich willkommen in der AushilfApp!
+            <br/><br/>
+            Schaue dich auf der Pinnwand um und nutze den Filter um zu finden was du suchst!
+          </p>
+          
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#AboutStep3', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+
+      </div>
+    </AnimatedElement>
+    </div>
+    <div  className="flex justify-center">
+    <AnimatedElement className="relative h-full w-full  rounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src={BeitragVerfassen}
+                alt="BeitragVerfassen"
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div  className="invisible">
+              <Image
+                src={BeitragVerfassen}
+                alt="BeitragVerfassen"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 3: <br/>
+               Beitrag verfassen!
+            </h1>
+          </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+Wenn du nach dem Ersten Blick auf die Pinnwand nicht das gefunden hast, was du suchst, dann wird es Zeit einen Beitrag zu verfassen!<br/><br/>
+Definiere mit den vorgegebenen Kategorien wobei man dir helfen kann, oder in welchem Bereich du helfen möchtest!<br/><br/>
+Dann nur noch eine kurze Beschreibung hinzufügen und der Post ist fertig!
+          </p>
+
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#AboutStep4', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+    
+      </div>
+    </AnimatedElement>
+    
+  </div>
+
+  <div id="AboutStep4" className="flex justify-center">
+    <AnimatedElement className="relative h-full w-full  rounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src={InKontaktTreten}
+                alt="InKontaktTreten"
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={InKontaktTreten}
+                alt="InKontaktTreten"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 4: <br/>
+               In Kontakt treten!
+            </h1>
+          </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+          Es braucht manchmal seine Zeit, doch wenn sich dann die richtige Möglichkeit gefunden hat, schicke eine freundliche Nachricht um sich über das Szenario zu unterhalten und auszutauschen.<br/><br/>
+Hierbei können auch schon wichtige Eckdaten mitgeteilt werden um zu schauen, ob man einander helfen kann.<br/><br/>
+Achte dabei bitte immer darauf, den Kommunikationrichtilinien zu folgen.<br/><br/>
+Wir als Verein behalten uns dabei das Recht ein, die Kommunikation in der AushilfApp zu moderieren und bei verstößen Konsequenzen zu ziehen.<br/><br/> 
+Neben der Moderation durch den Verein, ermutigt die AushilfApp seine User auch dazu, eine Selbstregulierung durch ein effektives Meldesystem zu betreiben.
+          </p>
+
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#AboutStep5', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+    
+      </div>
+    </AnimatedElement>
+    
+  </div>
+
+  <div id="AboutStep5" className="flex justify-center">
+    <AnimatedElement className="relative h-full w-full brounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 g-white/4 backdrop-blur-xl  rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src={SicherheitAnmeldung}
+                alt="SicherheitAnmeldung"
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={SicherheitAnmeldung}
+                alt="SicherheitAnmeldung"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 5: <br/>
+                Schlau machen!
+              </h1>
+          </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+          Es hat sich eine Möglichkeit ergeben, einander zu helfen?<br/><br/>
+          Dann ist es Zeit, sich darüber gedanken zu machen, in welchem Rahmen man zusammen kommen möchte!<br/><br/>
+          Ist die Unterstützung nur kurzfristig, oder absehbar langfristig?<br/><br/>
+          So oder so, gibt es für jedes Szenario eine Lösung! <br/>
+          Denn auch bei einer kurzzeitigen Beschäftigung, kann man die Vorteile einer Rechtskomformen Anmeldung genießen! <br/><br/>
+          So ist man zum Beispiel in nur wenigen Schritten im Rahmen der Tätigkeit versichert, und kann sich auf das eigentliche Helfen konzentrieren!<br/><br/>
+          Für ausführlichere Informationen, les' dich weiter bei der Minijobzentrale ein, oder schau einfach mal in unseren Schritt für Schritt Guide!
+              
+          </p>
+
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#AboutStep6', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Nächster Schritt
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+    
+      </div>
+    </AnimatedElement>
+    
+  </div>
+
+  <div id="AboutStep6" className="flex justify-center">
+    <AnimatedElement className="relative h-full w-full brounded-xl shadow-lg p-10 items-center justify-center">
+      {/* Inhalt */}
+      <div className="max-w-xl md:max-w-none md:w-full mx-auto " data-aos="fade-left">
+        <AnimatedElement 
+          className="relative flex flex-col max-w-3xl mx-auto text-center pb-12 g-white/4 backdrop-blur-xl  rounded-xl shadow-lg p-4" 
+          data-aos="fade-up"
+        >
+          {/* Container für Überschrift inkl. Hintergrundbild */}
+          <div className="relative inline-block w-full max-w-md mx-auto">
+            {/* Hintergrundbild – absolut positioniert */}
+            <div className="absolute inset-0 -z-10">
+              <Image
+                src={DankeSagen}
+                alt="DankeSagen"
+                fill
+                className="object-contain rounded-full"
+              />
+            </div>
+            {/* Invisible Placeholder sorgt dafür, dass der Container 
+                die Höhe des Bildes übernimmt */}
+            <div className="invisible">
+              <Image
+                src={DankeSagen}
+                alt="DankeSagen"
+                width={540}
+                height={405}
+                className="rounded-full"
+              />
+            </div>
+            {/* Überschrift, die über dem Bild liegt */}
+            <h1 className="relative text-4xl text-center mb-5 rounded-full py-4 px-10 inline-block rounded-full bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg px-6 py-3 shadow-lg">
+              Schritt 6: <br/>
+                Danke sagen!
+              </h1>
+          </div>
+  
+          <p className="text-2xl text-center text-gray-500">
+            Wenn am Ende des Tages alles erledigt ist und geklappt hat, vergessen sie nicht danke zu sagen!<br/><br/>
+            In der AushilfApp finden sie auf jedem Profil eine Pinnwand für Danksagungen!<br/><br/>
+            Geben sie dort einfach ihr Feedback ab und zeigen sie auch anderen Usern, dass das Zusammenarbeiten reibungslos funktioniert hat!
+              
+          </p>
+
+          <div id="previewScroll" data-aos="fade-up" data-aos-delay="400" className="flex justify-center gap-4 mt-10">
+          <button onClick={() => handleScroll('#preview2', 140)} className="cursor-pointer block">
+                          <span className="group relative cursor-pointer">
+                            <span className="relative font-semibold text-gray-500 text-2xl">
+                              Zurück zur Startseite
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100" />
+                              <span className="absolute left-0 bottom-[-18px] w-full h-0.5 border-b-2 z-[-1]" />
+                            </span>
+                          </span>
+                        </button>
+  
+              
+          </div>
+       
+  
+        </AnimatedElement>
+  
+    
+      </div>
+    </AnimatedElement>
+    
+  </div>
+
+  
+    
+    
+</section>
   )
 }

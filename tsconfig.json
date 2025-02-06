@@ -19,7 +19,10 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/public/*": ["./public/*"],  // Neue Zeile für Bilder
+      "@/images/*": ["./public/images/*"],  
+      "@/animation/*": ["./public/animation/*"] // Optional: Spezifisch für Bilder
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

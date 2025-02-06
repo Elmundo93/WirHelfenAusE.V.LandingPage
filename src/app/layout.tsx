@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import BackgroundImage from "../components/BackgroundImage";
 
 
 import Head from "next/head";
@@ -79,7 +80,7 @@ export default function RootLayout({
       >
 
           {children}
-
+          <BackgroundImage />
 
       </body>
     </html>

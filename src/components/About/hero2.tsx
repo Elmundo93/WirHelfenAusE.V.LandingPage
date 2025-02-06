@@ -6,17 +6,15 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import RightArrow from '../../../public/animation/Right Arrow.json'
 const LottieView = dynamic(() => import('lottie-react'), { ssr: false });
-
-
+import AnimatedElement from '../Animation/AnimatedElement'
+import { useHeaderHeight } from '../headerHeight'
+import DankeSagen from '../../../public/images/DankeSagen.png'
+import { handleScroll } from '../util/handleScroll'
 
 export default function Hero2() {
 
+  const headerHeight = useHeaderHeight()
 
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault();
-    const target = document.querySelector('#zigzag2');
-    target?.scrollIntoView({ behavior: 'smooth' });
-  };
   const NavigateToAbout = () => {
     const target = document.querySelector('#zigzag2');
     target?.scrollIntoView({ behavior: 'smooth' });
@@ -24,23 +22,14 @@ export default function Hero2() {
   const animationData = require('../../../public/Scribble Line.json');
 
   return (
-    <section className="relative h-full">        
-    <motion.div
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 0.1 }}
-         transition={{ duration: 2 }}
-         className="absolute inset-0 z-0"
-        >
-          <Image
-              src={People}
-              alt="Helfende Menschen"
-              fill
-              style={{ objectFit: 'cover' }}
-              priority
-          />
-        </motion.div>
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-10 md:pt-30 md:pb-16 mt-10">
-        <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
+    <section className="relative h-full"    style={{ marginTop: `${headerHeight}px` }}>
+   
+ 
+
+    <AnimatedElement className="h-full">
+    {/* Content-Bereich – er liegt über dem Hintergrund */}
+    <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pt-32 pb-10 md:pt-30 md:pb-16">
+      <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16  border-t-0 backdrop-blur-sm rounded-2xl">
           <h1 className="text-3xl text-gray-500 mt-[-100px] py-4 " data-aos="fade-up" data-aos-delay="200">
               <br />Sicher, Zugänglich & Intuitiv!
             </h1>
@@ -110,7 +99,7 @@ export default function Hero2() {
   </button>   </div>
             
               <div className="flex justify-center mt-10">
-      <a  className="group cursor-pointer" onClick={handleScroll}>
+      <a  className="group cursor-pointer" onClick={() => handleScroll('#preview2')}>
         <div className="flex flex-col pb-4 border-b border-gray-200">
           <p className="text-2xl text-gray-500">
           <span className="relative  text-2xl text-gray-500">
@@ -128,7 +117,7 @@ export default function Hero2() {
             </div>
           </div>
         </div>
-
+        </AnimatedElement>
     </section>
   );
 }
