@@ -23,7 +23,7 @@ export default function HeroLayout({ title, subtitle, buttonText, preTitle, butt
 
 
   return (
-    <section className="relative  overflow-x-hidden  z-20  ">
+    <section className="relative  overflow-x-hidden overflow-y-hidden  z-20  ">
       <div className="md:h-20 h-10"></div>
 
       <AnimatedElement >
