@@ -45,7 +45,7 @@ const ZigZagAnmeldung: React.FC = () => {
         <>
           Das Beschäftigungsverhältnis variiert je nach Szenario – daher ist es wichtig, vorab zu klären, in welchem Ausmaß die Unterstützung erfolgen soll.
           <br /><br />
-          So kann z. B. bei einer kurzzeitigen Beschäftigung (weniger als 70 Tage im Kalenderjahr) der Rentenversicherungsbeitrag entfallen.
+          So kann z.B. bei einer kurzzeitigen Beschäftigung (weniger als 70 Tage im Kalenderjahr) der Rentenversicherungsbeitrag entfallen.
           <br /><br />
           Nähere Infos zu den Abgaben kannst du&nbsp;
           <StepButton
