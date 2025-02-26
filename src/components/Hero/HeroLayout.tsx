@@ -6,7 +6,6 @@ import AnimatedElement from "../Animation/AnimatedElement";
 import { ReactNode } from "react";
 import MehrErfahren from "../Buttons/MehrErfahren";
 import StepButton, { ButtonAction } from "../Buttons/Button";
-import ScribbleAnimation from "../Animation/ScribbleAnimation";
 
 
 interface HeroLayoutProps {
