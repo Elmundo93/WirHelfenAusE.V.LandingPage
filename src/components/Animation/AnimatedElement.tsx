@@ -1,3 +1,5 @@
+// src/components/Animation/AnimatedElement.tsx
+
 'use client'
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';

@@ -1,3 +1,5 @@
+// src/components/Buttons/MehrErfahren.tsx
+
 "use client";
 import dynamic from "next/dynamic";
 import { handleScroll } from "../util/handleScroll";
