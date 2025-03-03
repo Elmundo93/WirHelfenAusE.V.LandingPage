@@ -90,21 +90,21 @@ export default function ContactUs() {
     <section className="z-20 relative">
       <AnimatedElement
         id="contact-us"
-        className=" z-10 pt-10 mt-10 p-8 grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-40 dark:bg-blue-900"
+        className=" z-10 pt-10 mt-10 p-8 grid grid-cols-1 md:grid-cols-2 gap-8 lg:px-40"
     >
       <div className="mx-auto flex flex-col justify-center mt-10">
         <div className="badge bg-amber-500 inline-block rounded-xl">
           <p className="font-light text-base px-4 py-1 text-gray-50">Kontaktieren Sie uns</p>
         </div>
-        <h1 className="text-4xl font-bold mt-4 dark:text-gray-50 text-gray-700">
+        <h1 className="text-4xl font-bold mt-4 text-gray-700">
           Sie haben ein Anliegen oder eine Frage?
         </h1>
      
       </div>
-      <form onSubmit={handleSubmit} className="rounded-lg shadow-xl flex flex-col p-8 bg-white dark:bg-blue-500">
-        <h1 className="text-3xl font-bold dark:text-gray-50 mb-6">Lassen Sie es uns wissen!</h1>
+      <form onSubmit={handleSubmit} className="rounded-lg shadow-xl flex flex-col p-8 bg-white">
+        <h1 className="text-3xl font-bold mb-6">Lassen Sie es uns wissen!</h1>
 
-        <label htmlFor="fullname" className="text-gray-500 font-light dark:text-gray-50">
+        <label htmlFor="fullname" className="text-gray-500 font-light">
           Name <span className="text-red-500">*</span>
         </label>
         <input
@@ -120,7 +120,7 @@ export default function ContactUs() {
         />
         {errors.fullname && <p className="text-red-500 text-sm mt-1">{errors.fullname}</p>}
 
-        <label htmlFor="email" className="text-gray-500 font-light mt-4 dark:text-gray-50">
+        <label htmlFor="email" className="text-gray-500 font-light mt-4">
           E-mail <span className="text-red-500">*</span>
         </label>
         <input
@@ -136,7 +136,7 @@ export default function ContactUs() {
         />
         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
 
-        <label htmlFor="subject" className="text-gray-500 font-light mt-4 dark:text-gray-50">
+        <label htmlFor="subject" className="text-gray-500 font-light mt-4">
           Thema <span className="text-red-500">*</span>
         </label>
         <input
@@ -152,7 +152,7 @@ export default function ContactUs() {
         />
         {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
 
-        <label htmlFor="message" className="text-gray-500 font-light mt-4 dark:text-gray-50">
+        <label htmlFor="message" className="text-gray-500 font-light mt-4">
           Nachricht <span className="text-red-500">*</span>
         </label>
         <textarea

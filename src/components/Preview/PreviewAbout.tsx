@@ -27,7 +27,7 @@ const PreviewAbout: React.FC = () => {
       <span>Klingt einfach? Ist es auch!</span>
     </>
   )
-  const buttonText = "Direkt zum Anleitung!"
+  const buttonText = "Direkt zur Anleitung!"
   const canvasText = "Übersicht aller Schritte"
 
   // Create an array of steps

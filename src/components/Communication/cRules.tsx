@@ -22,6 +22,7 @@ export default function CRules() {
               alt="CasualFriends"
               fill
               className="object-contain rounded-full "
+              loading="eager"
             />
           </div>
           {/* Invisible Placeholder */}
@@ -32,6 +33,7 @@ export default function CRules() {
               width={320}
               height={320}
               className="rounded-full"
+              loading="eager"
             />
           </div>
           {/* Überschrift, die über dem Bild liegt */}
