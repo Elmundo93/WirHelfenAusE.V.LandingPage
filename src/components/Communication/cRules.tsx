@@ -2,7 +2,7 @@ import ImageComponent from './Image'
 import AnimatedElement from '../Animation/AnimatedElement'
 import Image from 'next/image'
 
-import CasualFriends from '../../../public/images/CasualFriends.png'
+import CasualFriends from '../../../public/images/CasualFriends.svg'
 
 export default function CRules() {
 

@@ -36,7 +36,7 @@ const StepContent: React.FC<StepContentProps> = ({ step, className = '' }) => (
           width={120}
           height={120}
           className="rounded-full max-w-full mx-auto p-7"
-          placeholder="blur"
+       
         />
       </div>
       {/* Mobile Overlay Image */}
@@ -47,7 +47,7 @@ const StepContent: React.FC<StepContentProps> = ({ step, className = '' }) => (
           width={540}
           height={405}
           className={`${step.imageClass}`}
-          placeholder="blur"
+  
         />
       </div>
       <h3
@@ -79,7 +79,7 @@ const StepImage: React.FC<StepImageProps> = ({ step, className = '' }) => (
       width={540}
       height={405}
       className={`max-w-full mx-auto h-auto p-7 ${step.imageClass}`}
-      placeholder="blur"
+
     />
   </div>
 );

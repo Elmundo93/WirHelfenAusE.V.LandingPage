@@ -46,7 +46,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Wir helfen aus e.V.",
               "url": "https://www.wirhelfenaus.de",
-              "logo": "https://www.wirhelfenaus.de/logo.png",
+              "logo": "/BienenLogo.svg",
               "description": "Ein gemeinnütziger Verein zur Förderung von Nachbarschaftshilfe. Nutzen Sie unsere AushilfApp, um Hilfe anzubieten oder anzufragen.",
               "contactPoint": {
                 "@type": "ContactPoint",
@@ -62,10 +62,11 @@ export default function RootLayout({
             })
           }}
         />
-        <link rel="preload" href="/public/images/DankeSagen.png" as="image" />
+        <link rel="preload" href="/public/images/DankeSagen.svg" as="image" />
         <link rel="preload" href="/public/animation/RightArrow.json" as="animation" />
         <link rel="preload" href="/public/animation/ScribbleLine.json" as="animation" />
-        <link rel="preload" href="/public/images/CasualFriends.png" as="image" />
+        <link rel="preload" href="/public/images/CasualFriends.svg" as="image" />
+        <link rel="preload" href="/public/images/BienenLogo.svg" as="image" />
       </Head>
       
       <body >

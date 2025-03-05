@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import DankeSagen from '../../../public/images/DankeSagen.png'
+import DankeSagen from '../../../public/images/DankeSagen.svg'
 import Image from 'next/image'
 
 export default function ImageComponent() {

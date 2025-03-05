@@ -19,7 +19,7 @@ import {
 } from "@heroui/react";
 import Image from "next/image";
 import { Logs, MessageCircleQuestion, BookOpen, MessageCircle, UserPlus, BookA } from "lucide-react";
-import BienenLogo from "../../public/images/BienenLogoNeat.png";
+import BienenLogo from "../../public/images/BienenLogoNeat.svg";
 import Link from "next/link";
 
 export default function Header() {

@@ -4,7 +4,7 @@ import React from 'react'
 import PreviewLayout from './PreviewLayout'
 
 
-import IdeaCrafting from '../../../public/images/IdeaCrafting.png'
+import IdeaCrafting from '../../../public/images/IdeaCrafting.svg'
 
 
 const PreviewAbout: React.FC = () => {

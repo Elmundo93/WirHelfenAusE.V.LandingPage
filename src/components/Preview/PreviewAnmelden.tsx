@@ -1,7 +1,7 @@
 // PreviewAnmelden.server.tsx
 import PreviewLayout from './PreviewLayout';
 
-import HelpingPeople from '../../../public/images/Help and support to climbing employee from mentor or leader hand.png';
+import HelpingPeople from '../../../public/images/Help and support to climbing employee from mentor or leader hand.svg';
 
 
 export default function PreviewAnmelden() {

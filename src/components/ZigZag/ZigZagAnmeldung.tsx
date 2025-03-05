@@ -1,14 +1,14 @@
 import React from 'react';
 import ZigZagLayout, { ZigZagStep } from './ZigZagLayout';
 import StepButton from '../Buttons/Button';
-import Arbeitsvertrag from '../../../public/images/vecteezy_business-friendship-agreement-idea-with-successful-vector_2914732.png';
-import PaperPlane from '../../../public/images/PaperPlane.png';
-import Suchen from '../../../public/images/Curious analyst investigating question mark with magnifier.png';
-import MarBusiness from '../../../public/images/Mar-Business_6.png';
-import CheckList1 from '../../../public/images/Checklist1.png';
-import Calculation1 from '../../../public/images/13286.png';
-import ShortTime from '../../../public/images/3664288.png';
-import OptionenKennen from '../../../public/images/OptionenKennen.png';
+import Arbeitsvertrag from '../../../public/images/vecteezy_business-friendship-agreement-idea-with-successful-vector_2914732.svg';
+import PaperPlane from '../../../public/images/PaperPlane.svg';
+import Suchen from '../../../public/images/Curious analyst investigating question mark with magnifier.svg';
+import MarBusiness from '../../../public/images/Mar-Business_6.svg';
+import CheckList1 from '../../../public/images/Checklist1.svg';
+import Calculation1 from '../../../public/images/13286.svg';
+import ShortTime from '../../../public/images/3664288.svg';
+import OptionenKennen from '../../../public/images/OptionenKennen.svg';
 
 const ZigZagAnmeldung: React.FC = () => {
   const steps: ZigZagStep[] = [

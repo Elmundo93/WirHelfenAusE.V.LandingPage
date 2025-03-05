@@ -1,12 +1,12 @@
 import React from 'react';
 import ZigZagLayout, { ZigZagStep } from './ZigZagLayout';
 import StepButton from '../Buttons/Button';
-import Registration from '../../../public/images/Registration.png'
-import FilterSuche from '../../../public/images/FilterSucher.png'
-import BeitragVerfassen from '../../../public/images/VerfasseBeitrag.png'
-import InKontaktTreten from '../../../public/images/InKontaktTretene.png'
-import SicherheitAnmeldung from '../../../public/images/SicherheitAnmeldung.png'
-import DankeSagen from '../../../public/images/DankeSagen.png'
+import Registration from '../../../public/images/Registration.svg'
+import FilterSuche from '../../../public/images/FilterSucher.svg'
+import BeitragVerfassen from '../../../public/images/VerfasseBeitrag.svg'
+import InKontaktTreten from '../../../public/images/InKontaktTretene.svg'
+import SicherheitAnmeldung from '../../../public/images/SicherheitAnmeldung.svg'
+import DankeSagen from '../../../public/images/DankeSagen.svg'
 
 
 

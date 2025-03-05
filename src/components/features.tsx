@@ -2,14 +2,14 @@
 
 
 import SichererRahmen from '../../public/images/safe-and-stable-svgrepo-com.svg';
-import InderNähe from '../../public/images/location-svgrepo-com.png';
+import InderNähe from '../../public/images/location-svgrepo-com.svg';
 import Image from 'next/image';
 import Handshake from '../../public/images/handshake-svgrepo-com.svg';
 import People from '../../public/images/staff-personnel-structure-management-svgrepo-com.svg';
 import Register from '../../public/images/register-svgrepo-com.svg';
 import RightOne from '../../public/images/choice-svgrepo-com.svg';
 import AnimatedElement from './Animation/AnimatedElement';
-import CoolKids from '../../public/images/CoolKids.png'
+import CoolKids from '../../public/images/CoolKids.svg'
 
 
 
