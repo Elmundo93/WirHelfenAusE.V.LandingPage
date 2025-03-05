@@ -1,7 +1,8 @@
 //header.tsx
 'use client';
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from 'framer-motion';
 import {
   Navbar,
   NavbarBrand,
@@ -24,6 +25,15 @@ import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoaded(true);
+    }, 50); // Kürzere Verzögerung für den Header
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const menuItems = [
     { key: "about", label: "Über die App", icon: MessageCircleQuestion, href: "/about" },
@@ -37,108 +47,113 @@ export default function Header() {
   ];
 
   return (
-    <Navbar
-    
-      shouldHideOnScroll
-      isBordered
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      className={`fixed top-0 left-0 w-full z-50 text-2xl py-4 px-2 bg-white/90 backdrop-blur-md shadow-md ${!isMenuOpen ? 'navbar-closed' : ''}`} >
-      {/* Mobile-Navbar-Content */}
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={isLoaded ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
+      <Navbar
+        shouldHideOnScroll
+        isBordered
+        isMenuOpen={isMenuOpen}
+        onMenuOpenChange={setIsMenuOpen}
+        className={`fixed top-0 left-0 w-full z-50 text-2xl py-4 px-2 bg-white/90 backdrop-blur-md shadow-md ${!isMenuOpen ? 'navbar-closed' : ''}`} >
+        {/* Mobile-Navbar-Content */}
 
 
-      {/* Zentrierte Marke */}
+        {/* Zentrierte Marke */}
 
-        
-        
-      <NavbarContent >
-        <NavbarBrand>
-        <Link href="/" className="flex items-center gap-3 focus:outline-none rounded-full ">
-            <Image src={BienenLogo} alt="BienenLogo" height={70} width={50} className="justify-start"  />
-            <p className="inline-block font-bold text-amber-500 mt-2 tracking-wide" 
-               style={{ 
-                 fontSize: 'clamp(1.2rem, 4vw, 1.875rem)',
-                 whiteSpace: 'nowrap' 
-               }}>
-              Wir helfen aus e.V.
-            </p>
-          </Link>
-        </NavbarBrand>
-      </NavbarContent>
+          
+          
+        <NavbarContent >
+          <NavbarBrand>
+          <Link href="/" className="flex items-center gap-3 focus:outline-none rounded-full ">
+              <Image src={BienenLogo} alt="BienenLogo" height={70} width={50} className="justify-start"  />
+              <p className="inline-block font-bold text-amber-500 mt-2 tracking-wide" 
+                 style={{ 
+                   fontSize: 'clamp(1.2rem, 4vw, 1.875rem)',
+                   whiteSpace: 'nowrap' 
+                 }}>
+                Wir helfen aus e.V.
+              </p>
+            </Link>
+          </NavbarBrand>
+        </NavbarContent>
 
 
 
-      <NavbarContent className="sm:hidden" justify="end">
-        <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
-      </NavbarContent>
+        <NavbarContent className="sm:hidden" justify="end">
+          <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
+        </NavbarContent>
 
-      {/* Desktop-Menü */}
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <Dropdown>
-          <NavbarItem>
-            <DropdownTrigger>
-              <div className="flex items-center gap-2 cursor-pointer">
-                <p className="text-2xl text-default-600 tracking-wider">
-                  <span className="flex items-center gap-2 cursor-pointer hover:text-amber-500 active:text-amber-500 active:scale-100">
-                    <Logs className="w-6 h-6" />
-                    Wissenswertes
-                  </span>
-                </p>
-              </div>
-            </DropdownTrigger>
-          </NavbarItem>
-          <DropdownMenu
-            aria-label="Custom item styles"
-            className="p-3"
-            itemClasses={{
-              base: [
-                "rounded-md",
-                "text-default-500",
-                "text-2xl",
-                "transition-opacity",
-                "data-[hover=true]:text-foreground",
-                "data-[hover=true]:bg-default-100",
-                "dark:data-[hover=true]:bg-default-50",
-                "data-[selectable=true]:focus:bg-default-50",
-                "data-[pressed=true]:opacity-70",
-                "data-[focus-visible=true]:ring-default-500",
-                "relative",
-              ],
-            }}
-          >
-            {menuItems.map(({ key, label, icon: Icon, href }) => (
-              <DropdownSection key={key} showDivider>
-                <DropdownItem
-                  key={`item-${key}`}
-              
+        {/* Desktop-Menü */}
+        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+          <Dropdown>
+            <NavbarItem>
+              <DropdownTrigger>
+                <div className="flex items-center gap-2 cursor-pointer">
+                  <p className="text-2xl text-default-600 tracking-wider">
+                    <span className="flex items-center gap-2 cursor-pointer hover:text-amber-500 active:text-amber-500 active:scale-100">
+                      <Logs className="w-6 h-6" />
+                      Wissenswertes
+                    </span>
+                  </p>
+                </div>
+              </DropdownTrigger>
+            </NavbarItem>
+            <DropdownMenu
+              aria-label="Custom item styles"
+              className="p-3"
+              itemClasses={{
+                base: [
+                  "rounded-md",
+                  "text-default-500",
+                  "text-2xl",
+                  "transition-opacity",
+                  "data-[hover=true]:text-foreground",
+                  "data-[hover=true]:bg-default-100",
+                  "dark:data-[hover=true]:bg-default-50",
+                  "data-[selectable=true]:focus:bg-default-50",
+                  "data-[pressed=true]:opacity-70",
+                  "data-[focus-visible=true]:ring-default-500",
+                  "relative",
+                ],
+              }}
+            >
+              {menuItems.map(({ key, label, icon: Icon, href }) => (
+                <DropdownSection key={key} showDivider>
+                  <DropdownItem
+                    key={`item-${key}`}
                 
                   
-                  className="flex items-center gap-4 text-2xl font-semibold"
-                >
-                  <Link href={href} replace={true} className="flex items-center gap-3">
-                    <Icon className="w-6 h-6 text-gray-700" />
-                    <span className="text-2xl">{label}</span>
-                    <span className="absolute left-0 bottom-[-8px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
-                  </Link>
-                </DropdownItem>
-              </DropdownSection>
-            ))}
-          </DropdownMenu>
-        </Dropdown>
-      </NavbarContent>
+                    
+                    className="flex items-center gap-4 text-2xl font-semibold"
+                  >
+                    <Link href={href} replace={true} className="flex items-center gap-3">
+                      <Icon className="w-6 h-6 text-gray-700" />
+                      <span className="text-2xl">{label}</span>
+                      <span className="absolute left-0 bottom-[-8px] w-full h-0.5 bg-amber-500 origin-center transform scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100"></span>
+                    </Link>
+                  </DropdownItem>
+                </DropdownSection>
+              ))}
+            </DropdownMenu>
+          </Dropdown>
+        </NavbarContent>
 
-      {/* Mobile-Menü */}
-      <NavbarMenu className="mt-8">
-        {menuItems.map(({ key, label, icon: Icon, href }) => (
-          <NavbarMenuItem key={key}>
-            <Link className="flex items-center gap-3 w-full text-2xl mt-4" href={href} replace={true}>
-              <Icon className="w-6 h-6 text-default-500" /> {/* Angepasste Icon-Größe */}
-              <span className="text-2xl text-default-500">{label}</span> {/* Angepasste Text-Größe */}
-            </Link>
-            <div className="w-full h-px bg-gray-200 my-4"></div>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
-    </Navbar>
+        {/* Mobile-Menü */}
+        <NavbarMenu className="mt-8">
+          {menuItems.map(({ key, label, icon: Icon, href }) => (
+            <NavbarMenuItem key={key}>
+              <Link className="flex items-center gap-3 w-full text-2xl mt-4" href={href} replace={true}>
+                <Icon className="w-6 h-6 text-default-500" /> {/* Angepasste Icon-Größe */}
+                <span className="text-2xl text-default-500">{label}</span> {/* Angepasste Text-Größe */}
+              </Link>
+              <div className="w-full h-px bg-gray-200 my-4"></div>
+            </NavbarMenuItem>
+          ))}
+        </NavbarMenu>
+      </Navbar>
+    </motion.div>
   );
 }
