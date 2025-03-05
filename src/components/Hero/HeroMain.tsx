@@ -17,10 +17,11 @@ export default function HeroMain() {
       }
       subtitle="- oder eine zu werden!"
       buttonText="Schnell und einfach mit der AushilfApp! 📲"
-      
+      main={true}
       buttonAction={{ type: 'navigate', target: '/about' }}
       MehrErfahrenButtonLabel="Mehr Erfahren!"
       MehrErfahrenTarget="#ÜberUns"
+
     />
   );
 }
