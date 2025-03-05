@@ -37,10 +37,10 @@ export default function CRules() {
             />
           </div>
           {/* Überschrift, die über dem Bild liegt */}
-          <AnimatedElement className="p-4 border-t-none rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg  bg-white/50 shadow-lg   relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-anchor="[data-aos-id-blocks]">
+          <div className="p-4 border-t-none rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg  bg-white/50 shadow-lg   relative flex flex-col items-center" data-aos="fade-up" data-aos-delay="300" data-aos-anchor="[data-aos-id-blocks]">
             <h4 className="text-2xl  p-4 pt-0  rounded-full text-center">Unsere Kommunikationsrichtlinien!</h4>
             <p className="text-lg text-gray-500 text-center"> Miteinander helfen <br /> – respektvoll und freundlich - <br /> Diese Richtlinien sind unser Kern für ein positives und respektvolles Miteinander.</p>
-          </AnimatedElement>
+          </div>
         </div>
         <div className="flex flex-col items-center justify-center max-w-md mx-auto w-full">
           {/* Abschnitt: Grundwerte */}
