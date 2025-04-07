@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Website von *Wir helfen aus e.V.* – [www.wir-helfen-aus.de](https://www.wir-helfen-aus.de)
 
-## Getting Started
+Willkommen im GitHub-Repository der offiziellen Website des gemeinnützigen Vereins **„Wir helfen aus e.V.“**.  
+Unsere Website dient als **zentrale Anlaufstelle** für alle, die mehr über das Projekt erfahren, sich engagieren oder Hilfe finden möchten.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 💡 Über die Website
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Die Website bietet Besucher:innen einen umfassenden Einblick in unsere Arbeit, unsere Ziele und die **AushilfApp**.  
+Sie ist bewusst schlicht, barrierearm und informativ gestaltet – für alle Altersgruppen zugänglich.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📬 Funktionen & Inhalte
 
-## Learn More
+### 📥 Kontaktformular
+Besucher:innen können uns direkt über ein benutzerfreundliches Kontaktformular erreichen – bei Fragen zur App, zum Verein oder zur Mitwirkung.
 
-To learn more about Next.js, take a look at the following resources:
+### 📜 Vereinssatzung
+Unsere vollständige Satzung ist online einsehbar und steht zum Download bereit. So garantieren wir maximale Transparenz.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 📱 AushilfApp Showcase
+Eine eigene Sektion auf der Seite stellt die Funktionen und den gesellschaftlichen Nutzen der App vor – inklusive Screenshots, Anwendungsbeispielen und Download-Link.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 🧾 Minijob-Guide
+Wir bieten einen leicht verständlichen **Minijob-Ratgeber**, der Schritt für Schritt erklärt:
+- wie ein Minijob bei der Minijobzentrale angemeldet wird
+- worauf Arbeitgeber:innen achten müssen
+- welche Dokumente notwendig sind
 
-## Deploy on Vercel
+Das Ziel: **Hilfe rechtssicher und korrekt organisieren**, ohne bürokratische Hürden.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⚙️ Technischer Überblick
+
+| Technologie     | Einsatzbereich              |
+|-----------------|-----------------------------|
+| Next.js / React | Frontend & Routing          |
+| Tailwind CSS    | Styling                     |
+| Formsubmit / EmailJS | Kontaktformular-Anbindung   |
+| Markdown & PDF  | Für Satzung & Guides        |
+
+---
+
+## 👥 Zielgruppe
+
+- Menschen, die Hilfe suchen oder anbieten möchten
+- Organisationen & Förderer, die sich engagieren wollen
+- Junge Menschen auf der Suche nach ehrenamtlichem Engagement
+- Senior:innen & Angehörige
+- Arbeitgeber:innen, die Aushilfen korrekt anmelden möchten
+
+---
+
+## 📣 Mitmachen & Unterstützen
+
+**„Wir helfen aus e.V.“** lebt von ehrenamtlichem Engagement und freiwilliger Unterstützung.  
+So kannst du helfen:
+
+- ⭐️ Dieses Repository mit einem Star markieren
+- Feedback, Verbesserungsvorschläge oder Bugs melden via Issues
+- Website übersetzen oder für Barrierefreiheit verbessern
+- Verlinkung der Website in deinem Netzwerk teilen
+
+---
+
+## 📫 Kontakt
+
+**Lemont-Kim Mrutschock**  
+Vorstand – Wir helfen aus e.V.  
+📧 [Lemont-Kim@Wir-helfen-aus.de](mailto:Lemont-Kim@Wir-helfen-aus.de)  
+🌐 [www.wir-helfen-aus.de](https://www.wir-helfen-aus.de)
+
+---
+
+> Gemeinsam schaffen wir ein starkes Netzwerk für gegenseitige Hilfe.  
