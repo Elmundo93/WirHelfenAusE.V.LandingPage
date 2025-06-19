@@ -1,8 +1,5 @@
 import HeroLayout from "@/components/layout/Hero";
 
-
-import ScribbleAnimation from "@/components/Animation/ScribbleAnimation";
-
 export default function HeroAnmelden() {
 
 

@@ -3,9 +3,10 @@
 
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
+import { StaticImageData } from 'next/image'
 
 interface FeatureCardData {
-  icon: any
+  icon: StaticImageData
   title: string
   description: string
   alt: string

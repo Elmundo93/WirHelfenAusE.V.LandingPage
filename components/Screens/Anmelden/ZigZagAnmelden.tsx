@@ -8,7 +8,6 @@ import CheckList1 from '@/public/images/Checklist1.svg';
 import Calculation1 from '@/public/images/13286.svg';
 import ShortTime from '@/public/images/3664288.svg';
 import OptionenKennen from '@/public/images/OptionenKennen.svg';
-import { StaticImageData } from 'next/image';
 
 const ZigZagAnmeldung: React.FC = () => {
   const steps = [

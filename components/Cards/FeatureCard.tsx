@@ -1,9 +1,9 @@
 // components/FeatureCard.tsx
 import { Card, CardContent } from '@/components/ui/card'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 interface FeatureCardProps {
-  icon: any
+  icon: StaticImageData
   title: string
   description: string
   alt: string

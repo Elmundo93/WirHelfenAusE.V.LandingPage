@@ -1,7 +1,6 @@
 'use client'
 
 import { Badge } from "@/components/ui/badge"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils"
 
 import AnimatedElement from "../Animation/AnimatedElement"
@@ -33,7 +32,6 @@ export default function HeroLayout({
   MehrErfahrenButtonLabel,
   MehrErfahrenTarget,
   highlightColor,
-  main = false,
   finalWords,
 }: HeroLayoutProps) {
   return (

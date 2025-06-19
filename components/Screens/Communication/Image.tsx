@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 
 type Props = {
-  src: any
+  src: StaticImageData
   alt: string
   className?: string
   fill?: boolean
