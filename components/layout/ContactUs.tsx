@@ -5,7 +5,7 @@ import { FaHandshake } from "react-icons/fa"
 
 export default function ContactUsLayout({ children }: { children: ReactNode }) {
   return (
-    <section className="relative z-20 px-4 md:px-16 lg:px-32 overflow-hidden rounded-3xl shadow-xl">
+    <section className="relative z-20 px-4 md:px-16 lg:px-32 overflow-hidden rounded-3xl shadow-xl mt-20">
 
       {/* 🧡 Orange Blob Hintergrund */}
       <div className="absolute top-[-60px] left-[-60px] w-[220px] h-[220px] rounded-full blur-3xl opacity-30 -z-10" />

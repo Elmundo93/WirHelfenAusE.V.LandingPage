@@ -7,7 +7,7 @@ import StepButton, { ButtonAction } from "@/components/Buttons/StepButton"
 type ZigZagItem = {
   title: string
   text: string
-  imageSrc: StaticImageData
+  imageSrc: string
   imageAlt: string
   reverse?: boolean
   buttonLabel?: string

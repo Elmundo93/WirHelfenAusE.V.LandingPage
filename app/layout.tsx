@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         <BackgroundImage />
         <Header />
-        <main className="min-h-screen pt-24 z-10 relative">{children}</main>
+        <main className="min-h-screen z-10 relative">{children}</main>
         <Footer />
       </body>
     </html>

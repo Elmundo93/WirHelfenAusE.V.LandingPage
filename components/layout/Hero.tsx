@@ -35,7 +35,7 @@ export default function HeroLayout({
   finalWords,
 }: HeroLayoutProps) {
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 flex flex-col overflow-hidden min-h-[calc(100vh-250px)]">
+    <section className="relative px-4 sm:px-6 lg:px-8 flex flex-col overflow-hidden min-h-[calc(100vh-50px)]">
 
 <div className="flex flex-col justify-center items-center flex-1  pb-8 ">
         <div className="relative max-w-5xl w-full">

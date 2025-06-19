@@ -1,4 +1,5 @@
 import HeroLayout from "@/components/layout/Hero";
+
 export default function HeroMain() {
   return (
     <HeroLayout

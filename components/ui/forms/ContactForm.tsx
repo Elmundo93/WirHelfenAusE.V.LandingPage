@@ -1,3 +1,4 @@
+// components/ContactForm.tsx
 "use client"
 
 import { useState, FormEvent } from "react"
@@ -8,14 +9,25 @@ import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { cn } from "@/lib/utils"
 
+const FIELD_LABELS: Record<string, string> = {
+  fullname: "Ihr Name",
+  email: "Ihre E-Mail-Adresse",
+  subject: "Betreff",
+  message: "Ihre Nachricht",
+}
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    fullname: "", email: "", subject: "", message: ""
+    fullname: "",
+    email: "",
+    subject: "",
+    message: ""
   })
   const [errors, setErrors] = useState<Partial<typeof formData>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [feedback, setFeedback] = useState<{ type: "success" | "error" | ""; message: string }>({
-    type: "", message: ""
+    type: "",
+    message: ""
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -45,8 +57,8 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData)
       })
-      const { error } = await res.json()
-      if (error) {
+      const data = await res.json()
+      if (!res.ok || data.error) {
         setFeedback({ type: "error", message: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut." })
       } else {
         setFeedback({ type: "success", message: "Vielen Dank! Wir melden uns bald bei Ihnen. 😊" })
@@ -65,19 +77,14 @@ export default function ContactForm() {
       className="space-y-6 bg-white shadow-xl rounded-3xl p-10 border border-gray-200 text-lg"
     >
       <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">📬 Schreiben Sie uns!</h2>
-
       <p className="text-center text-muted-foreground mb-4 text-base">
         Wir freuen uns über Ihre Nachricht ✨
       </p>
 
-      {["fullname", "email", "subject", "message"].map((field) => (
+      {Object.keys(formData).map((field) => (
         <div key={field} className="space-y-1">
           <Label htmlFor={field} className="text-base font-semibold text-gray-700">
-            {field === "fullname" && "Ihr Name"}
-            {field === "email" && "Ihre E-Mail-Adresse"}
-            {field === "subject" && "Betreff"}
-            {field === "message" && "Ihre Nachricht"}
-            <span className="text-red-500"> *</span>
+            {FIELD_LABELS[field]}<span className="text-red-500"> *</span>
           </Label>
 
           {field === "message" ? (
@@ -85,13 +92,10 @@ export default function ContactForm() {
               id={field}
               name={field}
               rows={4}
-              value={formData[field]}
+              value={formData[field as keyof typeof formData]}
               onChange={handleChange}
               placeholder="Was möchten Sie uns mitteilen?"
-              className={cn(
-                "text-base p-4 rounded-md",
-                errors[field] && "border-red-500"
-              )}
+              className={cn("text-base p-4 rounded-md resize-y", errors[field] && "border-red-500")}
             />
           ) : (
             <Input
@@ -105,10 +109,7 @@ export default function ContactForm() {
                 field === "email" ? "z. B. maria@beispiel.de" :
                 "z. B. Frage zur App"
               }
-              className={cn(
-                "text-base p-4 rounded-md",
-                errors[field as keyof typeof formData] && "border-red-500"
-              )}
+              className={cn("text-base p-4 rounded-md", errors[field as keyof typeof formData] && "border-red-500")}
             />
           )}
           {errors[field as keyof typeof formData] && (
@@ -130,8 +131,6 @@ export default function ContactForm() {
           <AlertDescription>{feedback.message}</AlertDescription>
         </Alert>
       )}
-
- 
     </form>
   )
 }

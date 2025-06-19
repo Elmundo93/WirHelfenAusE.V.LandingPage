@@ -32,7 +32,7 @@ export default function Header() {
       <div className="w-full max-w-7xl mx-auto flex items-center py-4 px-4 sm:px-8">
         {/* Logo & Name */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src={BienenLogo} alt="Logo" width={40} height={50} />
+          <Image src={BienenLogo} alt="Logo" width={40} height={50} priority/>
           <span className="font-bold text-amber-400 text-2xl sm:text-3xl">Wir helfen aus e.V.</span>
         </Link>
 

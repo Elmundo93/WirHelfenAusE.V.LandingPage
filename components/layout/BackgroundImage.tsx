@@ -19,6 +19,7 @@ export default function BackgroundImage() {
         fill
         priority
         className="object-cover"
+
       />
     </motion.div>
   )

@@ -1,9 +1,11 @@
 // components/layout/FeatureLayout.tsx
 'use client'
 
+import React from 'react'
 import { ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 import { StaticImageData } from 'next/image'
+import FeatureCard from '@/components/Cards/FeatureCard'
 
 interface FeatureCardData {
   icon: StaticImageData
@@ -19,7 +21,7 @@ interface FeatureLayoutProps {
   features: FeatureCardData[]
 }
 
-import FeatureCard from '@/components/Cards/FeatureCard'
+
 
 export default function FeatureLayout({
   title,
@@ -27,6 +29,7 @@ export default function FeatureLayout({
   image,
   features,
 }: FeatureLayoutProps) {
+  
   return (
     <section id="ÜberUns" className="border-t mt-20 max-w-6xl mx-auto px-4 sm:px-6">
       <div className="">

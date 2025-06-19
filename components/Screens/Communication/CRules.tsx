@@ -15,11 +15,11 @@ export default function CRules() {
 
           {/* Bild im Hintergrund */}
           <div className="absolute inset-0" style={{ top: '-180px' }}>
-            <Image src={CasualFriends} alt="CasualFriends" fill className="object-contain rounded-full" loading="eager" />
+            <Image src={CasualFriends} alt="CasualFriends" fill className="object-contain rounded-full" priority />
           </div>
 
           <div className="invisible">
-            <Image src={CasualFriends} alt="CasualFriends" width={320} height={320} className="rounded-full" loading="eager" />
+            <Image src={CasualFriends} alt="CasualFriends" width={320} height={320} className="rounded-full" priority />
           </div>
 
           {/* Überschrift */}
