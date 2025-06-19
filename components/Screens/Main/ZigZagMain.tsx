@@ -1,7 +1,7 @@
 // components/Screens/ZigZagMain.tsx
 import ZigZagLayout from "@/components/layout/ZigZag"
 
-import EigentümerBild from "@/public/images/img_eigentümer.jpg"
+import EigentümerBild from "@/public/images/img_eigentuemer.jpg"
 import SeniorenBild from "@/public/images/img_senioren.jpg"
 import ProzessBild from "@/public/images/process_img.jpg"
 
