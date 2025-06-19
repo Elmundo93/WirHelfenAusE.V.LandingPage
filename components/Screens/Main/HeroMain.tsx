@@ -12,6 +12,7 @@ export default function HeroMain() {
       MehrErfahrenTarget="#ÜberUns"
       main
       finalWords="zu finden!"
+      scribbleBottomOffset="0.7em"
     />
   )
 }

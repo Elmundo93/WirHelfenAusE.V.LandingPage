@@ -12,9 +12,9 @@ return (
   buttonAction={{ type: 'navigate', target: '/about' }}
   MehrErfahrenButtonLabel="Mehr Erfahren!"
   MehrErfahrenTarget="#preview"
-  main
-  finalWords=""
-/>
+  scribbleBottomOffset="0.7em"
+  subtitleMarginTop="mt-8 sm:mt-10"
+  />
 
   );
 }

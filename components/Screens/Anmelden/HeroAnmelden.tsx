@@ -15,7 +15,8 @@ export default function HeroAnmelden() {
     MehrErfahrenButtonLabel="Mehr Erfahren!"
     MehrErfahrenTarget="#preview"
     finalWords="anmelden?"
-    main
+
+      scribbleBottomOffset="0.7em"
 
   />
   );

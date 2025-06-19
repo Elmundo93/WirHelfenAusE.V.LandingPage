@@ -20,6 +20,8 @@ interface HeroLayoutProps {
   highlightColor?: string
   main?: boolean
   finalWords?: string
+  scribbleBottomOffset?: string
+  subtitleMarginTop?: string
 }
 
 export default function HeroLayout({
@@ -33,6 +35,8 @@ export default function HeroLayout({
   MehrErfahrenTarget,
   highlightColor,
   finalWords,
+  scribbleBottomOffset,
+  subtitleMarginTop,
 }: HeroLayoutProps) {
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 flex flex-col overflow-hidden min-h-[calc(100vh-50px)]">
@@ -63,7 +67,7 @@ export default function HeroLayout({
                 >
                   <span className="relative z-10">{highlightedWord}</span>
                   <span
-                    className="absolute left-0 sm:bottom-[-0.1em] bottom-[0.2em] w-full z-0 pointer-events-none"
+                    className={`absolute left-0 lg:bottom-[${scribbleBottomOffset || '.5em'}] sm:bottom-[-0.1em] bottom-[0.2em] w-full z-0 pointer-events-none`}
                     aria-hidden
                   >
                     <ScribbleAnimation />
@@ -79,7 +83,7 @@ export default function HeroLayout({
             </AnimatedElement>
 
             <AnimatedElement delay={0.3}>
-              <p className=" sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-4 sm:mt-6">
+              <p className={`sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-muted-foreground max-w-4xl mx-auto leading-relaxed ${subtitleMarginTop || 'mt-4 sm:mt-6'}`}>
                 {subtitle}
               </p>
             </AnimatedElement>
