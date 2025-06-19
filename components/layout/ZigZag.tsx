@@ -1,6 +1,6 @@
 'use client'
 
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import AnimatedElement from "@/components/Animation/AnimatedElement"
 import StepButton, { ButtonAction } from "@/components/Buttons/StepButton"
 
