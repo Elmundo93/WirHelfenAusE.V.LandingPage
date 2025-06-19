@@ -1,36 +1,184 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🌟 Wir helfen aus e.V. – Offizielle Website (englisch below)
 
-## Getting Started
+“Wir helfen Ihnen, eine helfende Hand zu finden – oder eine zu werden!”
 
-First, run the development server:
+Herzlich willkommen im offiziellen GitHub-Repository der Website von Wir helfen aus e.V. – der digitalen Heimat unseres gemeinnützigen Vereins! Unsere Plattform vermittelt Hilfe auf Augenhöhe – lokal, barrierearm und mit Herz.
+
+🚀 Projekt-Highlights
+	•	🎯 Ziel: Vermittlung von Hilfeleistungen für Eigentümer, Senioren, Menschen mit Beeinträchtigung & Co.
+	•	💡 Besonderheit: Verbindung von App & Website zur nahtlosen Nutzererfahrung
+	•	🧑‍🤝‍🧑 Community-Ansatz: Jeder kann helfen. Jeder darf um Hilfe bitten.
+
+⸻
+
+🧱 Tech Stack
+
+Technologie	Beschreibung
+🧑‍💻 Next.js	React-basiertes Framework für SSR, SSG und ISR
+🎨 shadcn/ui	UI-Komponenten-Bibliothek für stilvolle, zugängliche Interfaces
+💨 Tailwind CSS	Utility-first CSS Framework für schnelles, responsives Styling
+🎞 Lottie	Animierte SVGs und JSON-Animationen für moderne UI-Erlebnisse
+🧠 IndexedDB Prefetch	Clientseitiges Caching für optimierte UX und Performance
+🗂 Modulare Struktur	Trennung von Layout, Screens und Komponenten
+
+
+⸻
+
+✨ Features
+	•	🔁 Wiederverwendbare Layout-Komponenten (Hero, Feature, ZigZag)
+	•	🎬 Animierte UI dank Lottie & ScribbleAnimations
+	•	🧩 Voll modularer Aufbau für wartbare Erweiterbarkeit
+	•	🎯 Navigation via ButtonAction: navigate, scroll, open
+	•	🌐 Responsives Design mit barrierefreier Gestaltung
+
+⸻
+
+📦 Installation
+
+git clone https://github.com/Elmundo93/wir-helfen-aus-website.git
+cd wir-helfen-aus-website
+pnpm install
+pnpm dev
+
+Die Seite ist dann erreichbar unter: http://localhost:3000
+
+⸻
+
+🛠 Deployment mit Vercel
+
+Die Website wird automatisch über Vercel deployed. Jeder Push auf den main-Branch wird in der Produktivumgebung aktualisiert.
+
+🔗 Live-Link: www.wir-helfen-aus.de
+
+⸻
+
+💬 Kontakt
+
+Du hast eine Frage, Anregung oder möchtest mitmachen?
+	•	📧 Mail: Lemont-Kim@Wir-helfen-aus.de
+	•	📱 Telefon: 0173 7523673
+	•	👤 Ansprechpartner: Lemont-Kim Mrutschock, Vorstand
+
+⸻
+
+❤️ Mitwirken
+
+Wir freuen uns über Hilfe in folgenden Bereichen:
+	•	🌱 UI/UX-Design (barrierearm & responsiv)
+	•	🧑‍🔧 Frontend-Entwicklung (Next.js, Tailwind, shadcn/ui)
+	•	🔍 Accessibility Testing & Audits
+	•	📝 Content & Redaktion
+	•	📢 Online-Marketing & Reichweite
+
+Einfach ein Issue erstellen oder eine Pull Request vorschlagen. Wir sind offen für jede gute Idee!
+
+⸻
+
+🧾 Lizenz
+
+Dieses Projekt ist unter der MIT-Lizenz veröffentlicht. Für weitere Informationen siehe die Datei LICENSE.
+
+⸻
+
+🙏 Danke!
+
+Danke, dass du Teil dieser Bewegung bist. Gemeinsam gestalten wir eine Welt, in der Hilfe leicht gefunden wird. Für alle. Ohne Hürden. Mit Herz.
+
+
+# 🌟 Wir helfen aus e.V. – Official Website
+
+![wir-helfen-aus-logo](public/images/logo.webp)
+
+> "We help you find a helping hand – or become one yourself!"
+
+Welcome to the official GitHub repository of the **Wir helfen aus e.V. website** – the digital home of our non-profit organization! Our platform connects people in need of help with those willing to lend a hand – locally, accessibly, and with heart.
+
+## 🚀 Project Highlights
+
+* 🎯 **Goal**: Connecting helpers and those in need – property owners, seniors, people with disabilities, and more
+* 💡 **Special**: Seamless user experience between app and website
+* 🧑‍🤝‍🧑 **Community-Driven**: Everyone can help. Everyone can ask for help.
+
+---
+
+## 🧱 Tech Stack
+
+| Technology                | Description                                          |
+| ------------------------- | ---------------------------------------------------- |
+| 🧑‍💻 **Next.js**         | React-based framework for SSR, SSG, and ISR          |
+| 🎨 **shadcn/ui**          | Stylish, accessible UI component library             |
+| 💨 **Tailwind CSS**       | Utility-first CSS framework for responsive styling   |
+| 🎞 **Lottie**             | JSON animations for modern interactive UI            |
+| 🧠 **IndexedDB Prefetch** | Client-side caching for optimal UX and performance   |
+| 🗂 **Modular Structure**  | Clear separation of layouts, screens, and components |
+
+---
+
+## ✨ Features
+
+* 🔁 Reusable layout components (Hero, Feature, ZigZag)
+* 🎬 Animated UI with Lottie & ScribbleAnimations
+* 🧩 Fully modular and maintainable architecture
+* 🎯 Navigation via ButtonAction: `navigate`, `scroll`, `open`
+* 🌐 Responsive and accessible design
+
+---
+
+## 📦 Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+git clone https://github.com/Elmundo93/wir-helfen-aus-website.git
+cd wir-helfen-aus-website
+pnpm install
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The site will be available at: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Deployment with Vercel
 
-## Learn More
+This website is automatically deployed via Vercel. Every push to the `main` branch updates the production environment.
 
-To learn more about Next.js, take a look at the following resources:
+🔗 **Live Site**: [www.wir-helfen-aus.de](https://www.wir-helfen-aus.de)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 💬 Contact
 
-## Deploy on Vercel
+Got questions or want to collaborate?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* 📧 **Email**: [Lemont-Kim@Wir-helfen-aus.de](mailto:Lemont-Kim@Wir-helfen-aus.de)
+* 📱 **Phone**: +49 173 7523673
+* 👤 **Contact**: Lemont-Kim Mrutschock, Chairperson
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## ❤️ Contribute
+
+We welcome help in the following areas:
+
+* 🌱 UI/UX Design (accessible & responsive)
+* 🧑‍🔧 Frontend Development (Next.js, Tailwind, shadcn/ui)
+* 🔍 Accessibility Testing & Audits
+* 📝 Content & Editorial Work
+* 📢 Online Marketing & Outreach
+
+Simply create an issue or submit a pull request. We're open to great ideas!
+
+---
+
+## 🧾 License
+
+This project is released under the MIT License. For details, see the [LICENSE](LICENSE) file.
+
+---
+
+## 🙏 Thank You!
+
+Thank you for being part of this movement. Together, we build a world where help is easy to find – for everyone, without barriers, with heart.
+
+
+
+
