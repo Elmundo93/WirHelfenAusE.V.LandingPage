@@ -1,9 +1,9 @@
 // components/Screens/ZigZagMain.tsx
 import ZigZagLayout from "@/components/layout/ZigZag"
 
-import EigentümerBild from "@/public/images/img_eigentümer.jpg.jpg"
-import SeniorenBild from "@/public/images/img_senioren.jpg.jpg"
-import ProzessBild from "@/public/images/process_img.jpg.jpg"
+import EigentümerBild from "@/public/images/img_eigentümer.jpg"
+import SeniorenBild from "@/public/images/img_senioren.jpg"
+import ProzessBild from "@/public/images/process_img.jpg"
 
 export default function ZigZagMain() {
   return (
