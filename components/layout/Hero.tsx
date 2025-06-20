@@ -17,6 +17,7 @@ interface HeroLayoutProps {
   buttonAction: ButtonAction
   MehrErfahrenButtonLabel: string
   MehrErfahrenTarget: string
+  MehrErfahrenTargetOffset?: number
   highlightColor?: string
   main?: boolean
   finalWords?: string
@@ -33,6 +34,7 @@ export default function HeroLayout({
   buttonAction,
   MehrErfahrenButtonLabel,
   MehrErfahrenTarget,
+  MehrErfahrenTargetOffset,
   highlightColor,
   finalWords,
   scribbleBottomOffset,
@@ -41,7 +43,7 @@ export default function HeroLayout({
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 flex flex-col overflow-hidden min-h-[calc(100vh-50px)]">
 
-<div className="flex flex-col justify-center items-center flex-1  pb-8 ">
+<div className="flex flex-col justify-center items-center flex-1 mt-20  pb-8 ">
         <div className="relative max-w-5xl w-full">
 
           <div className="absolute inset-0 z-0 rounded-3xl bg-white/60 dark:bg-zinc-900 border border-white/30 dark:border-zinc-800/40 shadow-lg ring-1 ring-white/20 dark:ring-zinc-800/20 animate-in fade-in duration-1000 ease-out" />
@@ -108,6 +110,7 @@ export default function HeroLayout({
             <MehrErfahren
               MehrErfahrenButtonLabel={MehrErfahrenButtonLabel}
               MehrErfahrenTarget={MehrErfahrenTarget}
+              MehrErfahrenTargetOffset={MehrErfahrenTargetOffset}
             />
           </div>
         </AnimatedElement>

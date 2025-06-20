@@ -13,6 +13,7 @@ export default function HeroMain() {
       main
       finalWords="zu finden!"
       scribbleBottomOffset="0.7em"
+      MehrErfahrenTargetOffset={100}
     />
   )
 }

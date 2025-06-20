@@ -9,7 +9,8 @@ export default function ZigZagMain() {
           title: "Hilfe für Eigentümer",
           text: `Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n & vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.`,
           imageSrc: "/images/img_eigentuemer.webp",
-          imageAlt: "Hilfe für Eigentümer"
+          imageAlt: "Hilfe für Eigentümer",
+          buttonActionOffset: 100
         },
         {
           title: "Hilfe für beeinträchtigte Menschen oder Senioren",

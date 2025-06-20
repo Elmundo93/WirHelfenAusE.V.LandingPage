@@ -10,17 +10,19 @@ const LottieView = dynamic(() => import('lottie-react'), { ssr: false })
 interface MehrErfahrenProps {
   MehrErfahrenButtonLabel: string
   MehrErfahrenTarget: string
+  MehrErfahrenTargetOffset?: number
 }
 
 export default function MehrErfahren({
   MehrErfahrenButtonLabel,
   MehrErfahrenTarget,
+  MehrErfahrenTargetOffset = 0,
 }: MehrErfahrenProps) {
   return (
     <div className="flex flex-col items-center gap-2 group my-4 ">
       <Button
         variant="ghost"
-        onClick={() => handleScroll(MehrErfahrenTarget)}
+        onClick={() => handleScroll(MehrErfahrenTarget, MehrErfahrenTargetOffset)}
         className="text-2xl text-gray-600 relative px-0 hover:bg-white"
       >
         <span className="relative">

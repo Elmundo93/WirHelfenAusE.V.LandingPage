@@ -3,85 +3,124 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
-import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { useEffect, useRef, useState } from "react"
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
-import { Logs, MessageCircleQuestion, BookOpen, MessageCircle, UserPlus, BookA, Menu } from "lucide-react"
+import { 
+  IoHelpCircleOutline,
+  IoDocumentTextOutline,
+  IoChatbubbleOutline,
+  IoPersonAddOutline,
+  IoBookOutline,
+} from "react-icons/io5"
 import BienenLogo from "@/public/images/BienenLogoNeat.svg"
+import sign from "@/public/images/sign.png"
 
 const menuItems = [
-  { label: "Über die App", href: "/about", icon: MessageCircleQuestion },
-  { label: "Minijobsystem & Anmeldung", href: "/anmeldung", icon: UserPlus },
-  { label: "Unsere Satzung", href: "/satzung", icon: BookOpen },
-  { label: "Kontakt", href: "/contact-us", icon: MessageCircle },
-  { label: "Kommunikationsrichtlinien", href: "/communication", icon: BookA },
+  { label: "Über die App", href: "/about", icon: IoHelpCircleOutline },
+  { label: "Minijobsystem & Anmeldung", href: "/anmeldung", icon: IoPersonAddOutline },
+  { label: "Unsere Satzung", href: "/satzung", icon: IoDocumentTextOutline },
+  { label: "Kontakt", href: "/contact-us", icon: IoChatbubbleOutline },
+  { label: "Kommunikationsrichtlinien", href: "/communication", icon: IoBookOutline },
 ]
-
 export default function Header() {
   const router = useRouter()
-  const [open, setOpen] = useState(false)
+  const [sheetOpen, setSheetOpen] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const lastScrollY = useRef(0)
+
+  // Scroll-Logik
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      const goingDown = currentScrollY > lastScrollY.current
+
+      setIsVisible(!goingDown || currentScrollY < 10)
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
 
   const handleNav = (href: string) => {
-    setOpen(false)
+    setSheetOpen(false)
     router.push(href)
   }
 
   return (
-    <header className="sticky top-0 z-50 backdrop-blur-xl bg-white/70 border-b border-white/30 shadow-sm">
-      <div className="w-full max-w-7xl mx-auto flex items-center py-4 px-4 sm:px-8">
+   <header
+  className={`fixed top-4 z-50 w-full px-4 md:px-6 transition-transform duration-300 ${
+    isVisible ? 'translate-y-0' : '-translate-y-24'
+  }`}
+>
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-6 py-4 bg-white/80 backdrop-blur-xl border border-white/30 shadow-md rounded-full">
         {/* Logo & Name */}
         <Link href="/" className="flex items-center gap-3">
-          <Image src={BienenLogo} alt="Logo" width={40} height={50} priority/>
-          <span className="font-bold text-amber-400 text-2xl sm:text-3xl">Wir helfen aus e.V.</span>
+          <Image src={BienenLogo} alt="Logo" width={40} height={50} className="lg:ml-12" priority />
+          <Image 
+            src={sign} 
+            alt="Logo" 
+            className="opacity-0 xl:opacity-100 transform transition-all duration-200 ease-in-out max-w-36 absolute lg:left-5 lg:top-20" 
+            priority 
+          />
+          <h1 className="xl:hidden text-2xl font-bold text-amber-400">Wir helfen aus e.V.</h1>
         </Link>
 
         {/* Spacer */}
         <div className="flex-1"></div>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="text-2xl text-gray-700 hover:text-amber-500 gap-2 p-6">
-                <Logs size={28} />
-                Wissenswertes
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-80 rounded-xl shadow-xl bg-white/90 backdrop-blur-2xl border">
-              {menuItems.map(({ label, href, icon: Icon }) => (
-                <DropdownMenuItem
-                  key={href}
-                  onClick={() => handleNav(href)}
-                  className=" flex items-center gap-3 px-4 py-3 text-gray-800 hover:bg-amber-100 cursor-pointer rounded-md text-xl"
-                >
-                  <Icon size={32} className="text-gray-500" />
-                  {label}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
+        <nav className="hidden xl:flex items-center gap-4" aria-label="Hauptnavigation">
+          {menuItems.map(({ label, href, icon: Icon }) => (
+            <Button
+              key={href}
+              variant="ghost"
+              className="text-gray-700 text-lg flex items-center gap-2 px-4 py-2 hover:bg-amber-100 rounded-full transition-all duration-200 hover:scale-105"
+              onClick={() => handleNav(href)}
+            >
+              <Icon size={20} className="text-gray-500" />
+              {label}
+            </Button>
+          ))}
+        </nav>
 
         {/* Mobile Burger */}
-        <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
+        <div className="xl:hidden">
+          <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu className="h-10 w-10" />
+              <Button 
+                variant="ghost" 
+                size="icon" 
+                className="h-12 w-12 rounded-full hover:bg-amber-100 transition-all duration-200 hover:scale-105 relative"
+              >
+                <div className="flex flex-col gap-1.5 items-center justify-center w-full h-full">
+                  <div className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${sheetOpen ? 'rotate-45 translate-y-2.5' : ''}`}></div>
+                  <div className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${sheetOpen ? 'opacity-0' : ''}`}></div>
+                  <div className={`w-6 h-0.5 bg-gray-700 rounded-full transition-all duration-300 ${sheetOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></div>
+                </div>
               </Button>
             </SheetTrigger>
-            <SheetContent side="top" className="pt-6 bg-white/90 backdrop-blur-xl border-b border-gray-200">
+            <SheetContent
+              side="top"
+              className="pt-8 bg-white/95 backdrop-blur-xl border-b border-gray-200 rounded-b-2xl"
+            >
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <nav className="flex flex-col gap-4">
+              <nav className="flex flex-col gap-2 mt-6" aria-label="Mobile Navigation">
                 {menuItems.map(({ label, href, icon: Icon }) => (
                   <Button
                     key={href}
                     variant="ghost"
-                    className="justify-start text-2xl gap-3 text-lg"
+                    className="justify-start text-lg gap-4 text-gray-700 px-6 py-4 rounded-xl hover:bg-amber-100 transition-all duration-200 hover:scale-102"
                     onClick={() => handleNav(href)}
                   >
-                    <Icon size={32} className="text-gray-600" />
+                    <Icon size={24} className="text-gray-600" />
                     {label}
                   </Button>
                 ))}

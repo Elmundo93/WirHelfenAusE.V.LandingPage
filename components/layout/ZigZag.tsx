@@ -13,6 +13,7 @@ type ZigZagItem = {
   buttonLabel?: string
   buttonAction?: ButtonAction
   id?: string
+  buttonActionOffset?: number
 }
 
 export default function ZigZagLayout({ items }: { items: ZigZagItem[] }) {
@@ -70,6 +71,7 @@ export default function ZigZagLayout({ items }: { items: ZigZagItem[] }) {
                           buttonLabel={item.buttonLabel}
                           buttonAction={item.buttonAction}
                           variant="cta"
+                          buttonActionOffset={item.buttonActionOffset}
                         />
                       )}
                     </p>

@@ -20,6 +20,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: false,
       buttonAction: { type: 'scroll' as const, target: '#guideStep2' },
       buttonLabel: 'Nächster Schritt',
+      buttonActionOffset: 100
 
     },
     {
@@ -31,7 +32,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: true,
       buttonAction: { type: 'scroll' as const, target: '#guideStep3' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep3',
@@ -42,7 +43,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: false,
       buttonAction: { type: 'scroll' as const, target: '#guideStep4' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep4',
@@ -53,7 +54,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: true,
       buttonAction: { type: 'scroll' as const, target: '#guideStep5' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep5',
@@ -64,7 +65,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: false,
       buttonAction: { type: 'scroll' as const, target: '#guideStep6' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep6',
@@ -75,7 +76,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: true,
       buttonAction: { type: 'scroll' as const, target: '#guideStep7' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep7',
@@ -86,7 +87,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: false,
       buttonAction: { type: 'scroll' as const, target: '#guideStep8' },
       buttonLabel: 'Nächster Schritt',
-
+      buttonActionOffset: 100
     },
     {
       id: 'guideStep8',
@@ -97,7 +98,7 @@ const ZigZagAnmeldung: React.FC = () => {
       reverse: true,
       buttonAction: { type: 'scroll' as const, target: '#preview' },
       buttonLabel: 'Zurück auf Anfang',
-
+      buttonActionOffset: 100
     },
   ];
 

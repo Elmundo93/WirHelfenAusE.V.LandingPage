@@ -19,7 +19,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: false,
       buttonLabel: "Nächster Schritt",
       buttonAction: { type: 'scroll' as const, target: '#guideStep2' },
-      id: 'guideStep1'
+      id: 'guideStep1',
+      buttonActionOffset: 100
     },
     {
       title: 'Schritt 2: Umschauen & Erkunden!',
@@ -29,7 +30,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: true,
       buttonLabel: "Nächster Schritt",
       buttonAction: { type: 'scroll' as const, target: '#guideStep3' },
-      id: 'guideStep2'
+      id: 'guideStep2',
+      buttonActionOffset: 100
     },
     {
       title: 'Schritt 3: Beitrag verfassen!',
@@ -39,7 +41,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: false,
       buttonLabel: "Nächster Schritt",
       buttonAction: { type: 'scroll' as const, target: '#guideStep4' },
-      id: 'guideStep3'
+      id: 'guideStep3',
+      buttonActionOffset: 100
     },
     {
       title: 'Schritt 4: In Kontakt treten!',
@@ -49,7 +52,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: true,
       buttonLabel: "Nächster Schritt",
       buttonAction: { type: 'scroll' as const, target: '#guideStep5' },
-      id: 'guideStep4'
+      id: 'guideStep4',
+      buttonActionOffset: 100
     },
     {
       title: 'Schritt 5: Schlau machen!',
@@ -59,7 +63,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: false,
       buttonLabel: "Nächster Schritt",
       buttonAction: { type: 'scroll' as const, target: '#guideStep6' },
-      id: 'guideStep5'
+      id: 'guideStep5',
+      buttonActionOffset: 100
     },
     {
       title: 'Schritt 6: Danke sagen!',
@@ -69,7 +74,8 @@ const ZigZagAbout: React.FC = () => {
       reverse: true,
       buttonLabel: "Zurück zur Übersicht",
       buttonAction: { type: 'scroll' as const, target: '#preview' },
-      id: 'guideStep6'
+      id: 'guideStep6',
+      buttonActionOffset: 100
     }
   ];
 

@@ -14,6 +14,7 @@ export interface StepButtonProps {
   buttonAction: ButtonAction
   variant?: 'cta' | 'next'
   extraClasses?: string
+  buttonActionOffset?: number
 }
 
 export default function StepButton({
@@ -21,6 +22,7 @@ export default function StepButton({
   buttonAction,
   variant = 'cta',
   extraClasses = '',
+  buttonActionOffset = 0,
 }: StepButtonProps) {
   const router = useRouter()
 
@@ -29,7 +31,7 @@ export default function StepButton({
       setTimeout(() => {
         const el = document.querySelector(buttonAction.target)
         if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - (buttonAction.offset || 0)
+          const y = el.getBoundingClientRect().top + window.scrollY - (buttonActionOffset || 0)
           window.scrollTo({ top: y, behavior: 'smooth' })
         }
       }, 200)
