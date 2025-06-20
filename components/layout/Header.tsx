@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import {
   Sheet,
@@ -17,6 +17,7 @@ import {
   IoChatbubbleOutline,
   IoPersonAddOutline,
   IoBookOutline,
+
 } from "react-icons/io5"
 import BienenLogo from "@/public/images/BienenLogoNeat.svg"
 import sign from "@/public/images/sign.png"
@@ -25,14 +26,21 @@ const menuItems = [
   { label: "Über die App", href: "/about", icon: IoHelpCircleOutline },
   { label: "Minijobsystem & Anmeldung", href: "/anmeldung", icon: IoPersonAddOutline },
   { label: "Unsere Satzung", href: "/satzung", icon: IoDocumentTextOutline },
-  { label: "Kontakt", href: "/contact-us", icon: IoChatbubbleOutline },
   { label: "Kommunikationsrichtlinien", href: "/communication", icon: IoBookOutline },
+  { label: "Kontakt", href: "/contact-us", icon: IoChatbubbleOutline },
 ]
 export default function Header() {
   const router = useRouter()
+  const pathname = usePathname()
   const [sheetOpen, setSheetOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
+  const [mounted, setMounted] = useState(false)
   const lastScrollY = useRef(0)
+
+  // Prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // Scroll-Logik
   useEffect(() => {
@@ -47,7 +55,6 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
-
 
   const handleNav = (href: string) => {
     setSheetOpen(false)
@@ -77,18 +84,34 @@ export default function Header() {
         <div className="flex-1"></div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-4" aria-label="Hauptnavigation">
-          {menuItems.map(({ label, href, icon: Icon }) => (
-            <Button
-              key={href}
-              variant="ghost"
-              className="text-gray-700 text-lg flex items-center gap-2 px-4 py-2 hover:bg-amber-100 rounded-full transition-all duration-200 hover:scale-105"
-              onClick={() => handleNav(href)}
-            >
-              <Icon size={20} className="text-gray-500" />
-              {label}
-            </Button>
-          ))}
+        <nav className="hidden xl:flex items-center gap-4 relative" 
+          aria-label="Hauptnavigation"
+        >
+          {menuItems.map(({ label, href, icon: Icon }) => {
+            const isActive = mounted && pathname === href
+            return (
+              <Button
+                key={href}
+                variant="ghost"
+                className={`text-lg flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 relative z-10 ${
+                  isActive 
+                    ? 'text-amber-600' 
+                    : 'text-gray-700 hover:bg-amber-100'
+                }`}
+                onClick={() => handleNav(href)}
+              >
+                <Icon 
+                  size={20} 
+                  className={isActive ? 'text-amber-400' : 'text-gray-500'} 
+                  style={{ width: '20px', height: '20px', minWidth: '30px', minHeight: '30px' }} 
+                />
+                {label}
+                {isActive && (
+                  <div className="absolute bottom-[-2] left-1/2 transform -translate-x-1/2 w-7 h-0.5 bg-amber-400 rounded-full w-32 "></div>
+                )}
+              </Button>
+            )
+          })}
         </nav>
 
         {/* Mobile Burger */}
@@ -112,18 +135,29 @@ export default function Header() {
               className="pt-8 bg-white/95 backdrop-blur-xl border-b border-gray-200 rounded-b-2xl"
             >
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <nav className="flex flex-col gap-2 mt-6" aria-label="Mobile Navigation">
-                {menuItems.map(({ label, href, icon: Icon }) => (
-                  <Button
-                    key={href}
-                    variant="ghost"
-                    className="justify-start text-lg gap-4 text-gray-700 px-6 py-4 rounded-xl hover:bg-amber-100 transition-all duration-200 hover:scale-102"
-                    onClick={() => handleNav(href)}
-                  >
-                    <Icon size={24} className="text-gray-600" />
-                    {label}
-                  </Button>
-                ))}
+              <nav className="flex flex-col gap-2 mt-6 pb-3" aria-label="Mobile Navigation">
+                {menuItems.map(({ label, href, icon: Icon }) => {
+                  const isActive = mounted && pathname === href
+                  return (
+                    <Button
+                      key={href}
+                      variant="ghost"
+                      className={`justify-start mb-2 border-gray-200 text-2xl gap-4 px-6 py-4 rounded-xl transition-all duration-200 hover:scale-102 relative ${
+                        isActive 
+                          ? 'text-amber-600 bg-amber-50 hover:bg-amber-100 border-l-4 border-l-amber-600' 
+                          : 'text-gray-700 hover:bg-amber-100'
+                      }`}
+                      onClick={() => handleNav(href)}
+                    >
+                      <Icon 
+                        size={32} 
+                        className={isActive ? 'text-amber-600' : 'text-gray-600'} 
+                        style={{ width: '32px', height: '32px', minWidth: '32px', minHeight: '32px' }} 
+                      />
+                      {label}
+                    </Button>
+                  )
+                })}
               </nav>
             </SheetContent>
           </Sheet>
