@@ -6,7 +6,7 @@ import CasualFriends from '../../../public/images/CasualFriends.svg'
 
 export default function CRules() {
   return (
-    <section id="cRules" className="flex flex-col items-center justify-center relative">
+    <section id="cRules" className="flex flex-col items-center justify-center relative mt-20">
       <div className="md:h-8 sm:h-6 lg:h-4" />
 
 
