@@ -10,6 +10,14 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Info } from "lucide-react";
 
+interface AnalysisResult {
+  model: string;
+  technique: string;
+  tokens: number;
+  quality: number;
+  output: string;
+}
+
 const models = ["openai", "claude", "gemini", "mistral", "groq"];
 const techniques = ["zero-shot", "few-shot", "instruction", "contextual", "chain-of-thought"];
 const fewShotVariants = [
@@ -40,7 +48,7 @@ export default function AiAnalysePage() {
   const [selectedModel, setSelectedModel] = useState("openai");
   const [selectedTechnique, setSelectedTechnique] = useState("zero-shot");
   const [fewShotVariant, setFewShotVariant] = useState("transform-to-question");
-  const [result, setResult] = useState<any[]>([]);
+  const [result, setResult] = useState<AnalysisResult[]>([]);
   const [loading, setLoading] = useState(false);
 
   const selectedVariant = fewShotVariants.find(v => v.value === fewShotVariant);

@@ -1,13 +1,10 @@
 'use client'
 
 import { useEffect } from 'react'
-import { useRouter } from 'next/navigation'
 import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export default function PaymentSuccessPage() {
-  const router = useRouter()
-
   // Automatischer Redirect nach 3 Sekunden
   useEffect(() => {
     const timeout = setTimeout(() => {
