@@ -1,0 +1,709 @@
+{
+  "Index": {
+    "meta": {
+      "title": "Wir helfen aus e.V. - Find and become helping hands",
+      "description": "Quickly and easily find helping hands in your area or become one yourself. Our app connects people and promotes a culture of helping."
+    }
+  },
+  "Main": {
+    "hero": {
+      "mainTitle": "We help you to find a",
+      "highlightedWord": "helping hand",
+      "subtitle": "- or to become one!",
+      "buttonText": "Quick and easy with the AushilfApp! 📲",
+      "mehrErfahren": "Learn more!",
+      "finalWords": "",
+      "buttonActionType": "navigate",
+      "buttonActionTarget": "/about",
+      "scribbleBottomOffset": "0.7em",
+      "mehrErfahrenTargetOffset": "100"
+    },
+    "zigzag": {
+      "0": {
+        "id": "owner",
+        "title": "Help for owners",
+        "text": "We all know that there's a lot of work to be done in our daily lives.\n\n And especially as a homeowner, these everyday chores can, depending on the nature of the job, require more manpower than the house can provide.\n\n And if your neighbor isn't available, you're faced with a task that should have been enjoyable, turning into a stressful weekly, or even monthly, project.",
+        "imageSrc": "/images/PeopleGardening2.png",
+        "imageAlt": "Help for owners",
+        "buttonLabel": "Let's move on!",
+        "buttonActionOffset": "100",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#senioren"
+        }
+      },
+      "1": {
+        "id": "seniors",
+        "title": "Help for disabled people or seniors",
+        "text": "Even minor tasks like walking the dog, shopping, or tending to the garden often become a challenge for people with disabilities.\n\n Even small amounts of assistance are often enough to make a huge difference in quality of life.",
+        "imageSrc": "/images/OldPeopleDancing.png",
+        "imageAlt": "Help for seniors",
+        "reverse": "true",
+        "buttonActionOffset": "100",
+        "buttonLabel": "Let's move on!",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#process"
+        }
+      },
+      "2": {
+        "id": "process",
+        "title": "Help with the process",
+        "text": "We are here to help you with any questions you may have.\n\n You will also find a detailed step-by-step guide with useful tips on registering for a mini-job. ",
+        "imageSrc": "/images/processe.png",
+        "imageAlt": "Help with the process",
+        "buttonLabel": "here!",
+        "buttonActionOffset": "100",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "navigate",
+          "target": "/anmeldung"
+        }
+      }
+    },
+    "features": {
+      "sectionTitle": "Our goal",
+      "sectionDescription": "We at 'Wir helfen aus e.V.' believe that with our network we promote the culture of helping at a regional level.\n\nMany tasks can be completed faster with more hands & that's why we connect people with our app!",
+      "org": {
+        "title": "Useful organizational options",
+        "description": "All the helping hands in your area in one app!",
+        "alt": "Organizational options"
+      },
+      "safe": {
+        "title": "Create a safe framework",
+        "description": "Through verification, we want to create the safest environment possible!",
+        "alt": "Safe framework"
+      },
+      "region": {
+        "title": "Stay up to date with your region!",
+        "description": "The app shows you region-specific announcements. See what's happening in your area!",
+        "alt": "Regional proximity"
+      },
+      "respect": {
+        "title": "Respectful treatment",
+        "description": "Clear guidelines ensure good communication. Respect and decency are paramount!",
+        "alt": "Respectful treatment"
+      },
+      "register": {
+        "title": "Enlightenment through interaction",
+        "description": "We help you take your first steps with the Minijob Center!",
+        "alt": "Register help"
+      },
+      "match": {
+        "title": "Find the right person for the job!",
+        "description": "Each helper describes their skills – so you can quickly find the right help!",
+        "alt": "Find the right one"
+      }
+    }
+  },
+  "About": {
+    "meta": {
+      "title": "Wir helfen aus e.V. – Help with impact!",
+      "description": "The AushilfApp connects people and promotes a culture of helping."
+    },
+    "hero": {
+      "mainTitle": "The",
+      "highlightedWord": "AushilfApp",
+      "subtitle": "Find a helping hand near you quickly and easily!",
+      "buttonText": "Download the app ⬇️ ",
+      "buttonActionType": "navigate",
+      "buttonActionTarget": "/about",
+      "mehrErfahrenButtonLabel": "Learn more!",
+      "mehrErfahrenTarget": "#preview",
+      "scribbleBottomOffset": "0.7em",
+      "subtitleMarginTop": "mt-8 sm:mt-10"
+    },
+    "preview": {
+      "heading": "The idea:",
+      "subheading": {
+        "line1": "Find ways to help where you can",
+        "line2": "- or someone who can!",
+        "line3": "Sounds simple? It is!"
+      },
+      "buttonText": "Go straight to the instructions!",
+      "buttonAction": {
+        "offset": "100",
+        "target": "#guideStep1"
+      },
+      "canvasText": "Overview of all steps",
+      "steps": {
+        "0": {
+          "label": "Step 1:",
+          "text": "Find your helping hand with the AushilfApp!"
+        },
+        "1": {
+          "label": "Step 2:",
+          "text": "Look around & explore!"
+        },
+        "2": {
+          "label": "Step 3:",
+          "text": "Write a post!"
+        },
+        "3": {
+          "label": "Step 4:",
+          "text": "Contact!"
+        },
+        "4": {
+          "label": "Step 5:",
+          "text": "Get smart!"
+        },
+        "5": {
+          "label": "Step 6:",
+          "text": "Say thank you!"
+        }
+      }
+    },
+    "zigzag": {
+      "guide": {
+        "0": {
+          "title": "Step 1: Download the app & create an account!",
+          "imageAlt": "Registration",
+          "text": "You can find the app quickly and easily in the App and Play Store! \n\n Once the app is installed on your device, you can create an account. The app will guide you through all the relevant verification steps!",
+          "reverse": "false",
+          "buttonLabel": "Next step",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#guideStep2"
+          },
+          "id": "guideStep1",
+          "buttonActionOffset": "100"
+        },
+        "1": {
+          "title": "Step 2: Look around & explore!",
+          "imageAlt": "FilterSearch",
+          "text": "Have you created an account?\n\nThen welcome to the AushilfApp!\n\nLook around the board and use the filter to find what you're looking for!",
+          "reverse": "true",
+          "buttonLabel": "Next step",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#guideStep3"
+          },
+          "id": "guideStep2",
+          "buttonActionOffset": "100"
+        },
+        "2": {
+          "title": "Step 3: Write a post!",
+          "imageAlt": "Write a post",
+          "text": "If you haven't found what you're looking for after browsing the board, it's time to write a post! \n\n Use the predefined categories to define what kind of help you need or what area you'd like to help in! \n\n Then just add a short description, and your post is complete!",
+          "reverse": "false",
+          "buttonLabel": "Next step",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#guideStep4"
+          },
+          "id": "guideStep3",
+          "buttonActionOffset": "100"
+        },
+        "3": {
+          "title": "Step 4: Get in touch!",
+          "imageAlt": "Contact",
+          "text": "It sometimes takes time, but when the right opportunity has been found, send a friendly message to discuss and exchange information about the scenario. \n\n Important key details can already be shared to see if you can help each other. \n\n Please always make sure to follow the communication guidelines. \n\n As an association, we reserve the right to moderate communication in the AushilfApp and take consequences for violations. \n\n In addition to moderation by the association, the AushilfApp also encourages its users to practice self-regulation through an effective reporting system.",
+          "reverse": "true",
+          "buttonLabel": "Next step",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#guideStep5"
+          },
+          "id": "guideStep4",
+          "buttonActionOffset": "100"
+        },
+        "4": {
+          "title": "Step 5: Get smart!",
+          "imageAlt": "SecurityRegistration",
+          "text": "Has an opportunity arisen to help each other? \n\n Then it's time to think about the framework in which you want to come together! \n\n Is the support only short-term, or is it foreseeable long-term? \n\n Either way, there's a solution for every scenario! \n\n Even with short-term employment, you can enjoy the benefits of legally compliant registration! \n\n For example, you can be insured for your work in just a few steps, allowing you to concentrate on actually helping! \n\n For more detailed information, read more at the Minijobzentrale (Minijob Center) or simply check out our step-by-step guide!",
+          "reverse": "false",
+          "buttonLabel": "Next step",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#guideStep6"
+          },
+          "id": "guideStep5",
+          "buttonActionOffset": "100"
+        },
+        "5": {
+          "title": "Step 6: Say thank you!",
+          "imageAlt": "Say thank you",
+          "text": "When everything is done and worked out at the end of the day, don't forget to say thank you! \n\n In the AushilfApp, you'll find a gratitude board on every profile! \n\n Simply leave your feedback there and show other users that the collaboration worked smoothly!",
+          "reverse": "true",
+          "buttonLabel": "Back to overview",
+          "buttonAction": {
+            "type": "scroll",
+            "target": "#preview"
+          },
+          "id": "guideStep6",
+          "buttonActionOffset": "100"
+        }
+      },
+      "0": {
+        "id": "owner",
+        "title": "Help for owners",
+        "text": "We all know that there's a lot of work to be done in our daily lives. \n\n And especially as a homeowner, these everyday chores can, depending on the nature of the job, require more manpower than the house can provide. \n\n And if your neighbor isn't available, you're faced with a task that should have been enjoyable, turning into a stressful weekly, or even monthly, project.",
+        "imageSrc": "/images/img_eigentuemer.webp",
+        "imageAlt": "Help for owners",
+        "buttonLabel": "Let's move on!",
+        "buttonActionOffset": "100",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#seniors"
+        }
+      },
+      "1": {
+        "id": "seniors",
+        "title": "Help for disabled people or seniors",
+        "text": "Even minor tasks like walking the dog, shopping, or tending to the garden often become a challenge for people with disabilities. \n\n Even small amounts of assistance are often enough to make a huge difference in quality of life.",
+        "imageSrc": "/images/img_senioren.webp",
+        "imageAlt": "Help for seniors",
+        "reverse": "true",
+        "buttonActionOffset": "100",
+        "buttonLabel": "Let's move on!",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#process"
+        }
+      },
+      "2": {
+        "id": "process",
+        "title": "Help with the process",
+        "text": "We are here to help you with any questions you may have. \n\n You will also find a detailed step-by-step guide with useful tips on registering for a mini-job. ",
+        "imageSrc": "/images/process_img.webp",
+        "imageAlt": "Help with the process",
+        "buttonLabel": "here!",
+        "buttonAction": {
+          "type": "navigate",
+          "target": "/anmeldung"
+        }
+      }
+    }
+  },
+  "Anmeldung": {
+    "meta": {
+      "title": "Wir helfen aus e.V. – Help that makes a difference",
+      "description": "The AushilfApp connects people and promotes a culture of helping. Free, simple & direct in your neighborhood. In addition to the app service, Wir helfen aus e.V. wants to bring the mini-job system closer to citizens. For this purpose, we have created a step-by-step guide that helps you register your helping hand with the Minijobzentrale."
+    },
+    "hero": {
+      "mainTitle": "You want your",
+      "highlightedWord": "helping hand",
+      "subtitle": "then you will find useful information about registering a mini-job here!",
+      "buttonText": "Watch the step-by-step guide! 📔",
+      "buttonAction": {
+        "type": "scroll",
+        "target": "#guideStep1",
+        "offset": "100"
+      },
+      "mehrErfahrenButtonLabel": "Learn more!",
+      "mehrErfahrenTarget": "#preview",
+      "finalWords": "register?",
+      "scribbleBottomOffset": "0.7em"
+    },
+    "preview": {
+      "heading": "Our step-by-step guide",
+      "subheading": "Find all the useful information you need to register your helping hand with the Minijobzentrale!",
+      "buttonText": "Go straight to the guide!",
+      "buttonAction": {
+        "offset": "100",
+        "target": "#guideStep1"
+      },
+      "canvasText": "Overview of all steps",
+      "steps": {
+        "0": {
+          "label": "Step 1:",
+          "text": "Find your helping hand with the AushilfApp!"
+        },
+        "1": {
+          "label": "Step 2:",
+          "text": "Get to know the options!"
+        },
+        "2": {
+          "label": "Step 3:",
+          "text": "Prepare an employment contract!"
+        },
+        "3": {
+          "label": "Step 4",
+          "text": "Register your helping hand with the Minijobzentrale!"
+        },
+        "4": {
+          "label": "Step 4, Part 2:",
+          "text": "Registration details"
+        },
+        "5": {
+          "label": "Step 5",
+          "text": "Calculation of taxes"
+        },
+        "6": {
+          "label": "Step 5, Part 2:",
+          "text": "Drop-off details for helping hands!"
+        },
+        "7": {
+          "label": "Step 5, Part 3:",
+          "text": "Submission details for employers!"
+        }
+      }
+    },
+    "zigzag": {
+      "0": {
+        "id": "guideStep1",
+        "imageAlt": "Seek",
+        "title": "Step 1: Find a helping hand with the AushilfApp!",
+        "text": "Our intuitive category system lets you quickly and easily define how you can be helped – or how you can help!",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep2"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "1": {
+        "id": "guideStep2",
+        "imageAlt": "OptionsKnow",
+        "title": "Step 2: Get to know your options!",
+        "text": "The employment relationship varies depending on the scenario – therefore, it's important to clarify in advance the extent of the support you want to receive. \n\n  For example, if you are employed for a short period of time (less than 70 days in a calendar year), pension insurance contributions may be waived. \n\n You can find more information about these contributions [here](https://www.minijob-zentrale.de/DE/fuer-haushalte/abgaben-und-fristen/detailseite.html).",
+        "reverse": "true",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep3"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "2": {
+        "id": "guideStep3",
+        "imageAlt": "employment contract",
+        "title": "Step 3: Prepare an employment contract!",
+        "text": "Once all the key details have been discussed, the [employment contract](https://www.minijob-zentrale.de/DE/die-minijobs/arbeitsrechte-im-minijob/arbeitsvertrag/detailseite.html) can be drafted. \n\n Important details include all personal information, the start date of the employment relationship, working hours, and remuneration. \n\nYou can find a sample contract from the Minijobzentrale [here](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/muster-arbeitsvertrag-privathaushalt.html)!",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep4"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "3": {
+        "id": "guideStep4",
+        "imageAlt": "PaperPlane",
+        "title": "Step 4: Register your helping hand with the Minijobzentrale!",
+        "text": "You can register your helping hand with the [Minijobzentrale](https://www.minijob-zentrale.de) in a variety of ways. \n\n By phone, to clarify any questions, at 0355 2902-70799 (Monday to Friday between 7:00 a.m. and 5:00 p.m.). \n\nBy mail to: Minijob-Zentrale, 45115 Essen. \n\n Or simply register online with the [Minijobzentrale](https://www.minijob-zentrale.de/DE/minijob-anmelden/haushaltshilfe-anmelden/detailseite.html) in two steps.",
+        "reverse": "true",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep5"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "4": {
+        "id": "guideStep5",
+        "imageAlt": "CheckList1",
+        "title": "Step 4, Part 2: Registration details!",
+        "text": "Basically, you need the following to register using the household check procedure: \n\n • The personal details of the parties \n\n • The employer's tax number \n\n • The pension insurance number of the helping hand (if not available, this will be determined using the date of birth and the name)",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep6"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "5": {
+        "id": "guideStep6",
+        "imageAlt": "MarBusiness",
+        "title": "Step 5: Calculate the taxes!",
+        "text": "The general rule is: The employer is responsible for the contributions. \n\n If the helping hand has not previously been exempted from [pension insurance contributions](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/), the employer withholds 13.6% of the gross salary to forward to the Minijobzentrale. \n\n The employer's contributions amount to 14.92% of the gross salary (as of January 1, 2025). \n\n Further details will follow in the next steps! \n\n All information is also available on the [Minijobzentrale website](https://www.minijobzentrale.de).",
+        "reverse": "true",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep7"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "6": {
+        "id": "guideStep7",
+        "imageAlt": "Calculation1",
+        "title": "Step 5, Part 2: Drop-off details for helping hands!",
+        "text": "As a helping hand, you have the option of being exempted from [compulsory pension insurance](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/), meaning no further taxes are deducted from your salary. \n\n While this leaves more money in your pocket, you forgo the opportunity to make early contributions to your pension insurance. \n\n The exemption will be submitted by mail with this letter. However, making the payment can be worthwhile, as the pension insurance not only allows you to register for a state-subsidized Riester pension, but also counts fully towards your waiting period. \n\n Rehabilitation benefits are also covered provided at least six months of contributions have been made in the last two years. If the insured person is completely unable to work, there is also the option of applying for a disability pension. \n\n For more details, read this [article](https://magazin.minijob-zentrale.de/minijob-rentenversicherung/) from the Minijobzentrale.",
+        "reverse": "false",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#guideStep8"
+        },
+        "buttonLabel": "Next step",
+        "buttonActionOffset": "100"
+      },
+      "7": {
+        "id": "guideStep8",
+        "imageAlt": "ShortTime",
+        "title": "Step 5, Part 3: Submission details for employers!",
+        "text": "The contributions are conveniently collected every six months by the Minijobzentrale via [SEPA direct debit](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/SEPA_Lastschriftmandat_HHS.html). \n\n The expected salary, the period of employment, and other important information are communicated in advance by letter. \n\n Should income change unexpectedly, the information can be adjusted every six months via a semi-annual check. \n\n As already mentioned, you as the employer withhold 13.6% of the helping hand's salary to make it available to the Minijobzentrale. \n\n In addition, 14.92% of the salary must normally be paid as contributions (for regular employment). \n\n You can read more about the composition of the contributions here.",
+        "reverse": "true",
+        "buttonAction": {
+          "type": "scroll",
+          "target": "#preview"
+        },
+        "buttonLabel": "Back to the beginning",
+        "buttonActionOffset": "100"
+      }
+    }
+  },
+  "ContactUs": {
+    "meta": {
+      "title": "Contact – Wir helfen aus e.V.",
+      "description": "Wir helfen aus e.V. is a non-profit organization. We are proud to have a positive impact on our community and are always looking for new ways to pursue our mission."
+    },
+    "layout": {
+      "badge": "Contact us",
+      "title": "Do you have a concern",
+      "subtitle": "or an idea?",
+      "description": "We look forward to hearing from you—whether it's praise, a question, or support. Write to us; we're here for you! 🤝"
+    },
+    "form": {
+      "title": "📬 Write to us!",
+      "subtitle": "We look forward to your message ✨",
+      "fields": {
+        "fullname": "Your name",
+        "email": "Your email address",
+        "subject": "Regarding",
+        "message": "your message"
+      },
+      "placeholders": {
+        "fullname": "e.g. John Doe",
+        "email": "e.g. maria@example.com",
+        "subject": "e.g. question about the app",
+        "message": "What would you like to tell us?"
+      },
+      "validation": {
+        "fullname": "Please enter your name.",
+        "email": "Please enter your email address.",
+        "subject": "Please enter a subject.",
+        "message": "Please write a message."
+      },
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": "Thank you! We'll be in touch soon. 😊",
+      "error": "Something went wrong. Please try again.",
+      "connectionError": "Connection error – please try again later."
+    }
+  },
+  "Communication": {
+    "meta": {
+      "title": "Communication rules – Our dos and don'ts!",
+      "description": "For a fair, respectful and helpful togetherness in the AushilfApp. Here you will find an overview of our communication guidelines."
+    },
+    "openGraph": {
+      "title": "Helping respectfully – Our communication rules",
+      "description": "Learn how we communicate with each other in the AushilfApp, what is allowed – and what is not. Together we create a friendly community."
+    },
+    "twitter": {
+      "title": "How we communicate in the AushilfApp",
+      "description": "Our rules for respect, helpfulness and secure communication – for a strong togetherness."
+    },
+    "header": {
+      "title": "Our communication guidelines!",
+      "subtitle": "Helping each other – respectfully and kindly – These guidelines are our core for a positive and respectful coexistence."
+    },
+    "sections": {
+      "values": {
+        "title": "Our core values",
+        "icon": "🧡",
+        "items": [
+          {
+            "emoji": "✅",
+            "content": "<b>Respectful & friendly:</b> Everyone is treated with dignity."
+          },
+          {
+            "emoji": "✅",
+            "content": "<b>Helpful & in solidarity:</b> Every bit of help counts – no matter how small!"
+          },
+          {
+            "emoji": "✅",
+            "content": "<b>Patient & understanding:</b> We give each other the opportunity to learn."
+          },
+          {
+            "emoji": "✅",
+            "content": "<b>Honest & trustworthy:</b> Be authentic in what you say and do."
+          },
+          {
+            "emoji": "✅",
+            "content": "<b>Constructive & solution-oriented:</b> Problems are addressed respectfully."
+          }
+        ]
+      },
+      "noGos": {
+        "title": "No-Gos – What we do not tolerate",
+        "icon": "🚫",
+        "items": [
+          {
+            "emoji": "❌",
+            "content": "<b>Discrimination & hate speech:</b> No place for racism, sexism or other forms of exclusion."
+          },
+          {
+            "emoji": "❌",
+            "content": "<b>Insults & bullying:</b> Personal attacks are taboo."
+          },
+          {
+            "emoji": "❌",
+            "content": "<b>Fake requests & fraud:</b> Be honest about what you are looking for or offering."
+          },
+          {
+            "emoji": "❌",
+            "content": "<b>Political & religious disputes:</b> This is about help – not about beliefs."
+          },
+          {
+            "emoji": "❌",
+            "content": "<b>Spam & Advertising:</b> No self-promotion or unnecessary messages."
+          },
+          {
+            "emoji": "❌",
+            "content": "<b>Threats & illegal content:</b> Violence or dangerous content will not be tolerated."
+          }
+        ]
+      },
+      "communication": {
+        "title": "How we communicate appreciatively",
+        "icon": "💬",
+        "items": [
+          {
+            "emoji": "💡",
+            "content": "<b>Stay polite & clear:</b> Formulate your messages clearly."
+          },
+          {
+            "emoji": "💡",
+            "content": "<b>Use positive language:</b> Words can empower or hurt – choose them wisely."
+          },
+          {
+            "emoji": "💡",
+            "content": "<b>Think about the tone:</b> Emojis 😊 or friendly wording help avoid misunderstandings."
+          },
+          {
+            "emoji": "💡",
+            "content": "<b>Give others a chance:</b> Everyone makes mistakes – be forgiving."
+          }
+        ]
+      },
+      "violations": {
+        "title": "What to do in case of violations?",
+        "icon": "🛠",
+        "items": [
+          {
+            "emoji": "🔹",
+            "content": "<b>Report inappropriate behavior:</b> Use the report function."
+          },
+          {
+            "emoji": "🔹",
+            "content": "<b>We take care of it:</b> Our team carefully reviews the reports."
+          },
+          {
+            "emoji": "🔹",
+            "content": "<b>Consequences:</b> Repeated or serious violations may lead to suspension."
+          }
+        ]
+      }
+    },
+    "footer": {
+      "title": "Thank you for respecting our values! 💙",
+      "subtitle": "Together we can create a helpful and friendly community."
+    }
+  },
+  "Satzung": {
+    "meta": {
+      "title": "Association statutes – Help with impact!",
+      "description": "Here you will find the most important contents of our association statutes. Learn more about the purpose, membership and non-profit status of 'Help with impact!'."
+    },
+    "openGraph": {
+      "title": "Association statutes – Help with impact!",
+      "description": "Transparency is important to us: In our statutes you will find all information about the goals, structure and legal basis of our non-profit association."
+    },
+    "twitter": {
+      "title": "The statutes of 'Help with impact!'",
+      "description": "What makes our association special? Learn everything about membership, structure, and our nonprofit mission."
+    },
+    "content": {
+      "title": "Statutes of the",
+      "subtitle": "Wir helfen aus e.V.",
+      "date": "Date: 24.01.2024",
+      "sections": {
+        "name": {
+          "title": "§ 1 Name, registered office, financial year",
+          "items": [
+            "The association is called \"Wir helfen aus e.V.\"",
+            "The association is based in Witzenhausen.",
+            "The financial year runs from August 1 of each year to July 31 of the following year."
+          ]
+        },
+        "purpose": {
+          "title": "§ 2 Purpose",
+          "mainPurpose": "The main purpose of the association is to promote communication between citizens in need and helpful people.",
+          "goals": "In detail, the association pursues the following goals:",
+          "goalsList": [
+            "The association aims to help citizens in need to establish contact with helpful people in order to cope with the tasks that arise in everyday life.",
+            "Through its services, the association aims to ensure a dignified life in old age or with disabilities, even with one's own home or other responsibilities.",
+            "The association aims to promote the culture of helping others in the regions of influence.",
+            "In addition to promoting communication, the association wants to make the mini-job system more accessible to citizens in order to inform them about the advantages of legally compliant registration."
+          ],
+          "implementation": "The association achieves these goals in particular through:",
+          "implementationList": [
+            "Promoting communication through the provision of digital platforms such as a website, groups in well-known messenger services or a mobile application.",
+            "Public relations through advertising campaigns for the association and its purpose in all available media.",
+            "Presentation at the University of Kassel (Witzenhausen location) & other suitable locations & meetings."
+          ]
+        },
+        "charity": {
+          "title": "§ 3 Non-profit status and use of funds",
+          "items": [
+            "The association pursues exclusively and directly non-profit purposes within the meaning of the \"Tax-Exempt Purposes\" section of the German Tax Code and operates selflessly. It does not primarily pursue commercial purposes.",
+            "The association's funds may only be used for statutory purposes. Members shall not receive any donations from the association's funds in their capacity as members. This also applies in the event of their resignation or the dissolution or termination of the association.",
+            "No person may be favored through expenses that are unrelated to the purpose of the association or through disproportionately high remuneration.",
+            "The association may create earmarked reserves for the fulfilment of its statutory purposes.",
+            "The association is liable exclusively with its assets.",
+            "The club may pay particularly active members a volunteer allowance and a trainer allowance. The club's board of directors decides on employment and remuneration. Payments of volunteer allowances and trainer allowances must take into account the club's financial viability."
+          ]
+        },
+        "membership": {
+          "title": "§ 4 Membership",
+          "items": [
+            "The association accepts as members natural persons who support the association's goals. Any legal entity whose statutes or constitution do not conflict with the association's purpose may also become a member.",
+            "The association may also accept supporting members. These members are regularly informed about the association's activities but are not entitled to vote.",
+            "Membership in the association is acquired following a written application by decision of the board.",
+            "The refusal of admission to the club, which does not require any justification."
+          ]
+        }
+      },
+      "footer": "This excerpt contains only relevant information for outsiders. For the complete statutes, please contact us!"
+    }
+  },
+  "Common": {
+    "backButton": "Back",
+    "loading": "Loading...",
+    "error": "Mistake",
+    "success": "Success"
+  },
+  "PaymentSuccess": {
+    "title": "Payment successful!",
+    "description": "Thank you for your verification. You will be automatically redirected back to the app shortly.",
+    "buttonText": "Return to the app"
+  },
+  "Header": {
+    "menuItems": {
+      "about": "About the app",
+      "anmeldung": "Minijob system & registration",
+      "satzung": "Our statutes",
+      "communication": "Communication guidelines",
+      "contact": "Contact"
+    },
+    "navigation": {
+      "mainNavigation": "Main navigation",
+      "mobileNavigation": "Mobile Navigation",
+      "navigationMenu": "Navigation Menu"
+    },
+    "languageNames": {
+      "de": "German",
+      "en": "English",
+      "fr": "French",
+      "es": "Spanish",
+      "ar": "Arabic",
+      "uk": "Ukrainian"
+    }
+  }
+}
