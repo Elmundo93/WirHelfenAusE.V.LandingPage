@@ -1,23 +1,24 @@
+'use client';
+import { useTranslations } from 'next-intl';
 import HeroLayout from "@/components/layout/Hero";
 
 export default function HeroAnmelden() {
-
-
+  const t = useTranslations('Anmeldung.hero');
   return (
-
-
     <HeroLayout
-    mainTitle="Sie möchten ihre"
-    highlightedWord="helfende Hand"
-    subtitle="dann finden Sie hier nützliche Informationen rund um die Anmeldung eines Minijobbs!"
-    buttonText="Schritt für Schritt Guide anschauen! 📔"
-    buttonAction={{ type: 'scroll', target: '#guideStep1' }}
-    MehrErfahrenButtonLabel="Mehr Erfahren!"
-    MehrErfahrenTarget="#preview"
-    finalWords="anmelden?"
-
-      scribbleBottomOffset="0.7em"
-
-  />
+      mainTitle={t('mainTitle')}
+      highlightedWord={t('highlightedWord')}
+      subtitle={t('subtitle')}
+      buttonText={t('buttonText')}
+      buttonAction={{
+        type: t.raw('buttonAction.type') as 'navigate' | 'scroll',
+        target: t.raw('buttonAction.target') as string,
+        offset: Number(t.raw('buttonAction.offset'))
+      }}
+      MehrErfahrenButtonLabel={t('mehrErfahrenButtonLabel')}
+      MehrErfahrenTarget={t('mehrErfahrenTarget')}
+      finalWords={t('finalWords')}
+      scribbleBottomOffset={t('scribbleBottomOffset')}
+    />
   );
 }

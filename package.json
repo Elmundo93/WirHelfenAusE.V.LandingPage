@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "validate-translations": "node scripts/validate-translations.js"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.14",
@@ -27,6 +28,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.517.0",
     "next": "15.3.3",
+    "next-intl": "^4.3.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",

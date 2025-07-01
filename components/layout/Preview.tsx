@@ -3,6 +3,7 @@
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import Image from 'next/image'
+import CustomImage from '@/components/ui/image'
 import { handleScroll } from '@/components/util/handleScroll'
 import { StaticImageData } from "next/image"
 import { useState } from 'react'
@@ -35,10 +36,24 @@ export default function PreviewLayout({ imageSrc, heading, subheading, buttonTex
     }, 100)
   }
 
+  // Amber/golden blur placeholder
+  const amberBlurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+
   return (
     <div className="relative max-w-5xl mx-auto p-6 rounded-2xl shadow-xl bg-white/80 backdrop-blur-xl flex flex-col items-center space-y-6">
 
-      <Image src={imageSrc} alt="Preview" width={400} height={300} className="rounded-full relative -mb-8 z-10" />
+      <CustomImage 
+        src={imageSrc} 
+        alt="Preview" 
+        width={400} 
+        height={300} 
+        className="rounded-full relative -mb-8 z-10" 
+        priority
+        placeholder="blur"
+        blurDataURL={amberBlurDataURL}
+        isSvg={true}
+        style={{ width: '400px', height: '300px' }}
+      />
       <h2 className="relative text-4xl text-center mb-5 rounded-xl py-4 px-10 bg-white shadow-lg mx-auto inline-block bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl shadow-lg p-8 z-20">{heading}</h2>
       <p className="text-2xl text-gray-700 text-center">{subheading}</p>
 

@@ -1,20 +1,24 @@
+'use client';
+import { useTranslations} from 'next-intl';
+
 import HeroLayout from "@/components/layout/Hero";
 
 export default function HeroAbout() {
-
-
-return (
-  <HeroLayout
-  mainTitle="Die"
-  highlightedWord="AushilfApp"
-  subtitle="Schnell und einfach eine helfenden Hand in deiner Nähe finden!"
-  buttonText="App herunterladen ⬇️ "
-  buttonAction={{ type: 'navigate', target: '/about' }}
-  MehrErfahrenButtonLabel="Mehr Erfahren!"
-  MehrErfahrenTarget="#preview"
-  scribbleBottomOffset="0.7em"
-  subtitleMarginTop="mt-8 sm:mt-10"
-  />
-
+  const t = useTranslations('About.hero');
+  return (
+    <HeroLayout
+      mainTitle={t('mainTitle')}
+      highlightedWord={t('highlightedWord')}
+      subtitle={t('subtitle')}
+      buttonText={t('buttonText')}
+      buttonAction={{
+        type: t.raw('buttonActionType') as 'navigate' | 'scroll',
+        target: t.raw('buttonActionTarget') as string
+      }}
+      MehrErfahrenButtonLabel={t('mehrErfahrenButtonLabel')}
+      MehrErfahrenTarget={t('mehrErfahrenTarget')}
+      scribbleBottomOffset={t('scribbleBottomOffset')}
+      subtitleMarginTop={t('subtitleMarginTop')}
+    />
   );
 }

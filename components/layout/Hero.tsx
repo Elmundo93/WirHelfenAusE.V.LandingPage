@@ -7,6 +7,7 @@ import AnimatedElement from "../Animation/AnimatedElement"
 import MehrErfahren from "../Buttons/MehrErfahren"
 import StepButton, { ButtonAction } from "../Buttons/StepButton"
 import ScribbleAnimation from "../Animation/ScribbleAnimation"
+import { useVisitType } from "@/lib/hooks/useVisitType"
 
 interface HeroLayoutProps {
   mainTitle: string
@@ -40,10 +41,12 @@ export default function HeroLayout({
   scribbleBottomOffset,
   subtitleMarginTop,
 }: HeroLayoutProps) {
+  const { isExternalVisit } = useVisitType()
+  
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 flex flex-col overflow-hidden min-h-[calc(100vh-50px)]">
 
-<div className="flex flex-col justify-center items-center flex-1 mt-20  pb-8 ">
+<div className="flex flex-col justify-center items-center flex-1 pt-20 pb-8 ">
         <div className="relative max-w-5xl w-full">
 
           <div className="absolute inset-0 z-0 rounded-3xl bg-white/60 dark:bg-zinc-900 border border-white/30 dark:border-zinc-800/40 shadow-lg ring-1 ring-white/20 dark:ring-zinc-800/20 animate-in fade-in duration-1000 ease-out" />
@@ -51,14 +54,14 @@ export default function HeroLayout({
           {/* Inhalt */}
           <div className="relative z-10 text-center px-6 sm:px-10 py-8">
             {preTitle && (
-              <AnimatedElement delay={0.1}>
+              <AnimatedElement delay={0.05} isExternalVisit={isExternalVisit}>
                 <Badge variant="secondary" className="text-sm sm:text-base md:text-xl px-3 sm:px-2 py-4 ">
                   {preTitle}
                 </Badge>
               </AnimatedElement>
             )}
 
-            <AnimatedElement delay={0.2}>
+            <AnimatedElement delay={0.1} isExternalVisit={isExternalVisit}>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl 2xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight">
                 {mainTitle}{" "}
                 <span
@@ -84,8 +87,8 @@ export default function HeroLayout({
               </h1>
             </AnimatedElement>
 
-            <AnimatedElement delay={0.3}>
-              <p className={`sm:text-2xl md:text-3xl lg:text-4xl xl:text-4xl text-muted-foreground max-w-4xl mx-auto leading-relaxed ${subtitleMarginTop || 'mt-4 sm:mt-6'}`}>
+            <AnimatedElement delay={0.15} isExternalVisit={isExternalVisit}>
+              <p className={`text-2xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed ${subtitleMarginTop || 'mt-4 sm:mt-6'}`}>
                 {subtitle}
               </p>
             </AnimatedElement>
@@ -95,7 +98,7 @@ export default function HeroLayout({
 
       {/* CTA section - positioned at bottom but within viewport */}
       <div className="flex items-center justify-center pb-4 sm:pb-6 lg:pb-8 mt-auto">
-        <AnimatedElement delay={0.5}>
+        <AnimatedElement delay={0.2} isExternalVisit={isExternalVisit}>
           <div className="flex flex-col gap-3 sm:gap-4 items-center">
        
 

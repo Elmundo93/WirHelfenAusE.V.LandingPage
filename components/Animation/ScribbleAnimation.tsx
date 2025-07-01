@@ -5,8 +5,6 @@ import animationData from "@/public/animation/ScribbleLine.json";
 
 const LottieView = dynamic(() => import("lottie-react").then((mod) => mod.default), { ssr: false });
 
-console.log(animationData);
-
 export default function ScribbleAnimation() {
 
   return (

@@ -1,70 +1,59 @@
 'use client'
 
+import { useTranslations, useLocale } from 'next-intl';
+import { useState, useEffect } from 'react';
 import FeatureLayout from '@/components/layout/Features'
-import CoolKids from '@/public/images/CoolKids.svg'
+import CoolKids from '@/public/images/CoolKids.png'
 import People from '@/public/images/staff-personnel-structure-management-svgrepo-com.svg'
 import SichererRahmen from '@/public/images/safe-and-stable-svgrepo-com.svg'
 import InderNähe from '@/public/images/location-svgrepo-com.svg'
 import Handshake from '@/public/images/handshake-svgrepo-com.svg'
 import Register from '@/public/images/register-svgrepo-com.svg'
 import RightOne from '@/public/images/choice-svgrepo-com.svg'
-import Image from 'next/image'
+
+import CustomImage from '@/components/ui/image'
 
 export default function FeatureMain() {
-  const featureCards = [
-    {
-      icon: People,
-      title: 'Nützliche Organisationsmöglichkeiten',
-      description: 'Alle helfenden Hände in deiner Umgebung in einer App!',
-      alt: 'Organisationsmöglichkeiten',
-    },
-    {
-      icon: SichererRahmen,
-      title: 'Einen sicheren Rahmen schaffen',
-      description:
-        'Durch die Verifizierung möchten wir ein möglichst sicheres Umfeld schaffen!',
-      alt: 'Sicherer Rahmen',
-    },
-    {
-      icon: InderNähe,
-      title: 'Bleib auf dem Stand deiner Region!',
-      description:
-        'Die App zeigt dir regionsspezifische Announcen.\nSieh, was in deiner Umgebung los ist!',
-      alt: 'Regionale Nähe',
-    },
-    {
-      icon: Handshake,
-      title: 'Respektvoller Umgang',
-      description:
-        'Klare Richtlinien sorgen für gute Kommunikation.\nRespekt und Anstand stehen an erster Stelle!',
-      alt: 'Respektvoller Umgang',
-    },
-    {
-      icon: Register,
-      title: 'Aufklärung durch Interaktion',
-      description: 'Wir helfen bei den ersten Schritten mit der Minijob-Zentrale!',
-      alt: 'Register-Hilfe',
-    },
-    {
-      icon: RightOne,
-      title: 'Den richtigen für den Job finden!',
-      description:
-        'Jeder Helfer beschreibt sein Können – so findest du schnell die passende Hilfe!',
-      alt: 'Richtigen finden',
-    },
-  ]
+  const t = useTranslations('Main.features');
+  const locale = useLocale();
+  const featureKeys = ['org', 'safe', 'region', 'respect', 'register', 'match'] as const;
+  const icons = [People, SichererRahmen, InderNähe, Handshake, Register, RightOne];
+
+  // Debug logging
+  console.log('=== FEATURES MAIN DEBUG ===');
+  console.log('FeaturesMain - Current locale:', locale);
+  console.log('FeaturesMain - sectionTitle:', t('sectionTitle'));
+  console.log('FeaturesMain - org.title:', t('org.title'));
+  console.log('FeaturesMain - safe.title:', t('safe.title'));
+  console.log('=== END FEATURES MAIN DEBUG ===');
+  
+  // Force re-render when locale changes
+  const [currentLocale, setCurrentLocale] = useState(locale);
+  
+  useEffect(() => {
+    setCurrentLocale(locale);
+  }, [locale]);
+
+  const featureCards = featureKeys.map((key, idx) => ({
+    icon: icons[idx],
+    title: t(`${key}.title`),
+    description: t(`${key}.description`),
+    alt: t(`${key}.alt`)
+  }));
 
   return (
     <FeatureLayout
-      title="Unser Ziel"
-      description={`Wir vom 'Wir helfen aus e.V.' glauben daran, dass wir mit unserem Netzwerk die Helferkultur auf regionaler Ebene fördern.\n\nViele Aufgaben lassen sich mit mehr Händen schneller bewältigen & deshalb verbinden wir Menschen mit unserer App!`}
+      title={t('sectionTitle')}
+      description={t('sectionDescription')}
       image={
-        <Image
+        <CustomImage
           src={CoolKids}
           alt="CoolKids"
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           className="rounded-full"
+          isSvg={true}
+          priority={true}
         />
       }
       features={featureCards}

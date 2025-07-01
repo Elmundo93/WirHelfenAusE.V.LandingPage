@@ -8,15 +8,10 @@ import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { cn } from "@/lib/utils"
-
-const FIELD_LABELS: Record<string, string> = {
-  fullname: "Ihr Name",
-  email: "Ihre E-Mail-Adresse",
-  subject: "Betreff",
-  message: "Ihre Nachricht",
-}
+import { useTranslations } from 'next-intl'
 
 export default function ContactForm() {
+  const t = useTranslations('ContactUs.form')
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
@@ -30,6 +25,13 @@ export default function ContactForm() {
     message: ""
   })
 
+  const FIELD_LABELS: Record<string, string> = {
+    fullname: t('fields.fullname'),
+    email: t('fields.email'),
+    subject: t('fields.subject'),
+    message: t('fields.message'),
+  }
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
@@ -37,10 +39,10 @@ export default function ContactForm() {
 
   const validateForm = () => {
     const errs: Partial<typeof formData> = {}
-    if (!formData.fullname.trim()) errs.fullname = "Bitte geben Sie Ihren Namen an."
-    if (!formData.email.trim()) errs.email = "Bitte geben Sie Ihre E-Mail-Adresse an."
-    if (!formData.subject.trim()) errs.subject = "Bitte geben Sie einen Betreff ein."
-    if (!formData.message.trim()) errs.message = "Bitte schreiben Sie eine Nachricht."
+    if (!formData.fullname.trim()) errs.fullname = t('validation.fullname')
+    if (!formData.email.trim()) errs.email = t('validation.email')
+    if (!formData.subject.trim()) errs.subject = t('validation.subject')
+    if (!formData.message.trim()) errs.message = t('validation.message')
     setErrors(errs)
     return Object.keys(errs).length === 0
   }
@@ -59,13 +61,13 @@ export default function ContactForm() {
       })
       const data = await res.json()
       if (!res.ok || data.error) {
-        setFeedback({ type: "error", message: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut." })
+        setFeedback({ type: "error", message: t('error') })
       } else {
-        setFeedback({ type: "success", message: "Vielen Dank! Wir melden uns bald bei Ihnen. 😊" })
+        setFeedback({ type: "success", message: t('success') })
         setFormData({ fullname: "", email: "", subject: "", message: "" })
       }
     } catch {
-      setFeedback({ type: "error", message: "Verbindungsfehler – bitte später erneut versuchen." })
+      setFeedback({ type: "error", message: t('connectionError') })
     } finally {
       setIsSubmitting(false)
     }
@@ -76,9 +78,9 @@ export default function ContactForm() {
       onSubmit={handleSubmit}
       className="space-y-6 bg-white shadow-xl rounded-3xl p-10 border border-gray-200 text-lg"
     >
-      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">📬 Schreiben Sie uns!</h2>
+      <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">{t('title')}</h2>
       <p className="text-center text-muted-foreground mb-4 text-base">
-        Wir freuen uns über Ihre Nachricht ✨
+        {t('subtitle')}
       </p>
 
       {Object.keys(formData).map((field) => (
@@ -94,7 +96,7 @@ export default function ContactForm() {
               rows={4}
               value={formData[field as keyof typeof formData]}
               onChange={handleChange}
-              placeholder="Was möchten Sie uns mitteilen?"
+              placeholder={t('placeholders.message')}
               className={cn("text-base p-4 rounded-md resize-y", errors[field] && "border-red-500")}
             />
           ) : (
@@ -104,11 +106,7 @@ export default function ContactForm() {
               type={field === "email" ? "email" : "text"}
               value={formData[field as keyof typeof formData]}
               onChange={handleChange}
-              placeholder={
-                field === "fullname" ? "z. B. Maria Mustermann" :
-                field === "email" ? "z. B. maria@beispiel.de" :
-                "z. B. Frage zur App"
-              }
+              placeholder={t(`placeholders.${field}`)}
               className={cn("text-base p-4 rounded-md", errors[field as keyof typeof formData] && "border-red-500")}
             />
           )}
@@ -123,7 +121,7 @@ export default function ContactForm() {
         disabled={isSubmitting}
         className="w-full text-lg py-3 rounded-xl bg-primary hover:bg-primary/90"
       >
-        {isSubmitting ? "Wird gesendet..." : "Nachricht abschicken"}
+        {isSubmitting ? t('submitting') : t('submit')}
       </Button>
 
       {feedback.message && (

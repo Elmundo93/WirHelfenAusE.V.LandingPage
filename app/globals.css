@@ -111,6 +111,7 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -145,5 +146,39 @@
   }
   body {
     @apply bg-background text-foreground;
+    /* Prevent layout shift during font loading */
+    font-display: swap;
+  }
+  
+  /* Prevent layout shift for images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Ensure proper aspect ratios for common image sizes */
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  
+  .aspect-video {
+    aspect-ratio: 16 / 9;
+  }
+  
+  /* Prevent layout shift for text elements */
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin: 0;
+  }
+  
+  /* Reserve space for dynamic content */
+  .content-placeholder {
+    min-height: 1.2em;
+  }
+  
+  /* Smooth transitions to reduce perceived layout shift */
+  .layout-stable {
+    transition: all 0.2s ease-in-out;
   }
 }

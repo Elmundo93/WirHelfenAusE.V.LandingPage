@@ -1,11 +1,13 @@
 // components/layout/ContactUsLayout.tsx
 
+import { useTranslations } from 'next-intl';
 import { ReactNode } from "react"
 import { FaHandshake } from "react-icons/fa"
 
 export default function ContactUsLayout({ children }: { children: ReactNode }) {
+  const t = useTranslations('ContactUs.layout');
   return (
-    <section className="relative z-20 px-4 md:px-16 lg:px-32 overflow-hidden rounded-3xl shadow-xl mt-20">
+    <section className="relative z-20 px-4 md:px-16 lg:px-32 overflow-hidden rounded-3xl shadow-xl mt-28">
 
       {/* 🧡 Orange Blob Hintergrund */}
       <div className="absolute top-[-60px] left-[-60px] w-[220px] h-[220px] rounded-full blur-3xl opacity-30 -z-10" />
@@ -15,18 +17,15 @@ export default function ContactUsLayout({ children }: { children: ReactNode }) {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <span className="inline-block rounded-full bg-amber-400 text-white text-sm px-4 py-1 font-semibold shadow-md">
-            Kontaktieren Sie uns
+            {t('badge')}
           </span>
 
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
-            <span className="bg-gradient-to-r from-amber-400 to-amber-500 text-transparent bg-clip-text">
-              Haben Sie ein Anliegen
-            </span>{" "}
-            oder eine Idee?
+            {t('title')} {t('subtitle')}
           </h2>
 
           <p className="text-muted-foreground text-lg leading-relaxed">
-            Wir freuen uns auf Ihre Nachricht – ob Lob, Frage oder Unterstützung. Schreiben Sie uns, wir sind für Sie da! 🤝
+            {t('description')}
           </p>
 
           {/* Optional: illustrative Grafik */}

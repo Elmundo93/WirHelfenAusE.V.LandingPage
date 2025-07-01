@@ -1,4 +1,4 @@
-// components/ContactUs/ContactUs.tsx
+'use client';
 import ContactUsLayout from "@/components/layout/ContactUs"
 import ContactForm from "@/components/ui/forms/ContactForm"
 import AnimatedElement from "@/components/Animation/AnimatedElement"

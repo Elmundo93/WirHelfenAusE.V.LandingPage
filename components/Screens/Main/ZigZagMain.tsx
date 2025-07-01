@@ -1,37 +1,27 @@
-// components/Screens/ZigZagMain.tsx
+'use client';
+import { useTranslations, useLocale } from 'next-intl';
+
 import ZigZagLayout from "@/components/layout/ZigZag"
 
 export default function ZigZagMain() {
+  const t = useTranslations('Main.zigzag');
+  
+  const items = ['0', '1', '2'].map((key) => ({
+    id: t(`${key}.id`),
+    title: t(`${key}.title`),
+    text: t(`${key}.text`),
+    imageSrc: t(`${key}.imageSrc`),
+    imageAlt: t(`${key}.imageAlt`),
+    reverse: t.raw(`${key}.reverse`),
+    buttonLabel: t(`${key}.buttonLabel`),
+    buttonActionOffset: Number(t(`${key}.buttonActionOffset`)),
+    buttonAction: {
+      type: t.raw(`${key}.buttonAction.type`) as 'scroll' | 'navigate',
+      target: t.raw(`${key}.buttonAction.target`) as string
+    }
+  }));
+  
   return (
-    <ZigZagLayout
-      items={[
-        {
-          title: "Hilfe für Eigentümer",
-          text: `Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n & vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.`,
-          imageSrc: "/images/img_eigentuemer.webp",
-          imageAlt: "Hilfe für Eigentümer",
-          buttonActionOffset: 100
-        },
-        {
-          title: "Hilfe für beeinträchtigte Menschen oder Senioren",
-          text: `Kleinere Aufgaben wie Gassie gehen, Einkaufen oder sich um den Garten kümmern, werden für Menschen mit einer Beeinträchtigung oft schon zu einem Problem.\n\n Hier reichen oft schon kleine Hilfestellungen um einen imensen Unterschied in der Lebensqualität zu erzielen.`,
-          imageSrc: "/images/img_senioren.webp",
-          imageAlt: "Hilfe für Senioren",
-          reverse: true
-        },
-        {
-          title: "Hilfe beim Prozess",
-          text: ` Bei Fragen jeder Art stehen wir als Verein ihnen zur Seite.\n\n 
-      Des weiteren finden Sie einen ausführlichen Schritt für Schritt Guide mit nützlichen Tipps rund um die Minijobanmeldug `,
-          imageSrc: "/images/process_img.webp",
-          imageAlt: "Hilfe beim Prozess",
-          buttonLabel: "hier!",
-          buttonAction: {
-            type: "navigate",
-            target: "/anmeldung"
-          }
-        }
-      ]}
-    />
+    <ZigZagLayout items={items} />
   )
 }

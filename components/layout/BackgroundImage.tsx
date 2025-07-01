@@ -1,26 +1,36 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
-import DankeSagen from '@/public/images/DankeSagen.svg'
+import { useState, useEffect } from 'react'
+import CustomImage from '@/components/ui/image'
+import DankeSagen from '@/public/images/DankeSagen.png'
 
 export default function BackgroundImage() {
+  const [mounted, setMounted] = useState(false)
+  
+  // Amber/golden blur placeholder
+  const amberBlurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 0.08 }}
-      transition={{ duration: 1.8, ease: 'easeOut' }}
-      className="fixed inset-0 -z-10 pointer-events-none select-none"
+    <div 
+      className="fixed inset-0 -z-10 pointer-events-none select-none transition-opacity duration-[1800ms] ease-out"
       aria-hidden="true"
+      style={{ opacity: mounted ? 0.08 : 0 }}
     >
-      <Image
+      <CustomImage
         src={DankeSagen}
         alt="Dekoratives Hintergrundbild: Helfende Menschen"
-        fill
+        fill={true}
         priority
+        sizes="100vw"
         className="object-cover"
-
+        placeholder="blur"
+        blurDataURL={amberBlurDataURL}
+        isSvg={true}
       />
-    </motion.div>
+    </div>
   )
 }

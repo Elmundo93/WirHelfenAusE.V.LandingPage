@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import { useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Home } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -19,10 +20,11 @@ export default function BackButton({
   className
 }: BackButtonProps) {
   const router = useRouter()
+  const locale = useLocale()
 
   const handleClick = () => {
     if (href) {
-      router.push(href)
+      router.push(`/${locale}${href}`)
     } else {
       router.back()
     }
@@ -49,7 +51,7 @@ export default function BackButton({
 
       {showHome && (
         <Button
-          onClick={() => router.push('/')}
+          onClick={() => router.push(`/${locale}/`)}
           variant="ghost"
           size="icon"
           className="group relative overflow-hidden rounded-full bg-white/80 backdrop-blur-sm border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-amber-50 hover:border-amber-200 dark:bg-gray-800/80 dark:border-gray-700/50 dark:hover:bg-amber-900/20 dark:hover:border-amber-700/50"

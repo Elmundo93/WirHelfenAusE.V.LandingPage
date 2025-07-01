@@ -1,8 +1,13 @@
+'use client'
+
 import Link from "next/link"
+import { useLocale } from 'next-intl'
 import { Separator } from "@/components/ui/separator"
 import { SiX, SiGithub, SiFacebook, SiInstagram, SiLinkedin } from 'react-icons/si'
 
 export default function Footer() {
+  const locale = useLocale()
+  
   return (
     <footer className="bg-white border-t border-gray-200 mt-16">
       <div className="container py-12 px-4 md:px-8 grid gap-12 md:grid-cols-3 text-sm text-gray-700">
@@ -22,9 +27,9 @@ export default function Footer() {
           <ul className="space-y-2">
             <li><Link href="/" className="hover:underline">Vector Design: vecteezy.com</Link></li>
             <li><Link href="/" className="hover:underline">www.Minijobzentrale.de</Link></li>
-            <li><Link href="/" className="hover:underline">www.UnsereSatzung.de</Link></li>
-            <li><Link href="/" className="hover:underline">www.Jobanmelden.de</Link></li>
-            <li><Link href="/" className="hover:underline">www.Wirhelfenausev.de</Link></li>
+            <li><Link href="/" className="hover:underline">www.Wir-helfen-aus.de/anmeldung</Link></li>
+
+
           </ul>
         </div>
 
@@ -32,10 +37,10 @@ export default function Footer() {
         <div>
           <h6 className="text-gray-800 font-semibold mb-4">Richtlinien & Datenschutz</h6>
           <ul className="space-y-2">
-            <li><Link href="/satzung" className="hover:underline">Unsere Vereinssatzung</Link></li>
-            <li><Link href="/anmeldung" className="hover:underline">Personalausweis-Verifizierung</Link></li>
-            <li><Link href="/communication" className="hover:underline">Kommunikationsrichtlinien</Link></li>
-            <li><Link href="/datenschutz" className="hover:underline">Datenschutz</Link></li>
+            <li><Link href={`/${locale}/satzung`} className="hover:underline">Unsere Vereinssatzung</Link></li>
+            <li><Link href={`/${locale}/anmeldung`} className="hover:underline">Personalausweis-Verifizierung</Link></li>
+            <li><Link href={`/${locale}/communication`} className="hover:underline">Kommunikationsrichtlinien</Link></li>
+            <li><Link href={`/${locale}/datenschutz`} className="hover:underline">Datenschutz</Link></li>
           </ul>
         </div>
       </div>
