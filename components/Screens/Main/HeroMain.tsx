@@ -17,7 +17,7 @@ export default function HeroMain() {
   console.log('=== END HERO MAIN DEBUG ===');
   
   // Force re-render when locale changes
-  const [currentLocale, setCurrentLocale] = useState(locale);
+  const [, setCurrentLocale] = useState(locale);
   
   useEffect(() => {
     setCurrentLocale(locale);

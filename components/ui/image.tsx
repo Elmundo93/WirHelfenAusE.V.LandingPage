@@ -1,8 +1,8 @@
 'use client'
-import Image, { ImageProps } from 'next/image'
+import Image, { ImageProps, StaticImageData } from 'next/image'
 
 interface CustomImageProps extends Omit<ImageProps, 'src'> {
-  src: string | any
+  src: string | StaticImageData
   isSvg?: boolean
   fill?: boolean
   sizes?: string
@@ -18,6 +18,7 @@ export default function CustomImage({ src, isSvg, fill, sizes, ...props }: Custo
         fill={fill}
         unoptimized
         sizes={sizes}
+        alt={props.alt || ''}
         style={{ 
           ...props.style,
           // Only add width/height if not using fill prop
@@ -39,6 +40,7 @@ export default function CustomImage({ src, isSvg, fill, sizes, ...props }: Custo
       src={src} 
       fill={fill}
       sizes={sizes}
+      alt={props.alt || ''}
       style={{ 
         ...props.style,
         // Only add width/height if not using fill prop

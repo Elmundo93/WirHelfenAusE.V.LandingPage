@@ -18,17 +18,17 @@ export function getFallbackLocale(locale: string): Locale {
  * Validates translation keys and provides fallbacks
  */
 export function validateTranslationKey(
-  messages: Record<string, any>,
+  messages: Record<string, unknown>,
   key: string,
   fallback: string = key
 ): string {
   try {
     const keys = key.split('.');
-    let value = messages;
+    let value: unknown = messages;
     
     for (const k of keys) {
       if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
         console.warn(`Translation key not found: ${key}`);
         return fallback;
@@ -46,7 +46,7 @@ export function validateTranslationKey(
  * Checks if all required translation modules are loaded
  */
 export function validateTranslationModules(
-  messages: Record<string, any>,
+  messages: Record<string, unknown>,
   requiredModules: string[]
 ): boolean {
   const missingModules = requiredModules.filter(module => !messages[module]);
@@ -63,7 +63,7 @@ export function validateTranslationModules(
  * Creates a safe translation function with fallbacks
  */
 export function createSafeTranslator(
-  messages: Record<string, any>,
+  messages: Record<string, unknown>,
   namespace: string
 ) {
   return (key: string, fallback?: string) => {

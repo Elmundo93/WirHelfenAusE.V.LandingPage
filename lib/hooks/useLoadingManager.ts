@@ -116,13 +116,13 @@ export function useLoadingManager() {
       }
     }
 
-    const clearCache = () => {
-      try {
-        localStorage.removeItem(CACHE_KEY)
-      } catch (error) {
-        console.warn('Failed to clear loading cache:', error)
-      }
-    }
+    // const clearCache = () => {
+    //   try {
+    //     localStorage.removeItem(CACHE_KEY)
+    //   } catch (error) {
+    //     console.warn('Failed to clear loading cache:', error)
+    //   }
+    // }
 
     const shouldShowLoading = () => {
       console.log('=== LOADING CACHE DEBUG ===')

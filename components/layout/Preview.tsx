@@ -2,7 +2,6 @@
 'use client'
 import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import Image from 'next/image'
 import CustomImage from '@/components/ui/image'
 import { handleScroll } from '@/components/util/handleScroll'
 import { StaticImageData } from "next/image"

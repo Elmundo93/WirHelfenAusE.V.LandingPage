@@ -17,8 +17,8 @@ export function clearLoadingCache() {
         }
       })
       console.log('Loading cache cleared successfully')
-    } catch (error) {
-      console.warn('Failed to clear loading cache:', error)
+    } catch {
+      console.warn('Failed to clear loading cache')
     }
   }
 }
@@ -29,7 +29,7 @@ export function hasLoadingCache(): boolean {
     try {
       const keys = Object.keys(localStorage)
       return keys.some(key => key.startsWith('wir-helfen-aus-preload-'))
-    } catch (error) {
+    } catch {
       return false
     }
   }

@@ -1,5 +1,5 @@
 
-import Image, { StaticImageData } from "next/image"
+import { StaticImageData } from "next/image"
 
 import CustomImage from "@/components/ui/image"
 

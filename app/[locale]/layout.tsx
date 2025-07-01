@@ -1,7 +1,7 @@
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
-import { locales } from '@/lib/i18n';
+import { locales, type Locale } from '@/lib/i18n';
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackgroundImage from "@/components/layout/BackgroundImage";
@@ -19,11 +19,11 @@ export default async function LocaleLayout({
   console.log('=== LAYOUT DEBUG ===');
   console.log('Layout - Received locale:', locale);
   console.log('Layout - Valid locales:', locales);
-  console.log('Layout - Is locale valid:', locales.includes(locale as any));
+  console.log('Layout - Is locale valid:', locales.includes(locale as Locale));
   console.log('=== END LAYOUT DEBUG ===');
   
   // Validate that the incoming `locale` parameter is valid
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 

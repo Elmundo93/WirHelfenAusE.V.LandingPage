@@ -1,7 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import AnimatedElement from '@/components/Animation/AnimatedElement'
-import Image from 'next/image'
 import CustomImage from '@/components/ui/image'
 import GuidelineSection from '@/components/layout/GuidelineSection'
 

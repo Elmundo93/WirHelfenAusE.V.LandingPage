@@ -28,7 +28,7 @@ export default function FeatureMain() {
   console.log('=== END FEATURES MAIN DEBUG ===');
   
   // Force re-render when locale changes
-  const [currentLocale, setCurrentLocale] = useState(locale);
+  const [, setCurrentLocale] = useState(locale);
   
   useEffect(() => {
     setCurrentLocale(locale);
