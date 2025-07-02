@@ -18,15 +18,14 @@ export default getRequestConfig(async ({ locale }) => {
 
   try {
     // Load the single JSON file for the locale from app directory
-    const filePath = path.join(process.cwd(), 'i18n', 'messages', `${validLocale}.json`);
-    console.log(`📁 Loading translations: ${filePath}`);
+    const filePath = path.resolve('./public/messages', `${validLocale}.json`);    console.log(`📁 Loading translations: ${filePath}`);
     console.log(`📁 File exists check: ${fs.existsSync(filePath)}`);
     
     if (!fs.existsSync(filePath)) {
       console.error(`❌ Translation file does not exist: ${filePath}`);
       
-      // Check if app/i18n/messages directory exists
-      const messagesDir = path.join(process.cwd(), 'app', 'i18n', 'messages');
+      // Check if public/messages directory exists
+      const messagesDir = path.join(process.cwd(), 'public', 'messages');
       console.log(`📁 Messages directory exists: ${fs.existsSync(messagesDir)}`);
       if (fs.existsSync(messagesDir)) {
         const files = fs.readdirSync(messagesDir);
@@ -34,7 +33,7 @@ export default getRequestConfig(async ({ locale }) => {
       }
       
       // Fallback to default locale if current locale file doesn't exist
-      const fallbackPath = path.join(process.cwd(), 'app', 'i18n', 'messages', `${defaultLocale}.json`);
+      const fallbackPath = path.resolve('./public/messages', `${defaultLocale}.json`);
       console.log(`🔄 Trying fallback path: ${fallbackPath}`);
       console.log(`🔄 Fallback file exists: ${fs.existsSync(fallbackPath)}`);
       
