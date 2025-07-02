@@ -18,16 +18,16 @@ export function getFallbackLocale(locale: string): Locale {
  * Validates translation key and returns fallback if not found
  */
 export function validateTranslationKey(
-  messages: Record<string, any>,
+  messages: Record<string, unknown>,
   key: string,
   fallback: string = key
 ): string {
   const keys = key.split('.');
-  let current = messages;
+  let current: unknown = messages;
   
   for (const k of keys) {
     if (current && typeof current === 'object' && k in current) {
-      current = current[k];
+      current = (current as Record<string, unknown>)[k];
     } else {
       console.warn(`Translation key not found: ${key}`);
       return fallback;
