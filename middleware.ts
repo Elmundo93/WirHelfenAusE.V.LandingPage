@@ -1,4 +1,3 @@
-
 import createMiddleware from 'next-intl/middleware';
 import { locales, defaultLocale } from '@/lib/i18n';
 
@@ -15,5 +14,5 @@ export default createMiddleware({
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(de|en|fr)/:path*']
+  matcher: ['/', '/(de|en)/:path*']
 }; 

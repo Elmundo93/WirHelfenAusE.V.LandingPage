@@ -16,36 +16,54 @@ export default async function LocaleLayout({
 }) {
   const { locale } = await params;
   
-  console.log('=== LAYOUT DEBUG ===');
+  console.log('=== LAYOUT DEBUG START ===');
   console.log('Layout - Received locale:', locale);
   console.log('Layout - Valid locales:', locales);
   console.log('Layout - Is locale valid:', locales.includes(locale as Locale));
-  console.log('=== END LAYOUT DEBUG ===');
+  console.log('Layout - Node env:', process.env.NODE_ENV);
+  console.log('=== LAYOUT DEBUG END ===');
   
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as Locale)) {
+    console.error(`❌ Invalid locale detected: ${locale}`);
     notFound();
   }
 
   // Providing all messages to the client
   // side is the easiest way to get started
+  console.log('=== GETTING MESSAGES ===');
   const messages = await getMessages({ locale });
+  console.log('=== MESSAGES RECEIVED ===');
   
-  // Debug the messages loading
-  console.log('=== MESSAGES LOADING DEBUG ===');
-  console.log('Layout - getMessages called with locale:', locale);
-  console.log('Layout - Messages result:', messages ? 'Loaded' : 'Failed to load');
-  console.log('=== END MESSAGES LOADING DEBUG ===');
-  
-  console.log('=== MESSAGES DEBUG ===');
+  // Enhanced debugging for messages
+  console.log('=== MESSAGES VALIDATION ===');
   console.log('Layout - Messages loaded for locale:', locale);
-  console.log('Layout - Available message keys:', Object.keys(messages));
-  console.log('Layout - Header messages available:', !!messages.Header);
-  console.log('Layout - Header menuItems available:', !!messages.Header?.menuItems);
-  console.log('Layout - Sample translation:', messages.Header?.menuItems?.about);
   console.log('Layout - Messages object type:', typeof messages);
-  console.log('Layout - Messages stringified (first 500 chars):', JSON.stringify(messages).substring(0, 500));
-  console.log('=== END MESSAGES DEBUG ===');
+  console.log('Layout - Messages is null/undefined:', messages == null);
+  console.log('Layout - Messages keys count:', messages ? Object.keys(messages).length : 'N/A');
+  console.log('Layout - Available message keys:', messages ? Object.keys(messages) : 'N/A');
+  
+  // Check for specific namespaces
+  if (messages) {
+    const expectedNamespaces = ['Main', 'About', 'Header', 'Index', 'Satzung', 'Anmeldung', 'Communication', 'ContactUs'];
+    expectedNamespaces.forEach(namespace => {
+      const hasNamespace = messages.hasOwnProperty(namespace);
+      console.log(`Layout - ${namespace} namespace available:`, hasNamespace);
+      if (hasNamespace && messages[namespace]) {
+        const namespaceKeys = Object.keys(messages[namespace]);
+        console.log(`Layout - ${namespace} has ${namespaceKeys.length} keys:`, namespaceKeys.slice(0, 3));
+      }
+    });
+    
+    // Sample translation check
+    if (messages.Main?.hero?.mainTitle) {
+      console.log('Layout - Sample Main.hero.mainTitle:', messages.Main.hero.mainTitle);
+    } else {
+      console.log('Layout - Main.hero.mainTitle NOT FOUND');
+    }
+  }
+  
+  console.log('=== MESSAGES VALIDATION END ===');
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>

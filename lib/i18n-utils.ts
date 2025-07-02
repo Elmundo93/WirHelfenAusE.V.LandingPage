@@ -1,45 +1,40 @@
-import { Locale } from './i18n';
+import { locales, defaultLocale, type Locale } from './i18n';
 
 /**
  * Validates if a locale is supported
  */
 export function isValidLocale(locale: string): locale is Locale {
-  return ['de', 'en', 'fr'].includes(locale);
+  return locales.includes(locale as Locale);
 }
 
 /**
- * Gets the fallback locale if the provided one is invalid
+ * Gets a fallback locale if the provided one is invalid
  */
 export function getFallbackLocale(locale: string): Locale {
-  return isValidLocale(locale) ? locale : 'de';
+  return isValidLocale(locale) ? locale : defaultLocale;
 }
 
 /**
- * Validates translation keys and provides fallbacks
+ * Validates translation key and returns fallback if not found
  */
 export function validateTranslationKey(
-  messages: Record<string, unknown>,
+  messages: Record<string, any>,
   key: string,
   fallback: string = key
 ): string {
-  try {
-    const keys = key.split('.');
-    let value: unknown = messages;
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = (value as Record<string, unknown>)[k];
-      } else {
-        console.warn(`Translation key not found: ${key}`);
-        return fallback;
-      }
+  const keys = key.split('.');
+  let current = messages;
+  
+  for (const k of keys) {
+    if (current && typeof current === 'object' && k in current) {
+      current = current[k];
+    } else {
+      console.warn(`Translation key not found: ${key}`);
+      return fallback;
     }
-    
-    return typeof value === 'string' ? value : fallback;
-  } catch (error) {
-    console.error(`Error accessing translation key ${key}:`, error);
-    return fallback;
   }
+  
+  return typeof current === 'string' ? current : fallback;
 }
 
 /**
