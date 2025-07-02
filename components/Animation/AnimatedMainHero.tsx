@@ -14,12 +14,8 @@ export default function AnimatedMainHero({ children, className, id }: AnimatedMa
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Warte kurz, um sicherzustellen, dass der Inhalt geladen ist
-    const timer = setTimeout(() => {
-      setIsLoaded(true);
-    }, 100);
-
-    return () => clearTimeout(timer);
+    // No delay - start animation immediately
+    setIsLoaded(true);
   }, []);
 
   return (

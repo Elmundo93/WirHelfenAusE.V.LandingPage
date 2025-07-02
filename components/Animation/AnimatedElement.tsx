@@ -13,19 +13,13 @@ interface AnimatedElementProps {
   isExternalVisit?: boolean;
 }
 
-export default function AnimatedElement({ children, className, id, delay = 0, disableAnimation = false, isExternalVisit = false }: AnimatedElementProps) {
+export default function AnimatedElement({ children, className, id, delay = 0, disableAnimation = false }: AnimatedElementProps) {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    // Only apply delay for external visits (not internal navigation)
-    const baseDelay = isExternalVisit ? 800 : 100; // 0.8s for external, 0.1s for internal
-    
-    const timer = setTimeout(() => {
-      setIsReady(true);
-    }, baseDelay);
-
-    return () => clearTimeout(timer);
-  }, [isExternalVisit]);
+    // No delay - start animation immediately
+    setIsReady(true);
+  }, []);
 
   if (disableAnimation) {
     return (
@@ -43,7 +37,7 @@ export default function AnimatedElement({ children, className, id, delay = 0, di
         animate={isReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ 
           duration: 1, 
-          delay: delay + (isExternalVisit ? 0.2 : 0), // Only add cascading delay for external visits
+          delay: delay, // Only use the delay prop if provided
           ease: "easeOut"
         }}
         className="transform-gpu"
