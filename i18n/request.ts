@@ -14,50 +14,32 @@ export default getRequestConfig(async ({ locale }) => {
   console.log('🔍 i18n loader - Loading for locale:', validLocale);
 
   try {
-    // Try multiple possible paths for the translation files
-    const possiblePaths = [
-      path.join(process.cwd(), 'i18n', 'messages', `${validLocale}.json`),
-      path.join(process.cwd(), '.next', 'server', 'i18n', 'messages', `${validLocale}.json`),
-      path.join(process.cwd(), 'public', 'i18n', 'messages', `${validLocale}.json`),
-    ];
-
-    let filePath = null;
-    let fileContent = null;
-
-    for (const testPath of possiblePaths) {
-      console.log(`📁 Testing path: ${testPath}`);
-      if (fs.existsSync(testPath)) {
-        filePath = testPath;
-        fileContent = fs.readFileSync(testPath, 'utf8');
-        console.log(`✅ Found translation file at: ${testPath}`);
-        break;
-      }
-    }
-
-    if (!filePath || !fileContent) {
-      console.error(`❌ Translation file not found for locale: ${validLocale}`);
-      console.error(`❌ Tried paths:`, possiblePaths);
-      
-      // Fallback to default locale
-      const fallbackPaths = [
-        path.join(process.cwd(), 'i18n', 'messages', `${defaultLocale}.json`),
-        path.join(process.cwd(), '.next', 'server', 'i18n', 'messages', `${defaultLocale}.json`),
-        path.join(process.cwd(), 'public', 'i18n', 'messages', `${defaultLocale}.json`),
-      ];
-
-      for (const fallbackPath of fallbackPaths) {
-        if (fs.existsSync(fallbackPath)) {
-          console.log(`🔄 Falling back to default locale: ${defaultLocale}`);
-          fileContent = fs.readFileSync(fallbackPath, 'utf8');
-          break;
-        }
-      }
-
-      if (!fileContent) {
+    // Load the single JSON file for the locale from app directory
+    const filePath = path.join(process.cwd(), 'app', 'i18n', 'messages', `${validLocale}.json`);
+    console.log(`📁 Loading translations: ${filePath}`);
+    
+    if (!fs.existsSync(filePath)) {
+      console.error(`❌ Translation file does not exist: ${filePath}`);
+      // Fallback to default locale if current locale file doesn't exist
+      const fallbackPath = path.join(process.cwd(), 'app', 'i18n', 'messages', `${defaultLocale}.json`);
+      if (fs.existsSync(fallbackPath)) {
+        console.log(`🔄 Falling back to default locale: ${defaultLocale}`);
+        const fallbackContent = fs.readFileSync(fallbackPath, 'utf8');
+        const messages = JSON.parse(fallbackContent);
+        console.log(`✅ Loaded fallback translations:`, Object.keys(messages));
+        
+        return {
+          locale: defaultLocale,
+          messages,
+          timeZone: 'Europe/Berlin',
+          now: new Date()
+        };
+      } else {
         throw new Error(`No translation files found for locale: ${validLocale} or fallback: ${defaultLocale}`);
       }
     }
     
+    const fileContent = fs.readFileSync(filePath, 'utf8');
     const messages = JSON.parse(fileContent);
     console.log(`✅ Loaded translations for ${validLocale}:`, Object.keys(messages));
 
