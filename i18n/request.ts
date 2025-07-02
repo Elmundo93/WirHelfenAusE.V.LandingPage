@@ -18,7 +18,7 @@ export default getRequestConfig(async ({ locale }) => {
 
   try {
     // Load the single JSON file for the locale from app directory
-    const filePath = path.join(process.cwd(), 'app', 'i18n', 'messages', `${validLocale}.json`);
+    const filePath = path.join(process.cwd(), 'i18n', 'messages', `${validLocale}.json`);
     console.log(`📁 Loading translations: ${filePath}`);
     console.log(`📁 File exists check: ${fs.existsSync(filePath)}`);
     
