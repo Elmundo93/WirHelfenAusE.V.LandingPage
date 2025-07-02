@@ -198,7 +198,7 @@
         "3": {
           "title": "Schritt 4: In Kontakt treten!",
           "imageAlt": "InKontaktTreten",
-          "text": "Es braucht manchmal seine Zeit, doch wenn sich dann die richtige Möglichkeit gefunden hat, schicke eine freundliche Nachricht um sich über das Szenario zu unterhalten und auszutauschen.\n\nHierbei können auch schon wichtige Eckdaten mitgeteilt werden um zu schauen, ob man einander helfen kann.\n\nAchte dabei bitte immer darauf, den Kommunikationrichtilinien zu folgen.\n\nWir als Verein behalten uns dabei das Recht ein, die Kommunikation in der AushilfApp zu moderieren und bei verstößen Konsequenzen zu ziehen.\n\nNeben der Moderation durch den Verein, ermutigt die AushilfApp seine User auch dazu, eine Selbstregulierung durch ein effektives Meldesystem zu betreiben.",
+          "text": "Es braucht manchmal seine Zeit, doch wenn sich dann die richtige Möglichkeit gefunden hat, schicke eine freundliche Nachricht um sich über das Szenario zu unterhalten und auszutauschen.\n\nHierbei können auch schon wichtige Eckdaten mitgeteilt werden um zu schauen, ob man einander helfen kann.\n\nAchte dabei bitte immer darauf, den [Kommunikationrichtilinien](/communication) zu folgen.\n\nWir als Verein behalten uns dabei das Recht ein, die Kommunikation in der AushilfApp zu moderieren und bei verstößen Konsequenzen zu ziehen.\n\nNeben der Moderation durch den Verein, ermutigt die AushilfApp seine User auch dazu, eine Selbstregulierung durch ein effektives Meldesystem zu betreiben.",
           "reverse": "true",
           "buttonLabel": "Nächster Schritt",
           "buttonAction": {
@@ -211,7 +211,7 @@
         "4": {
           "title": "Schritt 5: Schlau machen!",
           "imageAlt": "SicherheitAnmeldung",
-          "text": "Es hat sich eine Möglichkeit ergeben, einander zu helfen?\n\nDann ist es Zeit, sich darüber gedanken zu machen, in welchem Rahmen man zusammen kommen möchte!\n\nIst die Unterstützung nur kurzfristig, oder absehbar langfristig?\n\nSo oder so, gibt es für jedes Szenario eine Lösung!\n\nDenn auch bei einer kurzzeitigen Beschäftigung, kann man die[Vorteile einer Rechtskomformen Anmeldung](https://www.minijob-zentrale.de/DE/fuer-haushalte/vorteile-fuer-haushalte/vorteile-fuer-haushalte_node.html) genießen!\n\nSo ist man zum Beispiel in nur wenigen Schritten im Rahmen der Tätigkeit versichert, und kann sich auf das eigentliche Helfen konzentrieren!\n\nFür ausführlichere Informationen, les' dich weiter bei der [Minijobzentrale](https://www.minijob-zentrale.de/SharedDocs/Videos/DE/YT_Haushaltshilfe-anmelden-bringt-vorteile.html) ein, oder schau einfach mal in unseren [Schritt für Schritt Guide](/anmeldung)!",
+          "text": "Es hat sich eine Möglichkeit ergeben, einander zu helfen?\n\nDann ist es Zeit, sich darüber gedanken zu machen, in welchem Rahmen man zusammen kommen möchte!\n\nIst die Unterstützung nur kurzfristig, oder absehbar langfristig?\n\nSo oder so, gibt es für jedes Szenario eine Lösung!\n\nDenn auch bei einer kurzzeitigen Beschäftigung, kann man die [Vorteile einer Rechtskomformen Anmeldung](https://www.minijob-zentrale.de/DE/fuer-haushalte/vorteile-fuer-haushalte/vorteile-fuer-haushalte_node.html) genießen!\n\nSo ist man zum Beispiel in nur wenigen Schritten im Rahmen der Tätigkeit versichert, und kann sich auf das eigentliche Helfen konzentrieren!\n\nFür ausführlichere Informationen, les' dich weiter bei der [Minijobzentrale](https://www.minijob-zentrale.de/SharedDocs/Videos/DE/YT_Haushaltshilfe-anmelden-bringt-vorteile.html) ein, oder schau einfach mal in unseren [Schritt für Schritt Guide](/anmeldung)!",
           "reverse": "false",
           "buttonLabel": "Nächster Schritt",
           "buttonAction": {
@@ -397,7 +397,7 @@
         "id": "guideStep5",
         "imageAlt": "CheckList1",
         "title": "Schritt 4, Teil 2: Details zur Anmeldung!",
-        "text": "Grundsätzlich brauchst du für die Anmeldung mit dem Haushaltcheck-Verfahren:\n\n• Die persönlichen Daten der Parteien\n• Die Steuernummer des Arbeitgebers\n• Die Rentenversicherungsnummer der helfenden Hand (falls nicht vorhanden, wird diese über das Geburtsdatum und den Namen ermittelt)",
+        "text": "Grundsätzlich brauchst du für die Anmeldung mit dem [Haushaltcheck-Verfahren](https://www.minijob-zentrale.de/DE/minijob-anmelden/haushaltshilfe-anmelden/detailseite.html):\n\n• Die persönlichen Daten der Parteien\n\n• Die Steuernummer des Arbeitgebers\n\n• Die Rentenversicherungsnummer der helfenden Hand (falls nicht vorhanden, wird diese über das Geburtsdatum und den Namen ermittelt)",
         "reverse": "false",
         "buttonAction": {
           "type": "scroll",
@@ -410,7 +410,7 @@
         "id": "guideStep6",
         "imageAlt": "MarBusiness",
         "title": "Schritt 5: Kalkulation der Abgaben!",
-        "text": "Grundsätzlich gilt: Der Arbeitgeber ist für die Abgaben verantwortlich.\n\nFalls sich die helfende Hand nicht vorher von der [Rentenversicherungspflicht befreien](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/) ließ, behält der Arbeitgeber 13,6% vom Bruttolohn ein, um diese der Minijobzentrale weiterzuleiten.\n\nDie Abgaben des Arbeitgebers betragen 14,92% vom Bruttolohn (Stand: 01.01.2025).\n\nWeitere Details folgen in den nächsten Schritten! Alle Informationen sind auch auf der Website der Minijobzentrale.",
+        "text": "Grundsätzlich gilt: Der Arbeitgeber ist für die Abgaben verantwortlich.\n\nFalls sich die helfende Hand nicht vorher von der [Rentenversicherungspflicht befreien](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/) ließ, behält der Arbeitgeber 13,6% vom Bruttolohn ein, um diese der Minijobzentrale weiterzuleiten.\n\nDie Abgaben des Arbeitgebers betragen 14,92% vom Bruttolohn (Stand: 01.01.2025).\n\nWeitere Details folgen in den nächsten Schritten!",
         "reverse": "true",
         "buttonAction": {
           "type": "scroll",
@@ -423,7 +423,7 @@
         "id": "guideStep7",
         "imageAlt": "Calculation1",
         "title": "Schritt 5, Teil 2: Abgabedetails für helfende Hände!",
-        "text": "Als helfende Hand hast du die Möglichkeit, dich von der [Rentenversicherungspflicht befreien](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/) zu lassen, sodass keine weiteren Abgaben von deinem Lohn abgezogen werden.\n\nDadurch bleibt zwar mehr Geld in der Tasche, du verzichtest aber auf die Chance, frühzeitig in deine Rentenversicherung einzuzahlen.\n\nDie Befreiung wird per Post mit diesem Schreiben eingegeben.\n\nDie Einzahlung kann jedoch sinnvoll sein, da die Rentenversicherung nicht nur die Anmeldung einer staatlich geförderten Riesterrente ermöglicht, sondern auch vollständig auf die Wartezeit angerechnet wird.\n\nZudem werden Reha-Leistungen übernommen, sofern in den letzten 2 Jahren mindestens 6 Monate Beiträge gezahlt wurden.\n\nBei einem Totalausfall des Versicherten besteht auch die Möglichkeit, eine Erwerbsminderungsrente zu beantragen.\n\nFür weitere Details schaue gerne mal in diesen [Artikel](https://magazin.minijob-zentrale.de/minijob-rentenversicherung/) rein!",
+        "text": "Als helfende Hand hast du die Möglichkeit, dich von der [Rentenversicherungspflicht befreien](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/) zu lassen, sodass keine weiteren Abgaben von deinem Lohn abgezogen werden.\n\nDadurch bleibt zwar mehr Geld in der Tasche, du verzichtest aber auf die Chance, frühzeitig in deine Rentenversicherung einzuzahlen.\n\nDie Befreiung wird per Post mit diesem [Schreiben](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/gewerblich/Befreiungsantrag-fuer-Arbeitnehmer-im-Gewerbe.html) eingegeben.\n\nDie Einzahlung kann jedoch sinnvoll sein, da die Rentenversicherung nicht nur die Anmeldung einer staatlich geförderten Riesterrente ermöglicht, sondern auch vollständig auf die Wartezeit angerechnet wird.\n\nZudem werden Reha-Leistungen übernommen, sofern in den letzten 2 Jahren mindestens 6 Monate Beiträge gezahlt wurden.\n\nBei einem Totalausfall des Versicherten besteht auch die Möglichkeit, eine Erwerbsminderungsrente zu beantragen.\n\nFür weitere Details schaue gerne mal in diesen [Artikel](https://magazin.minijob-zentrale.de/minijob-rentenversicherung/) rein!",
         "reverse": "false",
         "buttonAction": {
           "type": "scroll",
@@ -436,7 +436,7 @@
         "id": "guideStep8",
         "imageAlt": "ShortTime",
         "title": "Schritt 5, Teil 3: Abgabedetails für Arbeitgeber!",
-        "text": "Die Abgaben werden halbjährlich bequem von der Minijobzentrale per [SEPA-Lastschrift](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/SEPA_Lastschriftmandat_HHS.html) eingezogen.\n\nDas zu erwartende Entgelt, der Beschäftigungszeitraum und weitere wichtige Informationen werden vorab per Schreiben mitgeteilt.\n\nSollte sich das Einkommen unerwartet ändern, können die Angaben halbjährlich per Halbjahrescheck angepasst werden.\n\nWie bereits erwähnt, behalten Sie als Arbeitgeber 13,6% des Lohns der helfenden Hand ein, um diese der Minijobzentrale bereitzustellen.\n\nZudem müssen im Normalfall (bei regelmäßiger Beschäftigung) 14,92% des Lohns als Abgabe gezahlt werden.\n\nWie sich die Abgaben zusammensetzen, können Sie hier nachlesen.",
+        "text": "Die Abgaben werden halbjährlich bequem von der Minijobzentrale per [SEPA-Lastschrift](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/SEPA_Lastschriftmandat_HHS.html) eingezogen.\n\nDas zu erwartende Entgelt, der Beschäftigungszeitraum und weitere wichtige Informationen werden vorab per Schreiben mitgeteilt.\n\nSollte sich das Einkommen unerwartet ändern, können die Angaben halbjährlich per [Halbjahrescheck](https://www.minijob-zentrale.de/DE/fuer-haushalte/halbjahresscheck/detailseite.html) angepasst werden.\n\nWie bereits erwähnt, behalten Sie als Arbeitgeber 13,6% des Lohns der helfenden Hand ein, um diese der Minijobzentrale bereitzustellen.\n\nZudem müssen im Normalfall (bei regelmäßiger Beschäftigung) 14,92% des Lohns als Abgabe gezahlt werden.\n\nWie sich die Abgaben zusammensetzen, können Sie in dieser [Broschüre](https://www.minijob-zentrale.de/DE/fuer-haushalte/halbjahresscheck/detailseite.html) noch genauer nachlesen.",
         "reverse": "true",
         "buttonAction": {
           "type": "scroll",

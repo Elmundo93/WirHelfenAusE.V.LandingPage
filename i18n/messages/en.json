@@ -159,7 +159,7 @@
         "0": {
           "title": "Step 1: Download the app & create an account!",
           "imageAlt": "Registration",
-          "text": "You can find the app quickly and easily in the App and Play Store! \n\n Once the app is installed on your device, you can create an account. The app will guide you through all the relevant verification steps!",
+          "text": "You can find the app quickly and easily in the App and Play Store! \n\n Once the app is installed on your device, you can create an account. The app will guide you through all the relevant [verification steps](https://stripe.com/de/identity)!",
           "reverse": "false",
           "buttonLabel": "Next step",
           "buttonAction": {
@@ -198,7 +198,7 @@
         "3": {
           "title": "Step 4: Get in touch!",
           "imageAlt": "Contact",
-          "text": "It sometimes takes time, but when the right opportunity has been found, send a friendly message to discuss and exchange information about the scenario. \n\n Important key details can already be shared to see if you can help each other. \n\n Please always make sure to follow the communication guidelines. \n\n As an association, we reserve the right to moderate communication in the AushilfApp and take consequences for violations. \n\n In addition to moderation by the association, the AushilfApp also encourages its users to practice self-regulation through an effective reporting system.",
+          "text": "It sometimes takes time, but when the right opportunity has been found, send a friendly message to discuss and exchange information about the scenario. \n\n Important key details can already be shared to see if you can help each other. \n\n Please always make sure to follow the [communication guidelines](/communication). \n\n As an association, we reserve the right to moderate communication in the AushilfApp and take consequences for violations. \n\n In addition to moderation by the association, the AushilfApp also encourages its users to practice self-regulation through an effective reporting system.",
           "reverse": "true",
           "buttonLabel": "Next step",
           "buttonAction": {
@@ -211,7 +211,7 @@
         "4": {
           "title": "Step 5: Get smart!",
           "imageAlt": "SecurityRegistration",
-          "text": "Has an opportunity arisen to help each other? \n\n Then it's time to think about the framework in which you want to come together! \n\n Is the support only short-term, or is it foreseeable long-term? \n\n Either way, there's a solution for every scenario! \n\n Even with short-term employment, you can enjoy the benefits of legally compliant registration! \n\n For example, you can be insured for your work in just a few steps, allowing you to concentrate on actually helping! \n\n For more detailed information, read more at the Minijobzentrale (Minijob Center) or simply check out our step-by-step guide!",
+          "text": "Has an opportunity arisen to help each other? \n\n Then it's time to think about the framework in which you want to come together! \n\n Is the support only short-term, or is it foreseeable long-term? \n\n Either way, there's a solution for every scenario! \n\n Even with short-term employment, you can enjoy the [benefits of legally compliant registration](https://www.minijob-zentrale.de/DE/fuer-haushalte/vorteile-fuer-haushalte/vorteile-fuer-haushalte_node.html)! \n\n For example, you can be insured for your work in just a few steps, allowing you to concentrate on actually helping! \n\n For more detailed information, read more at the [Minijobzentrale](https://www.minijob-zentrale.de/SharedDocs/Videos/DE/YT_Haushaltshilfe-anmelden-bringt-vorteile.html) or simply check out our [step-by-step guide](/anmeldung)!",
           "reverse": "false",
           "buttonLabel": "Next step",
           "buttonAction": {
@@ -397,7 +397,7 @@
         "id": "guideStep5",
         "imageAlt": "CheckList1",
         "title": "Step 4, Part 2: Registration details!",
-        "text": "Basically, you need the following to register using the household check procedure: \n\n • The personal details of the parties \n\n • The employer's tax number \n\n • The pension insurance number of the helping hand (if not available, this will be determined using the date of birth and the name)",
+        "text": "Basically, you need the following to register using the [household check procedure](https://www.minijob-zentrale.de/DE/minijob-anmelden/haushaltshilfe-anmelden/detailseite.html): \n\n • The personal details of the parties \n\n • The employer's tax number \n\n • The pension insurance number of the helping hand (if not available, this will be determined using the date of birth and the name)",
         "reverse": "false",
         "buttonAction": {
           "type": "scroll",
@@ -423,7 +423,7 @@
         "id": "guideStep7",
         "imageAlt": "Calculation1",
         "title": "Step 5, Part 2: Drop-off details for helping hands!",
-        "text": "As a helping hand, you have the option of being exempted from [compulsory pension insurance](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/), meaning no further taxes are deducted from your salary. \n\n While this leaves more money in your pocket, you forgo the opportunity to make early contributions to your pension insurance. \n\n The exemption will be submitted by mail with this letter. However, making the payment can be worthwhile, as the pension insurance not only allows you to register for a state-subsidized Riester pension, but also counts fully towards your waiting period. \n\n Rehabilitation benefits are also covered provided at least six months of contributions have been made in the last two years. If the insured person is completely unable to work, there is also the option of applying for a disability pension. \n\n For more details, read this [article](https://magazin.minijob-zentrale.de/minijob-rentenversicherung/) from the Minijobzentrale.",
+        "text": "As a helping hand, you have the option of being exempted from [compulsory pension insurance](https://magazin.minijob-zentrale.de/rentenversicherung-befreiung-minijob/), meaning no further taxes are deducted from your salary. \n\n While this leaves more money in your pocket, you forgo the opportunity to make early contributions to your pension insurance. \n\n The exemption will be submitted by mail with this [letter](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/gewerblich/Befreiungsantrag-fuer-Arbeitnehmer-im-Gewerbe.html). However, making the payment can be worthwhile, as the pension insurance not only allows you to register for a state-subsidized Riester pension, but also counts fully towards your waiting period. \n\n Rehabilitation benefits are also covered provided at least six months of contributions have been made in the last two years. If the insured person is completely unable to work, there is also the option of applying for a disability pension. \n\n For more details, read this [article](https://magazin.minijob-zentrale.de/minijob-rentenversicherung/) from the Minijobzentrale.",
         "reverse": "false",
         "buttonAction": {
           "type": "scroll",
@@ -436,7 +436,7 @@
         "id": "guideStep8",
         "imageAlt": "ShortTime",
         "title": "Step 5, Part 3: Submission details for employers!",
-        "text": "The contributions are conveniently collected every six months by the Minijobzentrale via [SEPA direct debit](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/SEPA_Lastschriftmandat_HHS.html). \n\n The expected salary, the period of employment, and other important information are communicated in advance by letter. \n\n Should income change unexpectedly, the information can be adjusted every six months via a semi-annual check. \n\n As already mentioned, you as the employer withhold 13.6% of the helping hand's salary to make it available to the Minijobzentrale. \n\n In addition, 14.92% of the salary must normally be paid as contributions (for regular employment). \n\n You can read more about the composition of the contributions here.",
+        "text": "The contributions are conveniently collected every six months by the Minijobzentrale via [SEPA direct debit](https://www.minijob-zentrale.de/SharedDocs/Downloads/DE/Formulare/privat/SEPA_Lastschriftmandat_HHS.html). \n\n The expected salary, the period of employment, and other important information are communicated in advance by letter. \n\n Should income change unexpectedly, the information can be adjusted every six months via a [semi-annual check](https://www.minijob-zentrale.de/DE/fuer-haushalte/halbjahresscheck/detailseite.html). \n\n As already mentioned, you as the employer withhold 13.6% of the helping hand's salary to make it available to the Minijobzentrale. \n\n In addition, 14.92% of the salary must normally be paid as contributions (for regular employment). \n\n You can read more about the composition of the contributions in this [brochure](https://www.minijob-zentrale.de/DE/fuer-haushalte/halbjahresscheck/detailseite.html).",
         "reverse": "true",
         "buttonAction": {
           "type": "scroll",
