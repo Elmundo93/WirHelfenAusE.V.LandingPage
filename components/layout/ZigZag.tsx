@@ -33,7 +33,7 @@ export default function ZigZagLayout({ items }: { items: ZigZagItem[] }) {
                   scale: 0.98,
                   transition: { duration: 0.1 }
                 }}
-                className="relative bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-6 md:p-10 border border-amber-200/20 hover:border-amber-300/30 transition-colors duration-300 hover:shadow-amber-100/20 overflow-hidden transform-gpu"
+                className="relative bg-card/4 backdrop-blur-xl rounded-xl shadow-lg p-6 md:p-10 border border-amber-200/20 hover:border-amber-300/30 transition-colors duration-300 hover:shadow-amber-100/20 overflow-hidden transform-gpu"
                 id={item.id}
               >
                 {/* Mobile Layout - Image above heading */}
@@ -65,10 +65,10 @@ export default function ZigZagLayout({ items }: { items: ZigZagItem[] }) {
                     <div className="flex justify-center mb-4">
                                               <h3 className="text-2xl md:text-4xl text-center rounded-xl py-3 px-6 md:py-4 md:px-10 bg-white shadow-lg bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl border border-amber-200/30 hover:shadow-amber-200/30 transition-shadow duration-300">{item.title}</h3>
                     </div>
-                    <div className="text-lg md:text-2xl text-center text-gray-500 mb-4 whitespace-pre-line">
+                    <div className="text-lg md:text-2xl text-center text-muted-foreground mb-4 whitespace-pre-line">
                       <TranslatedText 
                         content={item.text}
-                        className="text-lg md:text-2xl text-center text-gray-500"
+                        className="text-xl md:text-2xl text-center text-muted-foreground"
                         linkClassName="text-amber-400 hover:text-amber-500 underline decoration-amber-400/60 hover:decoration-amber-500/80 transition-all duration-300 font-medium"
                       />
                       <br />
@@ -123,10 +123,10 @@ export default function ZigZagLayout({ items }: { items: ZigZagItem[] }) {
                       <div className="flex justify-center mb-5">
                         <h3 className="relative text-4xl text-center rounded-xl py-4 px-10 bg-white shadow-lg bg-gradient-to-r from-amber-400 via-amber-300 to-amber-200 backdrop-blur-xl border border-amber-200/30 hover:shadow-amber-200/30 transition-shadow duration-300">{item.title}</h3>
                       </div>
-                      <div className="text-2xl text-center text-gray-500 mb-4 whitespace-pre-line">
+                      <div className="text-2xl text-center text-muted-foreground mb-4 whitespace-pre-line">
                         <TranslatedText 
                           content={item.text}
-                          className="text-2xl text-center text-gray-500"
+                          className="text-2xl text-center text-muted-foreground"
                           linkClassName="text-amber-400 hover:text-amber-500 underline decoration-amber-400/60 hover:decoration-amber-500/80 transition-all duration-300 font-medium"
                         />
                         <br />

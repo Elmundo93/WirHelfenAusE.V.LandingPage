@@ -32,7 +32,7 @@ export default function FeatureList({ items, className }: Props) {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: item.delay ?? index * 0.1 }}
         >
-          <Card className="backdrop-blur-xl bg-white/50 shadow-lg border-none">
+          <Card className="backdrop-blur-xl bg-card/50 shadow-lg border-none">
             <CardContent className="flex flex-col items-center text-center p-6 space-y-4">
               <Image src={item.icon} alt={item.title} width={64} height={64} className="w-16 h-16" />
               <h4 className="text-xl font-semibold">{item.title}</h4>

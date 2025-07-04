@@ -52,7 +52,7 @@ const defaultMetadata: Metadata = {
     siteName: "Wir helfen aus e.V.",
     images: [
       {
-        url: "/images/social-default.png",
+        url: "/images/BienenLogoNeat.png",
         width: 1200,
         height: 630,
         alt: "Logo von Wir helfen aus e.V. mit Menschen, die sich gegenseitig unterstützen",
@@ -64,7 +64,7 @@ const defaultMetadata: Metadata = {
     title: "Wir helfen aus e.V. – Hilfe organisieren. Menschen verbinden.",
     description:
       "Die AushilfApp für moderne Nachbarschaftshilfe. Verbinde dich mit Menschen in deiner Umgebung.",
-    images: ["/images/social-default.png"],
+    images: ["/images/BienenLogoNeat.png"],
     creator: "@wirhelfenaus", // optional, falls Twitter-Handle vorhanden
   },
   robots: {
@@ -83,7 +83,7 @@ const defaultMetadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
-    apple: "/images/BienenLogoNeat.svg",
+    apple: "/images/BienenLogoNeat.png",
     shortcut: "/favicon.ico",
   },
   category: "Nonprofit",

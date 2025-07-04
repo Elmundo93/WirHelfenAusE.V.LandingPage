@@ -62,7 +62,7 @@ export default function LoadingScreen({ onLoadingComplete, loadingProgress, isLo
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-white via-amber-50/30 to-amber-100/20 backdrop-blur-sm flex flex-col items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-gradient-to-br from-background via-amber-50/30 dark:via-amber-900/10 to-amber-100/20 dark:to-amber-900/5 backdrop-blur-sm flex flex-col items-center justify-center overflow-hidden"
         >
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-5">

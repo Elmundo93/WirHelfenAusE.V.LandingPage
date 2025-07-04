@@ -20,6 +20,8 @@ export default function BackgroundImage() {
       aria-hidden="true"
       style={{ opacity: mounted ? 0.08 : 0 }}
     >
+      {/* Dark mode overlay */}
+      <div className="absolute inset-0 bg-background/20 dark:bg-background/40" />
       <CustomImage
         src={DankeSagen}
         alt="Dekoratives Hintergrundbild: Helfende Menschen"

@@ -2,7 +2,8 @@
 
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
+import { XIcon } from "lucide-react"
+import { motion } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -48,9 +49,13 @@ function SheetContent({
   className,
   children,
   side = "right",
+  showCloseButton = true,
+  isAnimating = false,
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Content> & {
   side?: "top" | "right" | "bottom" | "left"
+  showCloseButton?: boolean
+  isAnimating?: boolean
 }) {
   return (
     <SheetPortal>
@@ -72,10 +77,27 @@ function SheetContent({
         {...props}
       >
         {children}
-        <SheetPrimitive.Close className="absolute top-6 right-6 z-50 rounded-full bg-white/90 backdrop-blur-sm border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-amber-50 hover:border-amber-200 p-3 group">
-          <X className="w-6 h-6 text-gray-600 group-hover:text-amber-600 transition-colors duration-300" />
-          <span className="sr-only">Close</span>
-        </SheetPrimitive.Close>
+        {showCloseButton && (
+          <SheetPrimitive.Close className="ring-offset-background focus:ring-ring absolute top-6 right-6 w-12 h-12 rounded-full bg-gradient-to-r from-amber-50 to-amber-100 hover:from-amber-100 hover:to-amber-200 dark:from-amber-900/20 dark:to-amber-800/20 dark:hover:from-amber-800/30 dark:hover:to-amber-700/30 border border-amber-200/50 dark:border-amber-700/50 transition-all duration-300 hover:scale-110 hover:shadow-lg focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:outline-hidden disabled:pointer-events-none group flex items-center justify-center">
+            <motion.div
+              initial={{ rotate: 0 }}
+              animate={isAnimating ? { rotate: 360 } : { rotate: 0 }}
+              transition={{ 
+                duration: isAnimating ? 1.5 : 0.3, 
+                ease: "linear",
+                repeat: 0
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.2 }
+              }}
+              className="flex items-center justify-center"
+            >
+              <XIcon className="size-6 text-amber-600 dark:text-amber-400 group-hover:text-amber-700 dark:group-hover:text-amber-300 transition-colors duration-300" />
+            </motion.div>
+            <span className="sr-only">Close</span>
+          </SheetPrimitive.Close>
+        )}
       </SheetPrimitive.Content>
     </SheetPortal>
   )

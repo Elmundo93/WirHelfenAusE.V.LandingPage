@@ -33,7 +33,7 @@ interface MobileMenuHeaderProps {
 const MobileMenuHeader = ({ sheetFullyOpen }: MobileMenuHeaderProps) => (
   <div className="flex items-center justify-center mb-8 mt-10">
     <motion.div 
-      className="w-24 h-24 rounded-full bg-amber-100 flex items-center justify-center"
+      className="w-20 h-20 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-100 to-amber-200 dark:from-amber-900/30 dark:to-amber-800/30 flex items-center justify-center shadow-lg border border-amber-200/50 dark:border-amber-700/50"
       initial={{ opacity: 0, scale: 0.6, y: -20 }}
       animate={sheetFullyOpen ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.6, y: -20 }}
       transition={{ 
@@ -43,7 +43,7 @@ const MobileMenuHeader = ({ sheetFullyOpen }: MobileMenuHeaderProps) => (
       }}
     >
       <motion.span 
-        className="text-amber-600 text-4xl transform scale-125"
+        className="text-amber-600 dark:text-amber-400 text-3xl md:text-5xl transform scale-125"
         initial={{ scale: 0.8 }}
         animate={sheetFullyOpen ? { scale: 1 } : { scale: 0.8 }}
         transition={{ 
@@ -55,13 +55,24 @@ const MobileMenuHeader = ({ sheetFullyOpen }: MobileMenuHeaderProps) => (
         🍯
       </motion.span>
     </motion.div>
+    
+    {/* Decorative elements for medium screens */}
+    <motion.div
+      className="hidden md:flex absolute inset-0 pointer-events-none"
+      initial={{ opacity: 0 }}
+      animate={sheetFullyOpen ? { opacity: 1 } : { opacity: 0 }}
+      transition={{ delay: 0.5, duration: 0.6 }}
+    >
+      <div className="absolute top-4 left-4 w-2 h-2 bg-amber-400 rounded-full animate-pulse" />
+      <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-amber-300 rounded-full animate-pulse delay-300" />
+      <div className="absolute bottom-6 left-8 w-1 h-1 bg-amber-500 rounded-full animate-pulse delay-500" />
+    </motion.div>
   </div>
 );
 
 interface MobileNavigationItemProps {
   label: string;
-  href: string;
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>;
   isActive: boolean;
   index: number;
   sheetFullyOpen: boolean;
@@ -70,7 +81,6 @@ interface MobileNavigationItemProps {
 
 const MobileNavigationItem = ({ 
   label, 
-  href, 
   icon: Icon, 
   isActive, 
   index, 
@@ -93,10 +103,10 @@ const MobileNavigationItem = ({
     >
       <Button
         variant="ghost"
-        className={`justify-start text-lg w-full h-14 rounded-xl transition-all duration-300 group ${
+        className={`justify-start text-lg md:text-xl w-full h-14 md:h-16 rounded-xl md:rounded-2xl transition-all duration-300 group ${
           isActive 
-            ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-white shadow-lg' 
-            : 'hover:bg-amber-50 text-gray-700'
+            ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-white shadow-lg md:shadow-xl' 
+            : 'hover:bg-amber-50 dark:hover:bg-amber-900/20 text-foreground hover:shadow-md'
         }`}
         onClick={onClick}
       >
@@ -111,14 +121,14 @@ const MobileNavigationItem = ({
         >
           <Icon 
             size={30} 
-            className={`mr-4 transition-all duration-300 ${
+            className={`mr-4 md:mr-6 transition-all duration-300 ${
               isActive ? 'text-white' : 'text-amber-500 group-hover:scale-110'
             }`}
             style={{ width: '30px', height: '30px', minWidth: '30px', minHeight: '30px' }}
           />
         </motion.div>
         <motion.span 
-          className="font-medium text-white text-2xl"
+          className="font-medium text-white md:text-black text-2xl md:text-3xl"
           initial={{ opacity: 0, x: 10 }}
           animate={sheetFullyOpen ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
           transition={{ 
@@ -164,50 +174,50 @@ const MobileLanguageSwitcher = ({
   onLocaleChange 
 }: MobileLanguageSwitcherProps) => (
   <motion.div 
-    className="mt-8 pt-6 border-t border-amber-200/30"
-    initial={{ opacity: 0, y: 30, scale: 0.95 }}
-    animate={sheetFullyOpen ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 30, scale: 0.95 }}
+    className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-amber-200/30"
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={sheetFullyOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
     transition={{ 
       delay: sheetFullyOpen ? 0.5 : 0, 
-      duration: 0.6,
+      duration: 0.5,
       ease: [0.25, 0.46, 0.45, 0.94]
     }}
   >
     <motion.h3 
-      className="text-sm font-medium text-gray-600 mb-4"
-      initial={{ opacity: 0, y: 10 }}
-      animate={sheetFullyOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+      className="text-sm md:text-base font-medium text-muted-foreground mb-4 md:mb-6"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={sheetFullyOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ 
         delay: sheetFullyOpen ? 0.6 : 0, 
-        duration: 0.4,
+        duration: 0.3,
         ease: "easeOut"
       }}
     >
       Sprache / Language
     </motion.h3>
-    <div className="flex gap-3">
+    <div className="flex gap-3 md:gap-4">
       {locales.map((loc, index) => (
         <motion.button
           key={loc}
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={sheetFullyOpen ? { opacity: 1, scale: 1, y: 0 } : { opacity: 0, scale: 0.8, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={sheetFullyOpen ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
           transition={{ 
-            delay: sheetFullyOpen ? 0.7 + index * 0.1 : 0, 
-            duration: 0.4,
+            delay: sheetFullyOpen ? 0.7 + index * 0.08 : 0, 
+            duration: 0.5,
             ease: [0.25, 0.46, 0.45, 0.94]
           }}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
           onClick={() => onLocaleChange(loc)}
-          className={`flex-1 h-12 rounded-xl flex items-center justify-center text-sm font-medium transition-all duration-300 ${
+          className={`flex-1 h-12 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center text-sm md:text-base font-medium transition-all duration-300 ${
             currentLocale === loc
-              ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-white shadow-lg'
-              : 'bg-gray-100 text-gray-600 hover:bg-amber-100'
+              ? 'bg-gradient-to-r from-amber-400 to-amber-500 text-white shadow-lg md:shadow-xl'
+              : 'bg-gray-100 text-gray-600 hover:bg-amber-100 hover:shadow-md'
           }`}
           aria-label={`Switch to ${localeNames[loc]}`}
         >
-          <span className="mr-2 text-lg">{localeFlags[loc]}</span>
-          <span className="text-xs">{localeNames[loc]}</span>
+          <span className="mr-2 text-lg md:text-xl">{localeFlags[loc]}</span>
+          <span className="text-xs md:text-sm">{localeNames[loc]}</span>
         </motion.button>
       ))}
     </div>
@@ -325,7 +335,7 @@ export default function Header() {
     isVisible ? 'translate-y-0' : '-translate-y-24'
   }`}
 >
-      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-white/30 backdrop-blur-xl border border-white/30 shadow-md rounded-full">
+      <div className="mx-auto max-w-7xl flex items-center justify-between px-4 md:px-6 py-3 md:py-4 bg-background/30 backdrop-blur-xl border border-border/30 shadow-md rounded-full">
         {/* Logo & Name */}
         <Link href={`/${currentLocale}/`} className="flex items-center gap-2 md:gap-3 group">
           <motion.div
@@ -376,13 +386,13 @@ export default function Header() {
                   className={`text-lg flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-200 hover:scale-105 relative z-10 ${
                     isActive 
                       ? 'text-amber-600' 
-                      : 'text-gray-700 hover:bg-amber-100'
+                      : 'text-foreground hover:bg-amber-100 dark:hover:bg-amber-900/20'
                   }`}
                   onClick={() => handleNav(href)}
                 >
                   <Icon 
                     size={20} 
-                    className={isActive ? 'text-amber-400' : 'text-gray-500'} 
+                    className={isActive ? 'text-amber-400' : 'text-muted-foreground'} 
                     style={{ width: '20px', height: '20px', minWidth: '30px', minHeight: '30px' }} 
                   />
                   {label}
@@ -397,29 +407,21 @@ export default function Header() {
 
         {/* Language Switcher positioned absolutely on the right */}
         {mounted && (
-          <div className="absolute right-5 bottom-[-50px]  flex items-center gap-2 ml-4">
-            {(() => {
-              console.log('=== LANGUAGE SWITCHER DEBUG ===');
-              console.log('Available locales:', locales);
-              console.log('Current locale:', currentLocale);
-              console.log('Locale names:', localeNames);
-              console.log('=== END LANGUAGE SWITCHER DEBUG ===');
-              
-              return locales.map((loc) => (
-                <button
-                  key={loc}
-                  onClick={() => handleLocaleChange(loc)}
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 hover:scale-110 ${
-                    currentLocale === loc
-                      ? 'bg-amber-400 text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-600 hover:bg-amber-100'
-                  }`}
-                  aria-label={`Switch to ${localeNames[loc]}`}
-                >
-                  {localeFlags[loc]}
-                </button>
-              ));
-            })()}
+          <div className="absolute right-5 bottom-[-50px] flex items-center gap-2 ml-4">
+            {locales.map((loc) => (
+              <button
+                key={loc}
+                onClick={() => handleLocaleChange(loc)}
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-200 hover:scale-110 ${
+                  currentLocale === loc
+                    ? 'bg-amber-400 text-white shadow-lg'
+                    : 'bg-gray-100 text-gray-600 hover:bg-amber-100 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-amber-900/20'
+                }`}
+                aria-label={`Switch to ${localeNames[loc]}`}
+              >
+                {localeFlags[loc]}
+              </button>
+            ))}
           </div>
         )}
 
@@ -429,21 +431,21 @@ export default function Header() {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="xl:hidden relative group hover:bg-amber-100/50 transition-all duration-300"
+              className="xl:hidden relative group hover:bg-amber-100/50 dark:hover:bg-amber-900/20 transition-all duration-300"
             >
               <div className="relative w-6 h-6">
                 <span 
-                  className={`absolute left-0 top-1 w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                  className={`absolute left-0 top-1 w-6 h-0.5 bg-foreground transition-all duration-300 ${
                     sheetOpen ? 'rotate-45 translate-y-2' : ''
                   }`}
                 />
                 <span 
-                  className={`absolute left-0 top-3 w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                  className={`absolute left-0 top-3 w-6 h-0.5 bg-foreground transition-all duration-300 ${
                     sheetOpen ? 'opacity-0' : ''
                   }`}
                 />
                 <span 
-                  className={`absolute left-0 top-5 w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                  className={`absolute left-0 top-5 w-6 h-0.5 bg-foreground transition-all duration-300 ${
                     sheetOpen ? '-rotate-45 -translate-y-2' : ''
                   }`}
                 />
@@ -451,8 +453,10 @@ export default function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent 
-            side="top" 
-            className="w-full sm:w-[400px] bg-transparent backdrop-blur-xl border-l border-amber-200/30"
+            side="right" 
+            className="w-full sm:w-[400px] md:w-[500px] lg:w-[600px] bg-background/80 backdrop-blur-xl border-l border-border/30"
+            showCloseButton={true}
+            isAnimating={sheetFullyOpen}
           >
             <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
             <div className="flex flex-col h-full">
@@ -467,7 +471,6 @@ export default function Header() {
                     <MobileNavigationItem
                       key={href}
                       label={label}
-                      href={href}
                       icon={Icon}
                       isActive={isActive}
                       index={index}

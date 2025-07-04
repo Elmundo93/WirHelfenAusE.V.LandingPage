@@ -15,7 +15,7 @@ export default function FeatureCard({ icon, title, description, alt }: FeatureCa
   const amberBlurDataURL = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
 
   return (
-    <Card className="text-center backdrop-blur-xl shadow-lg bg-white/30 h-full flex flex-col">
+    <Card className="text-center backdrop-blur-xl shadow-lg bg-card/30 dark:bg-card/20 h-full flex flex-col border border-border/50">
       <CardContent className="flex flex-col items-center p-6 h-full justify-between">
         <div className="flex flex-col items-center flex-1">
           <div className="h-[90px] w-[90px] flex items-center justify-center mb-4">
@@ -30,8 +30,8 @@ export default function FeatureCard({ icon, title, description, alt }: FeatureCa
               isSvg={true}
             />
           </div>
-          <h4 className="text-2xl font-semibold mb-3">{title}</h4>
-          <p className="text-gray-600 leading-relaxed">{description}</p>
+          <h4 className="text-2xl font-semibold mb-3 text-card-foreground">{title}</h4>
+          <p className="text-muted-foreground leading-relaxed">{description}</p>
         </div>
       </CardContent>
     </Card>

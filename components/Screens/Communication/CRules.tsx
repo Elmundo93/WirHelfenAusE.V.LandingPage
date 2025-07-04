@@ -79,8 +79,8 @@ export default function CRules() {
 
           {/* Abschlussabschnitt */}
           <div className="mt-12 text-center">
-            <p className="text-lg font-semibold text-gray-700">{t('footer.title')}</p>
-            <p className="text-gray-600 mt-2">{t('footer.subtitle')}</p>
+            <p className="text-lg font-semibold text-foreground">{t('footer.title')}</p>
+            <p className="text-muted-foreground mt-2">{t('footer.subtitle')}</p>
           </div>
         </div>
       </AnimatedElement>

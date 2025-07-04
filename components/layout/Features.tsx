@@ -34,7 +34,7 @@ export default function FeatureLayout({
 
         <div
           className={cn(
-            'relative flex flex-col max-w-full mx-auto text-center bg-white/4 backdrop-blur-xl rounded-xl shadow-lg p-4 '
+            'relative flex flex-col max-w-full mx-auto text-center bg-card/4 backdrop-blur-xl rounded-xl shadow-lg p-4 '
           )}
         >
           <div className="relative inline-block w-full max-w-md mx-auto items-center justify-center flex flex-col">
@@ -46,7 +46,7 @@ export default function FeatureLayout({
               {title}
             </h1>
           </div>
-          <p className="text-2xl text-center max-w-lg mx-auto text-gray-600 whitespace-pre-line mb-10">{description}</p>
+          <p className="text-2xl text-center max-w-lg mx-auto text-muted-foreground whitespace-pre-line mb-10">{description}</p>
         </div>
 
 

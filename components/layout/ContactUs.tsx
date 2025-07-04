@@ -20,7 +20,7 @@ export default function ContactUsLayout({ children }: { children: ReactNode }) {
             {t('badge')}
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight">
             {t('title')} {t('subtitle')}
           </h2>
 
