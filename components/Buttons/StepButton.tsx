@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { useLocale } from 'next-intl'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { handleScroll } from '@/components/util/handleScroll'
 
 export type ButtonAction =
   | { type: 'scroll'; target: string; offset?: number }
@@ -30,13 +31,8 @@ export default function StepButton({
 
   const handleClick = () => {
     if (buttonAction.type === 'scroll') {
-      setTimeout(() => {
-        const el = document.querySelector(buttonAction.target)
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - (buttonActionOffset || 0)
-          window.scrollTo({ top: y, behavior: 'smooth' })
-        }
-      }, 200)
+      // Use the handleScroll utility for consistent smooth scrolling
+      handleScroll(buttonAction.target, buttonActionOffset || 0)
     } else if (buttonAction.type === 'open') {
       window.open(buttonAction.url, buttonAction.target || '_blank')
     } else if (buttonAction.type === 'navigate') {

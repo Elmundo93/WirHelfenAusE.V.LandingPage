@@ -1,3 +1,4 @@
+//app/api/sendgrid/route.ts
 import { NextResponse } from "next/server"
 import sendgrid from "@sendgrid/mail"
 import { Redis } from "@upstash/redis"

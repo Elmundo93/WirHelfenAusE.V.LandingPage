@@ -22,7 +22,7 @@
     "0": {
       "id": "eigentuemer",
       "title": "Hilfe für Eigentümer",
-      "text": "Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n & vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.",
+      "text": "Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n Und vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.",
       "imageSrc": "/images/PeopleGardening2.png",
       "imageAlt": "Hilfe für Eigentümer",
       "buttonLabel": "Weiter geht's!",
@@ -159,7 +159,7 @@
         "0": {
           "title": "Schritt 1: App herunterladen & ein Konto erstellen!",
           "imageAlt": "Registration",
-          "text": "Du findest die App schnell und zugänglich im App- & Playstore!\n\nNachdem die App auf deinem Gerät installiert wurde, kannst du ein Konto erstellen. Die App führt dich durch alle relevanten [Verifiktationsschritte](https://stripe.com/de/identity)!",
+          "text": "Du findest die App schnell und zugänglich im App- & Playstore!\n\nNachdem die App auf deinem Gerät installiert wurde, kannst du ein Konto erstellen. Die App führt dich durch alle relevanten [Verifiktationsschritte!](https://stripe.com/de/identity)",
           "reverse": "false",
           "buttonLabel": "Nächster Schritt",
           "buttonAction": {
@@ -185,7 +185,7 @@
         "2": {
           "title": "Schritt 3: Beitrag verfassen!",
           "imageAlt": "BeitragVerfassen",
-          "text": "Wenn du nach dem Ersten Blick auf die Pinnwand nicht das gefunden hast, was du suchst, dann wird es Zeit einen Beitrag zu verfassen!\n\nDefiniere mit den vorgegebenen Kategorien wobei man dir helfen kann, oder in welchem Bereich du helfen möchtest!\n\nDann nur noch eine kurze Beschreibung hinzufügen und der Post ist fertig!",
+          "text": "Wenn du nach dem ersten Blick auf die Pinnwand nicht das gefunden hast, was du suchst, dann wird es Zeit einen Beitrag zu verfassen!\n\nDefiniere mit den vorgegebenen Kategorien wobei man dir helfen kann oder in welchem Bereich du helfen möchtest!\n\nDann nur noch eine kurze Beschreibung hinzufügen und der Post ist fertig!",
           "reverse": "false",
           "buttonLabel": "Nächster Schritt",
           "buttonAction": {
@@ -211,7 +211,7 @@
         "4": {
           "title": "Schritt 5: Schlau machen!",
           "imageAlt": "SicherheitAnmeldung",
-          "text": "Es hat sich eine Möglichkeit ergeben, einander zu helfen?\n\nDann ist es Zeit, sich darüber gedanken zu machen, in welchem Rahmen man zusammen kommen möchte!\n\nIst die Unterstützung nur kurzfristig, oder absehbar langfristig?\n\nSo oder so, gibt es für jedes Szenario eine Lösung!\n\nDenn auch bei einer kurzzeitigen Beschäftigung, kann man die [Vorteile einer Rechtskomformen Anmeldung](https://www.minijob-zentrale.de/DE/fuer-haushalte/vorteile-fuer-haushalte/vorteile-fuer-haushalte_node.html) genießen!\n\nSo ist man zum Beispiel in nur wenigen Schritten im Rahmen der Tätigkeit versichert, und kann sich auf das eigentliche Helfen konzentrieren!\n\nFür ausführlichere Informationen, les' dich weiter bei der [Minijobzentrale](https://www.minijob-zentrale.de/SharedDocs/Videos/DE/YT_Haushaltshilfe-anmelden-bringt-vorteile.html) ein, oder schau einfach mal in unseren [Schritt für Schritt Guide](/anmeldung)!",
+          "text": "Es hat sich eine Möglichkeit ergeben, einander zu helfen?\n\nDann ist es Zeit, sich darüber gedanken zu machen, in welchem Rahmen man zusammen kommen möchte!\n\nIst die Unterstützung nur kurzfristig, oder absehbar langfristig?\n\nSo oder so, gibt es für jedes Szenario eine Lösung!\n\nDenn auch bei einer kurzzeitigen Beschäftigung, kann man die [Vorteile einer Rechtskomformen Anmeldung](https://www.minijob-zentrale.de/DE/fuer-haushalte/vorteile-fuer-haushalte/vorteile-fuer-haushalte_node.html) genießen!\n\nSo ist man zum Beispiel in nur wenigen Schritten im Rahmen der Tätigkeit versichert, und kann sich auf das eigentliche Helfen konzentrieren!\n\nFür ausführlichere Informationen, les' dich weiter bei der [Minijobzentrale](https://www.minijob-zentrale.de/SharedDocs/Videos/DE/YT_Haushaltshilfe-anmelden-bringt-vorteile.html) ein, oder schau einfach mal in unseren [Schritt für Schritt Guide!](/anmeldung)",
           "reverse": "false",
           "buttonLabel": "Nächster Schritt",
           "buttonAction": {

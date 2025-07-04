@@ -57,13 +57,13 @@ export default function PreviewLayout({ imageSrc, heading, subheading, buttonTex
       <p className="text-2xl text-gray-700 text-center">{subheading}</p>
 
       <div className="flex flex-col md:flex-row items-center gap-4">
-        <Button onClick={() => handleScroll(buttonAction.target, buttonAction.offset)} className="text-xl text-gray-700 hover:bg-amber-400 hover:text-white border-1 border-gray-400 hover:border-amber-400 bg-white">
+        <Button onClick={() => handleScroll(buttonAction.target, buttonAction.offset)} className="text-xl text-gray-700 hover:bg-amber-400 hover:text-white border-1 border-gray-400 hover:border-amber-400 bg-white flex items-center justify-center">
           {buttonText}
         </Button>
 
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button variant="ghost" className="text-xl text-gray-700 hover:bg-amber-400 hover:text-white border-1 border-gray-400 hover:border-amber-400">{canvasText}</Button>
+            <Button variant="ghost" className="text-xl text-gray-700 hover:bg-amber-400 hover:text-white border-1 border-gray-400 hover:border-amber-400 flex items-center justify-center">{canvasText}</Button>
           </DialogTrigger>
           <DialogContent className="max-h-[80vh] overflow-y-auto">
             <DialogHeader>
