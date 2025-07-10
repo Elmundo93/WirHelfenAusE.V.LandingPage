@@ -22,7 +22,7 @@
     "0": {
       "id": "eigentuemer",
       "title": "Hilfe für Eigentümer",
-      "text": "Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n Und vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern, als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.",
+      "text": "Im Alltag fallen regelmäßig Arbeiten an, das kennen wir alle.\n\n Und vor allem als Eigentümer können diese Alltagspflichten, je nach Art, mehr Arbeitskraft fordern als im Haus vertreten ist. \n\nWenn dann auch noch der Nachbar keine Zeit hat, steht man vor einer eigentlich vergnügsamen Aufgabe, welche zum stressigen Wochen-, oder vielleicht sogar Monatsprojekt wird.",
       "imageSrc": "/images/PeopleGardening2.png",
       "imageAlt": "Hilfe für Eigentümer",
       "buttonLabel": "Weiter geht's!",
@@ -36,7 +36,7 @@
     "1": {
       "id": "senioren",
       "title": "Hilfe für beeinträchtigte Menschen oder Senioren",
-      "text": "Kleinere Aufgaben wie Einkaufen gehen, sich um den Garten kümmern oder den Hof sauber halten, werden für Menschen mit einer Beeinträchtigung oft schon zu einem Problem.\n\n Hier reichen oft schon kleine Hilfestellungen um einen imensen Unterschied in der Lebensqualität zu erzielen.",
+      "text": "Kleinere Aufgaben wie Gassie gehen, Einkaufen oder sich um den Garten kümmern, werden für Menschen mit einer Beeinträchtigung oft schon zu einem Problem.\n\n Hier reichen oft schon kleine Hilfestellungen um einen imensen Unterschied in der Lebensqualität zu erzielen.",
       "imageSrc": "/images/OldPeopleDancing.png",
       "imageAlt": "Hilfe für Senioren",
       "reverse": "true",
@@ -50,7 +50,7 @@
     "2": {
       "id": "prozess",
       "title": "Hilfe beim Prozess",
-      "text": "Bei Fragen jeder Art stehen wir als Verein ihnen zur Seite.\n\n Des weiteren finden Sie einen ausführlichen [Schritt für Schritt Guide](/anmeldung) mit nützlichen Tipps rund um die Minijobanmeldug ",
+      "text": "Bei Fragen jeder Art stehen wir als Verein ihnen zur Seite.\n\n Des weiteren finden Sie einen ausführlichen Schritt für Schritt Guide mit nützlichen Tipps rund um die Minijobanmeldug ",
       "imageSrc": "/images/processe.png",
       "imageAlt": "Hilfe beim Prozess",
       "buttonLabel": "hier!",
