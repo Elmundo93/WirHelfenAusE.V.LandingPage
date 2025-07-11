@@ -8,7 +8,7 @@ export default function IdentitySuccessPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.location.href = 'aushilfapp://onboarding/verify-identity-success'
-    }, 3000)
+    }, 5000)
 
     return () => clearTimeout(timeout)
   }, [])

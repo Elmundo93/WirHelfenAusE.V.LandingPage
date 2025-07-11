@@ -9,7 +9,7 @@ export default function PaymentSuccessPage() {
   useEffect(() => {
     const timeout = setTimeout(() => {
       window.location.href = 'aushilfapp://onboarding/payment-success'
-    }, 3000)
+    }, 5000)
 
     return () => clearTimeout(timeout)
   }, [])
