@@ -1,15 +1,13 @@
 'use client'
 
-import { useEffect } from 'react'
+
 import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export default function IdentitySuccessPage() {
 
 
-  const handleManualRedirect = () => {
-    window.location.href = 'aushilfapp://onboarding/verify-identity-success'
-  }
+ 
 
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-100 px-6 py-12 text-center font-sans">
