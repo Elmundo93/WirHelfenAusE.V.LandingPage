@@ -5,13 +5,7 @@ import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 export default function IdentitySuccessPage() {
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      window.location.href = 'aushilfapp://onboarding/verify-identity-success'
-    }, 5000)
 
-    return () => clearTimeout(timeout)
-  }, [])
 
   const handleManualRedirect = () => {
     window.location.href = 'aushilfapp://onboarding/verify-identity-success'
@@ -46,7 +40,7 @@ export default function IdentitySuccessPage() {
 
         <div className="pt-4">
           <Button
-            onClick={handleManualRedirect}
+            onClick={() => window.location.href = 'aushilfapp://onboarding/verify-identity-success'}
             className="bg-amber-500 hover:bg-amber-600 text-white shadow-md"
           >
             Zur App zurückkehren
