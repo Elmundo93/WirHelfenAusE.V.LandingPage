@@ -7,7 +7,13 @@ import { Button } from '@/components/ui/button'
 export default function IdentitySuccessPage() {
 
 
- 
+ const handleManualRedirect = () => {
+  const url = 'aushilfapp://verify-identity-success'
+  window.location.href = url
+  setTimeout(() => {
+    window.close()
+  }, 300)
+ }
 
   return (
     <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-gradient-to-br from-amber-50 via-white to-amber-100 px-6 py-12 text-center font-sans">
@@ -38,7 +44,7 @@ export default function IdentitySuccessPage() {
 
         <div className="pt-4">
           <Button
-            onClick={() => window.location.href = 'aushilfapp://onboarding/verify-identity-success'}
+            onClick={handleManualRedirect}
             className="bg-amber-500 hover:bg-amber-600 text-white shadow-md"
           >
             Zur App zurückkehren
