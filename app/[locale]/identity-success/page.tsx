@@ -3,8 +3,17 @@
 
 import { CheckCircle2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useEffect } from 'react'
 
 export default function IdentitySuccessPage() {
+
+useEffect(() => {
+  const url = 'aushilfapp://verify-identity-success'
+  window.location.href = url
+  setTimeout(() => {
+    window.close()
+  }, 300)
+}, [])
 
 
  const handleManualRedirect = () => {
