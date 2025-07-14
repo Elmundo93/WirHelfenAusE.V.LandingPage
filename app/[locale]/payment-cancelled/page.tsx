@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import LoadingScreen from '@/components/layout/LoadingScreen'
 
-export default function IdentitySuccessPage() {
+export default function PaymentCancelledPage() {
   const [isLoading, setIsLoading] = useState(true)
   const [loadingProgress, setLoadingProgress] = useState(0)
 
@@ -20,11 +20,7 @@ export default function IdentitySuccessPage() {
   }, [isLoading, loadingProgress])
 
   const handleLoadingComplete = () => {
-    const url = 'aushilfapp://verify-identity-success'
-    window.location.href = url
-    setTimeout(() => {
-      window.close()
-    }, 300)
+    window.location.href = 'aushilfapp://onboarding/payment-cancelled'
   }
 
   if (isLoading) {
@@ -39,4 +35,4 @@ export default function IdentitySuccessPage() {
 
   // Optionally, show a fallback message if not loading (should redirect before this)
   return null
-}
+} 
