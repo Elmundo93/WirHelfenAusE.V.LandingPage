@@ -6,17 +6,28 @@ import { Ratelimit } from "@upstash/ratelimit"
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY!)
 
-// Redis-Instanz (Upstash)
-const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL!,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-})
+// Redis-Instanz (Upstash) - mit Fallback für Development
+let redis: Redis | null = null
+let ratelimit: Ratelimit | null = null
 
-// Rate Limiter: max. 3 Anfragen pro IP / 1h
-const ratelimit = new Ratelimit({
-  redis,
-  limiter: Ratelimit.fixedWindow(3, "1h"),
-})
+try {
+  if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
+    redis = new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+
+    // Rate Limiter: max. 3 Anfragen pro IP / 1h
+    ratelimit = new Ratelimit({
+      redis,
+      limiter: Ratelimit.fixedWindow(3, "1h"),
+    })
+  } else {
+    console.warn("⚠️ Upstash Redis configuration missing - rate limiting disabled")
+  }
+} catch (error) {
+  console.warn("⚠️ Failed to initialize Redis - rate limiting disabled:", error)
+}
 
 export async function POST(req: Request) {
   const ip =
@@ -24,22 +35,29 @@ export async function POST(req: Request) {
     req.headers.get("x-real-ip") ||
     "unknown"
 
-  const { success, reset } = await ratelimit.limit(ip)
+  // Rate limiting nur wenn Redis verfügbar ist
+  if (ratelimit) {
+    try {
+      const { success, reset } = await ratelimit.limit(ip)
 
-  if (!success) {
-    const retryAfterSeconds = Math.ceil((reset - Date.now()) / 1000)
-    return NextResponse.json(
-      {
-        error: "Du hast das Nachrichtenlimit erreicht. Bitte versuche es später erneut.",
-        retryAfterSeconds,
-      },
-      {
-        status: 429,
-        headers: {
-          "Retry-After": retryAfterSeconds.toString(),
-        },
+      if (!success) {
+        const retryAfterSeconds = Math.ceil((reset - Date.now()) / 1000)
+        return NextResponse.json(
+          {
+            error: "Du hast das Nachrichtenlimit erreicht. Bitte versuche es später erneut.",
+            retryAfterSeconds,
+          },
+          {
+            status: 429,
+            headers: {
+              "Retry-After": retryAfterSeconds.toString(),
+            },
+          }
+        )
       }
-    )
+    } catch (error) {
+      console.warn("⚠️ Rate limiting failed, continuing without rate limit:", error)
+    }
   }
 
   const { fullname, email, subject, message } = await req.json()
@@ -47,6 +65,15 @@ export async function POST(req: Request) {
   if (!fullname || !email || !subject || !message) {
     return NextResponse.json(
       { error: "Fehlende Felder im Formular" },
+      { status: 400 }
+    )
+  }
+
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return NextResponse.json(
+      { error: "Ungültige E-Mail-Adresse" },
       { status: 400 }
     )
   }
@@ -70,20 +97,24 @@ export async function POST(req: Request) {
       `,
     })
 
-    // ✅ 2. Bestätigung an Absender
-    const confirmationData = {
-      to: email,
-      from: process.env.SENDGRID_SENDER_EMAIL!,
-      templateId: process.env.SENDGRID_TEMPLATE_ID!,
-      dynamicTemplateData: {
-        fullname,
-        message,
-        subject,
-      },
-    }
+    // ✅ 2. Bestätigung an Absender (nur wenn Template ID vorhanden)
+    if (process.env.SENDGRID_TEMPLATE_ID) {
+      const confirmationData = {
+        to: email,
+        from: process.env.SENDGRID_SENDER_EMAIL!,
+        templateId: process.env.SENDGRID_TEMPLATE_ID!,
+        dynamicTemplateData: {
+          fullname,
+          message,
+          subject,
+        },
+      }
 
-    console.log("Sending confirmation mail with data:", confirmationData)
-    await sendgrid.send(confirmationData)
+      console.log("Sending confirmation mail with data:", confirmationData)
+      await sendgrid.send(confirmationData)
+    } else {
+      console.warn("⚠️ SENDGRID_TEMPLATE_ID not configured - skipping confirmation email")
+    }
 
     return NextResponse.json({ success: true })
   } catch (error: unknown) {
