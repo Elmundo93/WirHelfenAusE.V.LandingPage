@@ -20,7 +20,7 @@ export default function IdentitySuccessPage() {
   }, [isLoading, loadingProgress])
 
   const handleLoadingComplete = () => {
-    const url = 'aushilfapp://verify-identity-success'
+    const url = 'aushilfapp://onboarding/identity-success'
     window.location.href = url
     setTimeout(() => {
       window.close()
