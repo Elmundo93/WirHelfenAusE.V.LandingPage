@@ -1,11 +1,8 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import { handleScroll } from '../util/handleScroll'
-import animationData from '@/public/animation/RightArrow.json'
 import { Button } from '@/components/ui/button'
-
-const LottieView = dynamic(() => import('lottie-react'), { ssr: false })
+import { ChevronDown } from 'lucide-react'
 
 interface MehrErfahrenProps {
   MehrErfahrenButtonLabel: string
@@ -32,12 +29,7 @@ export default function MehrErfahren({
       </Button>
 
       <div className="flex justify-center">
-        <LottieView
-          animationData={animationData}
-          loop
-          className="w-18 h-18 sm:w-22 sm:h-22 md:w-24 md:h-24 lg:w-28 lg:h-28 rotate-90"
-          aria-hidden="true"
-        />
+        <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 text-gray-400 animate-bounce" />
       </div>
     </div>
   )

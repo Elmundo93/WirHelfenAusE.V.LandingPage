@@ -3,7 +3,6 @@ import HeroMain from "@/components/Screens/Main/HeroMain"
 import Features from "@/components/Screens/Main/FeaturesMain"
 import ZigZagMain from "@/components/Screens/Main/ZigZagMain"
 import CoolKids from '@/public/images/CoolKids.png'
-import animationData from '@/public/animation/RightArrow.json'
 
 export async function generateMetadata() {
   const t = await getTranslations('Index');
@@ -22,7 +21,6 @@ export async function generateMetadata() {
           alt: "Illustration: Junge Menschen helfen Senioren",
         },
       ],
-      animationData: animationData,
     },
     twitter: {
       card: "summary_large_image",

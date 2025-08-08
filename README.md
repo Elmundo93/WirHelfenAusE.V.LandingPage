@@ -17,7 +17,7 @@ Technologie	Beschreibung
 🧑‍💻 Next.js	React-basiertes Framework für SSR, SSG und ISR
 🎨 shadcn/ui	UI-Komponenten-Bibliothek für stilvolle, zugängliche Interfaces
 💨 Tailwind CSS	Utility-first CSS Framework für schnelles, responsives Styling
-🎞 Lottie	Animierte SVGs und JSON-Animationen für moderne UI-Erlebnisse
+🎨 CSS Animations	Moderne CSS-Animationen für interaktive UI-Erlebnisse
 🧠 IndexedDB Prefetch	Clientseitiges Caching für optimierte UX und Performance
 🗂 Modulare Struktur	Trennung von Layout, Screens und Komponenten
 
@@ -26,7 +26,7 @@ Technologie	Beschreibung
 
 ✨ Features
 	•	🔁 Wiederverwendbare Layout-Komponenten (Hero, Feature, ZigZag)
-	•	🎬 Animierte UI dank Lottie & ScribbleAnimations
+	•	🎬 Animierte UI mit CSS-Animationen & modernen Effekten
 	•	🧩 Voll modularer Aufbau für wartbare Erweiterbarkeit
 	•	🎯 Navigation via ButtonAction: navigate, scroll, open
 	•	🌐 Responsives Design mit barrierefreier Gestaltung
@@ -108,7 +108,7 @@ Welcome to the official GitHub repository of the **Wir helfen aus e.V. website**
 | 🧑‍💻 **Next.js**         | React-based framework for SSR, SSG, and ISR          |
 | 🎨 **shadcn/ui**          | Stylish, accessible UI component library             |
 | 💨 **Tailwind CSS**       | Utility-first CSS framework for responsive styling   |
-| 🎞 **Lottie**             | JSON animations for modern interactive UI            |
+| 🎨 **CSS Animations**      | Modern CSS animations for interactive UI            |
 | 🧠 **IndexedDB Prefetch** | Client-side caching for optimal UX and performance   |
 | 🗂 **Modular Structure**  | Clear separation of layouts, screens, and components |
 
@@ -117,7 +117,7 @@ Welcome to the official GitHub repository of the **Wir helfen aus e.V. website**
 ## ✨ Features
 
 * 🔁 Reusable layout components (Hero, Feature, ZigZag)
-* 🎬 Animated UI with Lottie & ScribbleAnimations
+* 🎬 Animated UI with CSS animations & modern effects
 * 🧩 Fully modular and maintainable architecture
 * 🎯 Navigation via ButtonAction: `navigate`, `scroll`, `open`
 * 🌐 Responsive and accessible design

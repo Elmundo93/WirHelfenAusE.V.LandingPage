@@ -28,7 +28,6 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.18.1",
     "lodash.debounce": "^4.0.8",
-    "lottie-react": "^2.4.1",
     "lucide-react": "^0.517.0",
     "next": "15.3.3",
     "next-intl": "^4.3.1",
