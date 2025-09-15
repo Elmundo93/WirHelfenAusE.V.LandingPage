@@ -197,6 +197,7 @@ export async function POST(req: Request) {
   try {
     const res1 = await api.sendTransacEmail(notifyEmail);
     console.log("notify messageId:", (res1 as { messageId?: string })?.messageId ?? "ok");
+    console.log("notify messageId:", (res1 as { messageId?: string })?.messageId ?? "ok");
   } catch (e: unknown) {
     const status = (e as { response?: { status?: number }; status?: number })?.response?.status || (e as { status?: number })?.status || "unknown";
     console.error("notify failed:", status);
