@@ -15,6 +15,7 @@ interface FormData {
   email: string
   subject: string
   message: string
+  website?: string // Honeypot field
 }
 
 interface FormErrors {
@@ -22,6 +23,7 @@ interface FormErrors {
   email?: string
   subject?: string
   message?: string
+  website?: string
 }
 
 export default function ContactForm() {
@@ -31,13 +33,16 @@ export default function ContactForm() {
     fullname: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    website: '' // Honeypot field - should remain empty
   })
   
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const [lastSubmissionTime, setLastSubmissionTime] = useState<number>(0)
+  const [submissionCount, setSubmissionCount] = useState<number>(0)
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {}
@@ -80,12 +85,40 @@ export default function ContactForm() {
       return
     }
     
+    // Client-side rate limiting
+    const now = Date.now()
+    const timeSinceLastSubmission = now - lastSubmissionTime
+    const minInterval = 5000 // 5 seconds between submissions
+    
+    if (timeSinceLastSubmission < minInterval) {
+      setSubmitStatus('error')
+      setErrorMessage('Bitte warten Sie einen Moment, bevor Sie erneut senden.')
+      return
+    }
+    
+    // Check submission count (max 3 per hour)
+    const hourInMs = 60 * 60 * 1000
+    const submissionsInLastHour = submissionCount > 0 && (now - lastSubmissionTime) < hourInMs ? submissionCount : 0
+    
+    if (submissionsInLastHour >= 3) {
+      setSubmitStatus('error')
+      setErrorMessage('Sie haben das Limit von 3 Nachrichten pro Stunde erreicht. Bitte versuchen Sie es später erneut.')
+      return
+    }
+    
+    // Honeypot check - if website field is filled, it's likely a bot
+    if (formData.website && formData.website.trim() !== '') {
+      setSubmitStatus('error')
+      setErrorMessage('Spam erkannt. Bitte versuchen Sie es erneut.')
+      return
+    }
+    
     setIsSubmitting(true)
     setSubmitStatus('idle')
     setErrorMessage('')
     
     try {
-      const response = await fetch('/api/sendgrid', {
+      const response = await fetch('/api/brevo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -97,6 +130,8 @@ export default function ContactForm() {
       
       if (response.ok && data.success) {
         setSubmitStatus('success')
+        setLastSubmissionTime(Date.now())
+        setSubmissionCount(prev => prev + 1)
         setFormData({
           fullname: '',
           email: '',
@@ -168,6 +203,20 @@ export default function ContactForm() {
 
         {/* Contact Form */}
         <form onSubmit={handleSubmit} className="space-y-6 bg-white rounded-xl p-8">
+          {/* Honeypot field - hidden from users but visible to bots */}
+          <div style={{ display: 'none' }}>
+            <label htmlFor="website">Website (leave empty)</label>
+            <input
+              type="text"
+              id="website"
+              name="website"
+              value={formData.website}
+              onChange={(e) => handleInputChange('website', e.target.value)}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Name Field */}
             <div className="space-y-2">
