@@ -1,0 +1,12 @@
+[build]
+  command = "yarn build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Configure secrets scanning to ignore BREVO_SENDER_NAME
+# This is not a sensitive secret - it's just the sender name for emails
+[secrets_scanning]
+  enabled = true
+  omit_keys = ["BREVO_SENDER_NAME"]
