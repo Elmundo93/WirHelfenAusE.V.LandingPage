@@ -185,7 +185,7 @@ export async function POST(req: Request) {
         to: [{ email, name: fullname }],
         sender: {
           email: process.env.BREVO_SENDER_EMAIL!,
-          name: process.env.BREVO_SENDER_NAME || "Wir helfen aus e.V.",
+          name: "Wir helfen aus e.V.",
         },
         templateId,
         params: { fullname, subject, message }, // Template: {{ params.fullname }} etc.
