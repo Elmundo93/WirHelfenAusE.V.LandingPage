@@ -196,9 +196,9 @@ export async function POST(req: Request) {
   // ---------- Senden (getrennt) ----------
   try {
     const res1 = await api.sendTransacEmail(notifyEmail);
-    console.log("notify messageId:", (res1 as any)?.messageId ?? "ok");
-  } catch (e: any) {
-    const status = e?.response?.status || e?.status || "unknown";
+    console.log("notify messageId:", (res1 as { messageId?: string })?.messageId ?? "ok");
+  } catch (e: unknown) {
+    const status = (e as { response?: { status?: number }; status?: number })?.response?.status || (e as { status?: number })?.status || "unknown";
     console.error("notify failed:", status);
     // Bestätigung trotzdem versuchen
   }
@@ -206,12 +206,12 @@ export async function POST(req: Request) {
   try {
     if (confirmationEmail) {
       const res2 = await api.sendTransacEmail(confirmationEmail);
-      console.log("confirm messageId:", (res2 as any)?.messageId ?? "ok");
+      console.log("confirm messageId:", (res2 as { messageId?: string })?.messageId ?? "ok");
     } else {
       console.warn("⚠️ BREVO_TEMPLATE_ID fehlt – Bestätigung übersprungen.");
     }
-  } catch (e: any) {
-    const status = e?.response?.status || e?.status || "unknown";
+  } catch (e: unknown) {
+    const status = (e as { response?: { status?: number }; status?: number })?.response?.status || (e as { status?: number })?.status || "unknown";
     console.error("confirm failed:", status);
   }
 
